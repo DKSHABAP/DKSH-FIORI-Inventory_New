@@ -1,0 +1,88 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Popover placement="Bottom" showHeader="false">
+		<Table alternateRowColors="true" class="sapUiSizeCompact" inset="false" fixedLayout="false" items="{matMovPopoverModel>/}"
+			popinLayout="GridSmall">
+			<columns>
+				<!--<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/0/status}">-->
+				<!--	<Label text="Stock Type" design="Bold"/>-->
+				<!--</Column>-->
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/14/status}">
+					<Label text="{i18n>DONumber}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/15/status}">
+					<Label text="{i18n>HeaderNote}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/12/status}">
+					<Label text="{i18n>SpcIND}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/7/status}">
+					<Label text="{i18n>SLoc}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}">
+					<Label text="{i18n>GR/GIlocation}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}">
+					<Label text="{i18n>PerPack}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}">
+					<Label text="{i18n>Qty}" design="Bold"/>
+				</Column>
+				<!--<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"-->
+				<!--	visible="{PersonalizationModel>/personalizationData/userPersonaDto/12/status}">-->
+				<!--	<Label text="{i18n>SalesQty}" design="Bold"/>-->
+				<!--</Column>-->
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}">
+					<Label text="{i18n>MaterialGroup}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}">
+					<Label text="{i18n>MaterialGroup4}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}">
+					<Label text="{i18n>ExpDate} " design="Bold"/></Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}">
+					<Label text="{i18n>Date}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}">
+					<Label text="{i18n>VendorMat}" design="Bold"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<Text text="{matMovPopoverModel>/results/referenceDocNum}"></Text>
+					<Text text="{matMovPopoverModel>/results/headerNote}"></Text>
+					<Text text="{matMovPopoverModel>/results/splStockIndicator}"></Text>
+					<Text text="{matMovPopoverModel>/results/storageLocation}"></Text>
+					<Text text="{matMovPopoverModel>/results/receivingStorageLocation}"></Text>
+					<Text text="{matMovPopoverModel>/results/packSize}"></Text>
+					<Text text=" {parts:[{path:'matMovPopoverModel>/results/quantity'},{path:'matMovPopoverModel>/results/baseUnit'}],formatter:'.formatter.concatenateStrings'}"
+											wrapping="true"></Text>
+					<!--<Text text=" {parts:[{path:'matMovPopoverModel>/results/bigQuantity'},{path:'matMovPopoverModel>/results/saleUnit'}],formatter:'.formatter.concatenateStrings'}"-->
+					<!--						wrapping="true"></Text>-->
+					<Text
+						text=" {parts:[{path:'matMovPopoverModel>/results/materialGroup'},{path:'matMovPopoverModel>/results/matGroupDesc'}],formatter:'.formatter.concatenateStrings'}"
+						wrapping="true"></Text>
+					<Text
+						text=" {parts:[{path:'matMovPopoverModel>/results/materialGroup4'},{path:'matMovPopoverModel>/results/materialGroup4Desc'}],formatter:'.formatter.concatenateStrings'}"
+						wrapping="true"></Text>
+					<Text text="{path:'matMovPopoverModel>/results/shelflLifeDate',formatter:'.formatter.date'}"></Text>
+					<Text text="{path:'matMovPopoverModel>/results/postingDate',formatter:'.formatter.date'}"></Text>
+					<!--<Text text="{matMovPopoverModel>/results/shelflLifeDate}"></Text>-->
+					<!--<Text text="{matMovPopoverModel>/results/postingDate}"></Text>-->
+					<Text text="{matMovPopoverModel>/results/vendorMaterial}"></Text>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Popover>
+</core:FragmentDefinition>

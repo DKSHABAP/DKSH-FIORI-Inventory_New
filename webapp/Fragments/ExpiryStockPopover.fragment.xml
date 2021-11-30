@@ -1,0 +1,92 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Popover placement="Bottom" showHeader="false">
+		<Table alternateRowColors="true" class="sapUiSizeCompact" inset="false" fixedLayout="false" items="{expiryStckPopoverModel>/}"
+			popinLayout="GridSmall">
+			<columns>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/0/status}">
+					<Label text="{i18n>MaterialGroup}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}">
+					<Label text="{i18n>MaterialGroup4}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}">
+					<Label text="{i18n>VendorMat}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}">
+					<Label text="{i18n>Batch}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/6/status}">
+					<Label text="{i18n>Value}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}">
+					<Label text="{i18n>Unit}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}">
+					<Label text="{i18n>ExpDate}" design="Bold"/></Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}">
+					<Label text="{i18n>ManuDate}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/12/status}">
+					<Label text="{i18n>Expired}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/13/status}">
+					<Label text="{i18n>3Months}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/14/status}">
+					<Label text="{i18n>6Months}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/15/status}">
+					<Label text="{i18n>9Months}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/16/status}">
+					<Label text="{i18n>12Months}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/17/status}">
+					<Label text="{i18n>15Months}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/18/status}">
+					<Label text="{i18n>18Months}" design="Bold"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<Text
+						text=" {parts:[{path:'expiryStckPopoverModel>/results/materialGroup'},{path:'expiryStckPopoverModel>/results/matGroupDesc'}],formatter:'.formatter.concatenateStrings'}"
+						wrapping="true"></Text>
+					<Text
+						text=" {parts:[{path:'expiryStckPopoverModel>/results/materialGroup4'},{path:'expiryStckPopoverModel>/results/matGroup4Desc'}],formatter:'.formatter.concatenateStrings'}"
+						wrapping="true"></Text>
+					<Text text="{expiryStckPopoverModel>/results/prodInsMemo}"></Text>
+					<Text text="{expiryStckPopoverModel>/results/batch}"></Text>
+					<Text text="{expiryStckPopoverModel>/results/rate}"></Text>
+					<Text text="{expiryStckPopoverModel>/results/baseUOM}"></Text>
+					<Text text="{path:'expiryStckPopoverModel>/results/shelflLifeDate',formatter:'.formatter.date'}"></Text>
+					<Text text="{path:'expiryStckPopoverModel>/results/manufDate',formatter:'.formatter.date'}"></Text>
+					
+					<Text text="{expiryStckPopoverModel>/results/expired}"></Text>
+					<Text text="{expiryStckPopoverModel>/results/expired3}"></Text>
+					<Text text="{expiryStckPopoverModel>/results/expired6}"></Text>
+					<Text text="{expiryStckPopoverModel>/results/expired9}"></Text>
+					<Text text="{expiryStckPopoverModel>/results/expired12}"></Text>
+					<Text text="{expiryStckPopoverModel>/results/expired15}"></Text>
+					<Text text="{expiryStckPopoverModel>/results/expired18}"></Text>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Popover>
+</core:FragmentDefinition>

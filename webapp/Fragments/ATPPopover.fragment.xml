@@ -1,0 +1,46 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form">
+	<Popover placement="Bottom" showHeader="false">
+		<Table alternateRowColors="true" class="sapUiSizeCompact" inset="false" fixedLayout="false" items="{ATPPopoverModel>/}">
+			<columns>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}">
+					<Label text="{i18n>Plant}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}">
+					<Label text="{i18n>StockQty}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/6/status}">
+					<Label text="{i18n>ReqQty}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/7/status}">
+					<Label text="{i18n>ConfirmQty}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}">
+					<Label text="{i18n>ShortQty}" design="Bold"/></Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}">
+					<Label text="{i18n>Unit}" design="Bold"/>
+				</Column>
+				<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
+					visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
+					<Label text="{i18n>LTP/Price}" design="Bold"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<Text text="{ATPPopoverModel>/results/plant}"></Text>
+					<Text text="{ATPPopoverModel>/results/stockQty}"></Text>
+					<Text text="{ATPPopoverModel>/results/requiredQty}"></Text>
+					<Text text="{ATPPopoverModel>/results/confirmQty}"></Text>
+					<Text text="{ATPPopoverModel>/results/shortQty}"></Text>
+					<Text text="{ATPPopoverModel>/results/baseUnit}"></Text>
+					<Text text="{ATPPopoverModel>/results/ltpPrice}"></Text>
+				</ColumnListItem>
+			</items>
+		</Table>
+	</Popover>
+</core:FragmentDefinition>

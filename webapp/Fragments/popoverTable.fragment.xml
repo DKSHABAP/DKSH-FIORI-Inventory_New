@@ -1,0 +1,105 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:mvc="sap.ui.core.mvc" xmlns:core="sap.ui.core">
+	<Popover placement="Bottom" showHeader="false">
+		<Table alternateRowColors="true" class="sapUiSizeCompact" inset="false" fixedLayout="false">
+			<!--<headerToolbar>-->
+			<!--	<Toolbar>-->
+			<!--		<Label text="Expiry Stock (2)" design="Bold"></Label>-->
+			<!--		<ToolbarSpacer></ToolbarSpacer>-->
+			<!--		<SearchField width="30%"></SearchField>-->
+			<!--		<Button text="Export" icon="sap-icon://download" type="Emphasized"/>-->
+			<!--		<Button icon="sap-icon://action-settings"/>-->
+			<!--	</Toolbar>-->
+			<!--</headerToolbar>-->
+			<columns>
+				<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline">
+					<Label text="Batch" design="Bold"/>
+				</Column>
+				<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline">
+					<Label text="Recv. Date" design="Bold"/>
+				</Column>
+				<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline">
+					<Label text="Manu. Date" design="Bold"/>
+				</Column>
+				<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline">
+					<Label text="Exp. Date" design="Bold"/>
+				</Column>
+				<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline">
+					<Label text="Qty" design="Bold"/>
+				</Column>
+				<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline">
+					<Label text="SLoc" design="Bold"/>
+				</Column>
+				<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline">
+					<Label text="Reserved By" design="Bold"/>
+				</Column>
+				<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline">
+					<Label text="Unrest" design="Bold"/>
+				</Column>
+				<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline">
+					<Label text="Blocked" design="Bold"/></Column>
+				<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline">
+					<Label text="QI" design="Bold"/>
+				</Column>
+				<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline">
+					<Label text="Serial No." design="Bold"/>
+				</Column>
+			</columns>
+			<items>
+				<ColumnListItem>
+					<Text text="28919402"></Text>
+					<Text text="30.09.2019"></Text>
+					<Text text="28.02.2018"></Text>
+					<Text text="30.09.2019"></Text>
+					<Text text="7"></Text>
+					<Text text="T05"></Text>
+					<Text text="100130482"></Text>
+					<Text text="23"></Text>
+					<Text text="QW"></Text>
+					<Text text="QW"></Text>
+				</ColumnListItem>
+				<ColumnListItem>
+					<Text text="28919402"></Text>
+					<Text text="30.09.2019"></Text>
+					<Text text="28.02.2018"></Text>
+					<Text text="30.09.2019"></Text>
+					<Text text="7"></Text>
+					<Text text="T05"></Text>
+					<Text text="100130482"></Text>
+					<Text text="23"></Text>
+					<Text text="QW"></Text>
+					<Text text="QW"></Text>
+				</ColumnListItem>
+				<ColumnListItem>
+					<Text text="28919402"></Text>
+					<Text text="30.09.2019"></Text>
+					<Text text="28.02.2018"></Text>
+					<Text text="30.09.2019"></Text>
+					<Text text="7"></Text>
+					<Text text="T05"></Text>
+					<Text text="100130482"></Text>
+					<Text text="23"></Text>
+					<Text text="QW"></Text>
+					<Text text="QW"></Text>
+				</ColumnListItem>
+				<ColumnListItem>
+					<Text text="28919402"></Text>
+					<Text text="30.09.2019"></Text>
+					<Text text="28.02.2018"></Text>
+					<Text text="30.09.2019"></Text>
+					<Text text="7"></Text>
+					<Text text="T05"></Text>
+					<Text text="100130482"></Text>
+					<Text text="23"></Text>
+					<Text text="QW"></Text>
+					<Text text="QW"></Text>
+				</ColumnListItem>
+			</items>
+		</Table>
+		<footer>
+			<OverflowToolbar>
+				<ToolbarSpacer/>
+				<Button text="Close" press="closePopover"/>
+			</OverflowToolbar>
+		</footer>
+	</Popover>
+</core:FragmentDefinition>
