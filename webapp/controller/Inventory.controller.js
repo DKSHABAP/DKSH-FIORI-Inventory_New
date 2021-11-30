@@ -10,12 +10,12 @@ sap.ui.define([
 ], function (Controller, JSONModel, MessageBox, Fragment, MessageToast, formatter, Token, Spreadsheet) {
 	"use strict";
 
-	return Controller.extend("incture.com.ConnectClient_Inventory1.controller.Inventory", {
+	return Controller.extend("incture.com.ConnectClient_Inventory.controller.Inventory", {
 		formatter: formatter,
 		/**
 		 * Called when a controller is instantiated and its View controls (if available) are already created.
 		 * Can be used to modify the View before it is displayed, to bind event handlers and do other one-time initialization.
-		 * @memberOf incture.com.ConnectClient_Inventory1.view.Inventory
+		 * @memberOf incture.com.ConnectClient_Inventory.view.Inventory
 		 */
 
 		_doAjax: function (sUrl, sMethod, oData, bAbort) {
@@ -244,7 +244,7 @@ sap.ui.define([
 				// create popover
 				if (!this._oPopover) {
 					Fragment.load({
-						name: "incture.com.ConnectClient_Inventory1.Fragments.EndingStockPopover",
+						name: "incture.com.ConnectClient_Inventory.Fragments.EndingStockPopover",
 						controller: this
 					}).then(function (pPopover) {
 						this._oPopover = pPopover;
@@ -291,7 +291,7 @@ sap.ui.define([
 				// create popover
 				if (!this._oPopover) {
 					Fragment.load({
-						name: "incture.com.ConnectClient_Inventory1.Fragments.ExpiryStockPopover",
+						name: "incture.com.ConnectClient_Inventory.Fragments.ExpiryStockPopover",
 						controller: this
 					}).then(function (pPopover) {
 						this._oPopover = pPopover;
@@ -338,7 +338,7 @@ sap.ui.define([
 				// create popover
 				if (!this._oPopover) {
 					Fragment.load({
-						name: "incture.com.ConnectClient_Inventory1.Fragments.MatMovPopover",
+						name: "incture.com.ConnectClient_Inventory.Fragments.MatMovPopover",
 						controller: this
 					}).then(function (pPopover) {
 						this._oPopover = pPopover;
@@ -385,7 +385,7 @@ sap.ui.define([
 				// create popover
 				if (!this._oPopover) {
 					Fragment.load({
-						name: "incture.com.ConnectClient_Inventory1.Fragments.ATPPopover",
+						name: "incture.com.ConnectClient_Inventory.Fragments.ATPPopover",
 						controller: this
 					}).then(function (pPopover) {
 						this._oPopover = pPopover;
@@ -767,7 +767,7 @@ sap.ui.define([
 			var that = this;
 			var PersonalizationModel = this.getView().getModel("PersonalizationModel");
 			if (!this.FilterPersonalization) {
-				this.FilterPersonalization = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory1.Fragments.FilterPersonalization", this);
+				this.FilterPersonalization = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory.Fragments.FilterPersonalization", this);
 				this.getView().addDependent(this.FilterPersonalization);
 			}
 			var FilterPersonalization = new sap.ui.model.json.JSONModel({
@@ -797,7 +797,7 @@ sap.ui.define([
 			var that = this;
 			var PersonalizationModel = this.getView().getModel("PersonalizationModel");
 			if (!this.FilterPersonalization) {
-				this.FilterPersonalization = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory1.Fragments.FilterPersonalization", this);
+				this.FilterPersonalization = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory.Fragments.FilterPersonalization", this);
 				this.getView().addDependent(this.FilterPersonalization);
 			}
 			var FilterPersonalization = new sap.ui.model.json.JSONModel({
@@ -829,7 +829,7 @@ sap.ui.define([
 		// 	} else {
 		// 		// var that = this;
 		// 		if (!that.salesOrg) {
-		// 			that.salesOrg = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory1.Fragments.SalesOrg", that);
+		// 			that.salesOrg = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory.Fragments.SalesOrg", that);
 		// 			that.getView().addDependent(that.salesOrg);
 		// 			var oDataModel = this.getView().getModel("ZDKSH_CC_INVENTORY_HDRLOOKUP_SRV");
 		// 			// var filters = [];
@@ -889,7 +889,7 @@ sap.ui.define([
 			} else {
 				var that = this;
 				if (!that.plantFrag) {
-					that.plantFrag = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory1.Fragments.plant", that);
+					that.plantFrag = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory.Fragments.plant", that);
 					that.getView().addDependent(that.plantFrag);
 					var oDataModel = this.getView().getModel("ZDKSH_CC_INVENTORY_HDRLOOKUP_SRV");
 					var filters = [];
@@ -960,7 +960,7 @@ sap.ui.define([
 			} else {
 				// var that = this;
 				if (!that.materialGroup4) {
-					that.materialGroup4 = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory1.Fragments.materialGroup4", that);
+					that.materialGroup4 = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory.Fragments.materialGroup4", that);
 					that.getView().addDependent(that.materialGroup4);
 					var oDataModel = this.getView().getModel("ZDKSH_CC_INVENTORY_HDRLOOKUP_SRV");
 					var filters = [];
@@ -1033,7 +1033,7 @@ sap.ui.define([
 			} else {
 				// var that = this;
 				if (!that.MaterialGroup) {
-					that.MaterialGroup = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory1.Fragments.MaterialGroup", that);
+					that.MaterialGroup = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory.Fragments.MaterialGroup", that);
 					that.getView().addDependent(that.MaterialGroup);
 					var oDataModel = this.getView().getModel("ZDKSH_CC_INVENTORY_HDRLOOKUP_SRV");
 					var filters = [];
@@ -1163,7 +1163,7 @@ sap.ui.define([
 				this.SLocPlaceholder = oEvent.getSource().getPlaceholder();
 
 				// if (!that.StorageLocation) {
-				that.StorageLocation = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory1.Fragments.StorageLocation", that);
+				that.StorageLocation = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory.Fragments.StorageLocation", that);
 				that.getView().addDependent(that.StorageLocation);
 				var oDataModel = this.getView().getModel("ZDKSH_CC_INVENTORY_HDRLOOKUP_SRV");
 				var filters = [];
@@ -1427,7 +1427,7 @@ sap.ui.define([
 			var that = this;
 			var PersonalizationModel = this.getView().getModel("PersonalizationModel");
 			if (!this.FilterPersonalization) {
-				this.FilterPersonalization = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory1.Fragments.FilterPersonalization", this);
+				this.FilterPersonalization = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory.Fragments.FilterPersonalization", this);
 				this.getView().addDependent(this.FilterPersonalization);
 			}
 			var FilterPersonalization = new sap.ui.model.json.JSONModel({
@@ -6205,7 +6205,7 @@ sap.ui.define([
 			// create popover
 			if (!this._oPopover) {
 				Fragment.load({
-					name: "incture.com.ConnectClient_Inventory1.Fragments.popoverTable",
+					name: "incture.com.ConnectClient_Inventory.Fragments.popoverTable",
 					controller: this
 				}).then(function (pPopover) {
 					this._oPopover = pPopover;
@@ -6245,7 +6245,7 @@ sap.ui.define([
 				// create popover
 				if (!this._oPopover) {
 					Fragment.load({
-						name: "incture.com.ConnectClient_Inventory1.Fragments.StockLotPopover",
+						name: "incture.com.ConnectClient_Inventory.Fragments.StockLotPopover",
 						controller: this
 					}).then(function (pPopover) {
 						this._oPopover = pPopover;
@@ -6474,7 +6474,7 @@ sap.ui.define([
 			} else {
 				// var that = this;
 				if (!that.salesOrg) {
-					that.salesOrg = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory1.Fragments.SalesOrg", that);
+					that.salesOrg = sap.ui.xmlfragment("incture.com.ConnectClient_Inventory.Fragments.SalesOrg", that);
 					that.getView().addDependent(that.salesOrg);
 					var oDataModel = this.getView().getModel("ZDKSH_CC_INVENTORY_HDRLOOKUP_SRV");
 					var filters = [];
@@ -7247,7 +7247,7 @@ sap.ui.define([
 		/**
 		 * Similar to onAfterRendering, but this hook is invoked before the controller's View is re-rendered
 		 * (NOT before the first rendering! onInit() is used for that one!).
-		 * @memberOf incture.com.ConnectClient_Inventory1.view.Inventory
+		 * @memberOf incture.com.ConnectClient_Inventory.view.Inventory
 		 */
 		//	onBeforeRendering: function() {
 		//
@@ -7256,7 +7256,7 @@ sap.ui.define([
 		/**
 		 * Called when the View has been rendered (so its HTML is part of the document). Post-rendering manipulations of the HTML could be done here.
 		 * This hook is the same one that SAPUI5 controls get after being rendered.
-		 * @memberOf incture.com.ConnectClient_Inventory1.view.Inventory
+		 * @memberOf incture.com.ConnectClient_Inventory.view.Inventory
 		 */
 		onAfterRendering: function () {
 			this.resourceBundle = this.getView().getModel("i18n").getResourceBundle();
@@ -7264,7 +7264,7 @@ sap.ui.define([
 
 		/**
 		 * Called when the Controller is destroyed. Use this one to free resources and finalize activities.
-		 * @memberOf incture.com.ConnectClient_Inventory1.view.Inventory
+		 * @memberOf incture.com.ConnectClient_Inventory.view.Inventory
 		 */
 		//	onExit: function() {
 		//

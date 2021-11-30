@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (Opa5) {
 	"use strict";
 
-	return Opa5.extend("incture.com.ConnectClient_Inventory1.test.integration.arrangements.Startup", {
+	return Opa5.extend("incture.com.ConnectClient_Inventory.test.integration.arrangements.Startup", {
 
 		iStartMyApp: function (oOptionsParameter) {
 			var oOptions = oOptionsParameter || {};
@@ -14,7 +14,7 @@ sap.ui.define([
 			// start the app UI component
 			this.iStartMyUIComponent({
 				componentConfig: {
-					name: "incture.com.ConnectClient_Inventory1",
+					name: "incture.com.ConnectClient_Inventory",
 					async: true
 				},
 				hash: oOptions.hash,

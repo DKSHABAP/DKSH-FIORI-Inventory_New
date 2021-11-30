@@ -7,7 +7,7 @@ sap.ui.define([
 
 	Opa5.extendConfig({
 		arrangements: new Startup(),
-		viewNamespace: "incture.com.ConnectClient_Inventory1.view.",
+		viewNamespace: "incture.com.ConnectClient_Inventory.view.",
 		autoWait: true
 	});
 });

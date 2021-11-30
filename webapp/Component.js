@@ -14,11 +14,11 @@
 	sap.ui.define([
 		"sap/ui/core/UIComponent",
 		"sap/ui/Device",
-		"incture/com/ConnectClient_Inventory1/model/models"
+		"incture/com/ConnectClient_Inventory/model/models"
 	], function (UIComponent, Device, models) {
 		"use strict";
 
-		return UIComponent.extend("incture.com.ConnectClient_Inventory1.Component", {
+		return UIComponent.extend("incture.com.ConnectClient_Inventory.Component", {
 
 			metadata: {
 				manifest: "json",

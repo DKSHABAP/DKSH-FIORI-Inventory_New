@@ -1,7 +1,7 @@
 {
 	"_version": "1.12.0",
 	"sap.app": {
-		"id": "incture.com.ConnectClient_Inventory1",
+		"id": "incture.com.ConnectClient_Inventory",
 		"type": "application",
 		"i18n": "i18n/i18n.properties",
 		"applicationVersion": {
@@ -70,7 +70,7 @@
 	"sap.ui5": {
 		"flexEnabled": false,
 		"rootView": {
-			"viewName": "incture.com.ConnectClient_Inventory1.view.App",
+			"viewName": "incture.com.ConnectClient_Inventory.view.App",
 			"type": "XML",
 			"async": true,
 			"id": "App"
@@ -91,7 +91,7 @@
 			"i18n": {
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
-					"bundleName": "incture.com.ConnectClient_Inventory1.i18n.i18n"
+					"bundleName": "incture.com.ConnectClient_Inventory.i18n.i18n"
 				}
 			},
 			"ZDKSH_CC_ATP_OVERVIEW_SRV": {
@@ -162,7 +162,7 @@
 				"routerClass": "sap.m.routing.Router",
 				"viewType": "XML",
 				"async": true,
-				"viewPath": "incture.com.ConnectClient_Inventory1.view",
+				"viewPath": "incture.com.ConnectClient_Inventory.view",
 				"controlAggregation": "pages",
 				"controlId": "app",
 				"clearControlAggregation": false

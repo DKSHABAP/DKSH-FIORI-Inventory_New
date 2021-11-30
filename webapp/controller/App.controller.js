@@ -3,7 +3,7 @@ sap.ui.define([
 ], function (Controller) {
 	"use strict";
 
-	return Controller.extend("incture.com.ConnectClient_Inventory1.controller.App", {
+	return Controller.extend("incture.com.ConnectClient_Inventory.controller.App", {
 		onInit: function () {
 
 		}
