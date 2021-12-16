@@ -1,5 +1,6 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:u="sap.uxap" xmlns:layout="sap.ui.layout"
-	controllerName="incture.com.ConnectClient_Inventory.controller.Inventory" xmlns:html="http://www.w3.org/1999/xhtml">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:u="sap.uxap"
+	xmlns:layout="sap.ui.layout" controllerName="incture.com.ConnectClient_Inventory.controller.Inventory"
+	xmlns:html="http://www.w3.org/1999/xhtml">
 	<html:iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WG969CM" height="0" width="0" style="display:none; visibility:hidden"></html:iframe>
 	<Page id="page" class="sapUiSizeCompact" showHeader="false">
 		<content>
@@ -100,9 +101,17 @@
 										visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}">
 										<Label text="{i18n>Plant}" design="Bold" tooltip="{i18n>Plant}"/>
 									</Column>
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}">
+										<Label text="{i18n>PlantDesc}" design="Bold" tooltip="{i18n>PlantDesc}"/>
+									</Column>
 									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline"
 										visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}">
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
+									</Column>
+									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline"
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}">
+										<Label text="{i18n>SLOCDesc}" design="Bold" tooltip="{i18n>SLOCDesc}"/>
 									</Column>
 									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
 										visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}">
@@ -147,10 +156,15 @@
 									<ColumnListItem type="Navigation" press="onPressDetailATP">
 										<Label
 											text=" {parts:[{path:'ATPOverviewTableModel>materialNum'},{path:'ATPOverviewTableModel>materialDesc'}],formatter:'.formatter.concatenateStrings'}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}" wrapping="true"></Label>
+											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"
+											wrapping="true"></Label>
 										<Label text="{ATPOverviewTableModel>plant}"
 											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
+										<Label text="{ATPOverviewTableModel>Plantdesc}"
+											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
 										<Label text="{ATPOverviewTableModel>storageLocation}"
+											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
+										<Label text="{ATPOverviewTableModel>storagelocationDesc}"
 											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
 										<Label text="{ATPOverviewTableModel>batchNumber}"
 											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
@@ -281,6 +295,10 @@
 										popinDisplay="Inline">
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 									</Column>
+									<Column visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}" minScreenWidth="XSmall" demandPopin="true"
+										popinDisplay="Inline">
+										<Label text="{i18n>SLOCDesc}" design="Bold" tooltip="{i18n>SLOCDesc}"/>
+									</Column>
 									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
 										visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}">
 										<Label text="{i18n>RealBatch}" design="Bold" tooltip="{i18n>RealBatch}"/>
@@ -317,6 +335,7 @@
 										<Text text="{endingStckTableModel>oldCode}"></Text>
 										<Text text="{endingStckTableModel>vendorMaterial}"></Text>
 										<Text text="{endingStckTableModel>storageLocation}"></Text>
+										<Text text="{endingStckTableModel>storageLocationDesc}"></Text>
 										<Text text="{endingStckTableModel>realBatch}"></Text>
 										<Text text="{path:'endingStckTableModel>expireDate',formatter:'.formatter.date'}"></Text>
 										<Text text="{path:'endingStckTableModel>manufDate',formatter:'.formatter.manufDate'}"></Text>
@@ -456,6 +475,10 @@
 										visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 									</Column>
+									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
+										<Label text="{i18n>SLocDesc}" design="Bold" tooltip="{i18n>SLocDesc}"/>
+									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
 										visible="{PersonalizationModel>/personalizationData/userPersonaDto/12/status}">
 										<Label text="{i18n>Expired}" design="Bold" tooltip="{i18n>Expired}"/>
@@ -508,6 +531,7 @@
 										<Text text="{path:'expiryStckTableModel>manufDate',formatter:'.formatter.manufDate'}"></Text>
 										<Text text="{expiryStckTableModel>baseUOM}"></Text>
 										<Text text="{expiryStckTableModel>storageLocation}"/>
+										<Text text="{expiryStckTableModel>storageLocationdesc}"/>
 										<Text text="{expiryStckTableModel>expired}"></Text>
 										<Text text="{expiryStckTableModel>expired3}"></Text>
 										<Text text="{expiryStckTableModel>expired6}"/>
@@ -624,6 +648,10 @@
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}">
+										<Label text="{i18n>SLOCDesc}" design="Bold" tooltip="{i18n>SLOCDesc}"/>
+									</Column>
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
 										visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}">
 										<Label text="{i18n>GR/GIlocation}" design="Bold" tooltip="{i18n>GR/GIlocation}"/>
 									</Column>
@@ -681,6 +709,7 @@
 										<Text text="{path:'mavMovTableModel>shelflLifeDate',formatter:'.formatter.date'}"></Text>
 										<Text text="{mavMovTableModel>batchNumber}"></Text>
 										<Text text="{mavMovTableModel>storageLocation}"></Text>
+										<Text text="{mavMovTableModel>Storelocdesc}"></Text>
 										<Text text="{mavMovTableModel>receivingStorageLocation}"></Text>
 										<Text text="{mavMovTableModel>packSize}"></Text>
 										<Text text=" {parts:[{path:'mavMovTableModel>quantity'},{path:'mavMovTableModel>baseUnit'}],formatter:'.formatter.concatenateStrings'}"
@@ -833,72 +862,75 @@ tokenUpdate="onDeleteBatchStkLot"/>-->
 												</f:content>
 											</f:SimpleForm>
 											<!--<ScrollContainer class="crtMinListHeight crtScrollBar" horizontal="false" vertical="true" height="{baseModel>/invoiceTableLength}">-->
-												
-												<Table alternateRowColors="true" class="sapUiSizeCompact" popinLayout="GridSmall" items="{stockLotModel>OutputToBatchOutput/results}"
-													sticky="ColumnHeaders">
-													<columns>
-														<Column demandPopin="true" minScreenWidth="XSmall" popinDisplay="Inline"
-															visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
-															<Label text="{i18n>Batch}" design="Bold" tooltip="{i18n>Batch}"/>
-														</Column>
-														<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline"
-															visible="{PersonalizationModel>/personalizationData/userPersonaDto/12/status}">
-															<Label text="{i18n>recvDt}" design="Bold" tooltip="{i18n>recvDt}"/>
-														</Column>
-														<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline"
-															visible="{PersonalizationModel>/personalizationData/userPersonaDto/13/status}">
-															<Label text="{i18n>ManuDate}" design="Bold" tooltip="{i18n>ManuDate}"/>
-														</Column>
-														<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline"
-															visible="{PersonalizationModel>/personalizationData/userPersonaDto/14/status}">
-															<Label text="{i18n>ExpDate}" design="Bold" tooltip="{i18n>ExpDate}"/>
-														</Column>
-														<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
-															visible="{PersonalizationModel>/personalizationData/userPersonaDto/15/status}">
-															<Label text="{i18n>Qty}" design="Bold" tooltip="{i18n>Qty}"/>
-														</Column>
-														<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
-															visible="{PersonalizationModel>/personalizationData/userPersonaDto/16/status}">
-															<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
-														</Column>
-														<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline"
-															visible="{PersonalizationModel>/personalizationData/userPersonaDto/17/status}">
-															<Label text="{i18n>resvdBy}" design="Bold" tooltip="{i18n>resvdBy}"/>
-														</Column>
-														<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
-															visible="{PersonalizationModel>/personalizationData/userPersonaDto/18/status}">
-															<Label text="{i18n>Unrest}" design="Bold" tooltip="{i18n>Unrest}"/>
-														</Column>
-														<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
-															visible="{PersonalizationModel>/personalizationData/userPersonaDto/19/status}">
-															<Label text="{i18n>Blocked}" design="Bold" tooltip="{i18n>Blocked}"/></Column>
-														<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
-															visible="{PersonalizationModel>/personalizationData/userPersonaDto/20/status}">
-															<Label text="{i18n>QI}" design="Bold" tooltip="{i18n>QI}"/>
-														</Column>
-														<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
-															visible="{PersonalizationModel>/personalizationData/userPersonaDto/21/status}">
-															<Label text="{i18n>SerialNo}" design="Bold" tooltip="{i18n>SerialNo}"/>
-														</Column>
-													</columns>
-													<items>
-														<ColumnListItem type="Navigation" press="navigateStkLot">
-															<Text text="{stockLotModel>batchNum}"></Text>
-															<Text text="{path: 'stockLotModel>createdOn', formatter: '.formatter.convertToDateToDispFormat'}"></Text>
-															<Text text="{path: 'stockLotModel>manufDate', formatter: '.formatter.convertToDateToDispFormatManuf'}"></Text>
-															<Text text="{path: 'stockLotModel>shelfLifeDate', formatter: '.formatter.convertToDateToDispFormatExp'}"></Text>
-															<Text text="{stockLotModel>qtyUnrestrictedStock}"></Text>
-															<Text text="{stockLotModel>storageLocation}"></Text>
-															<Text text="{stockLotModel>reservedby}"></Text>
-															<Text text="{stockLotModel>batchQty}"></Text>
-															<Text text="{stockLotModel>blockStock}"></Text>
-															<Text text="{stockLotModel>stockInspection}"></Text>
-															<!--<Text text="{stockLotModel>reservedby}"/>-->
-															<Text text="{stockLotModel>serialNum}"></Text>
-														</ColumnListItem>
-													</items>
-												</Table>
-											
+											<Table alternateRowColors="true" class="sapUiSizeCompact" popinLayout="GridSmall" items="{stockLotModel>OutputToBatchOutput/results}"
+												sticky="ColumnHeaders">
+												<columns>
+													<Column demandPopin="true" minScreenWidth="XSmall" popinDisplay="Inline"
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
+														<Label text="{i18n>Batch}" design="Bold" tooltip="{i18n>Batch}"/>
+													</Column>
+													<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline"
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/12/status}">
+														<Label text="{i18n>recvDt}" design="Bold" tooltip="{i18n>recvDt}"/>
+													</Column>
+													<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline"
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/13/status}">
+														<Label text="{i18n>ManuDate}" design="Bold" tooltip="{i18n>ManuDate}"/>
+													</Column>
+													<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline"
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/14/status}">
+														<Label text="{i18n>ExpDate}" design="Bold" tooltip="{i18n>ExpDate}"/>
+													</Column>
+													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/15/status}">
+														<Label text="{i18n>Qty}" design="Bold" tooltip="{i18n>Qty}"/>
+													</Column>
+													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/16/status}">
+														<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
+													</Column>
+													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/16/status}">
+														<Label text="{i18n>SLocDesc}" design="Bold" tooltip="{i18n>SLocDesc}"/>
+													</Column>
+													<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline"
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/17/status}">
+														<Label text="{i18n>resvdBy}" design="Bold" tooltip="{i18n>resvdBy}"/>
+													</Column>
+													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/18/status}">
+														<Label text="{i18n>Unrest}" design="Bold" tooltip="{i18n>Unrest}"/>
+													</Column>
+													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/19/status}">
+														<Label text="{i18n>Blocked}" design="Bold" tooltip="{i18n>Blocked}"/></Column>
+													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/20/status}">
+														<Label text="{i18n>QI}" design="Bold" tooltip="{i18n>QI}"/>
+													</Column>
+													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/21/status}">
+														<Label text="{i18n>SerialNo}" design="Bold" tooltip="{i18n>SerialNo}"/>
+													</Column>
+												</columns>
+												<items>
+													<ColumnListItem type="Navigation" press="navigateStkLot">
+														<Text text="{stockLotModel>batchNum}"></Text>
+														<Text text="{path: 'stockLotModel>createdOn', formatter: '.formatter.convertToDateToDispFormat'}"></Text>
+														<Text text="{path: 'stockLotModel>manufDate', formatter: '.formatter.convertToDateToDispFormatManuf'}"></Text>
+														<Text text="{path: 'stockLotModel>shelfLifeDate', formatter: '.formatter.convertToDateToDispFormatExp'}"></Text>
+														<Text text="{stockLotModel>qtyUnrestrictedStock}"></Text>
+														<Text text="{stockLotModel>storageLocation}"></Text>
+														<Text text="{stockLotModel>storelocdesc}"></Text>
+														<Text text="{stockLotModel>reservedby}"></Text>
+														<Text text="{stockLotModel>batchQty}"></Text>
+														<Text text="{stockLotModel>blockStock}"></Text>
+														<Text text="{stockLotModel>stockInspection}"></Text>
+														<!--<Text text="{stockLotModel>reservedby}"/>-->
+														<Text text="{stockLotModel>serialNum}"></Text>
+													</ColumnListItem>
+												</items>
+											</Table>
 											<!--</ScrollContainer>-->
 										</content>
 									</Panel>

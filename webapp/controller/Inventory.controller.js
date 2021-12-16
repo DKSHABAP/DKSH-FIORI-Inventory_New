@@ -2500,6 +2500,8 @@ sap.ui.define([
 							row2 = row2 + "QTY" + '","';
 						} else if (defaultVariant[k].enabledKey === "Batch – SLOC") {
 							row2 = row2 + "Storage Location" + '","';
+						} else if (defaultVariant[k].enabledKey === "SLOC Desc") {
+							row2 = row2 + "Storage Location Desc." + '","';
 						} else if (defaultVariant[k].enabledKey === "Batch – Reserved By") {
 							row2 = row2 + "Reserved By" + '","';
 						} else if (defaultVariant[k].enabledKey === "Batch –Unrest") {
@@ -2538,6 +2540,8 @@ sap.ui.define([
 								row3 = row3 + parseFloat(arrData[i].OutputToBatchOutput.results[j].qtyUnrestrictedStock) + '","';
 							} else if (defaultVariant[k].enabledKey === "Batch – SLOC") {
 								row3 = row3 + arrData[i].OutputToBatchOutput.results[j].storageLocation + '","';
+							} else if (defaultVariant[k].enabledKey === "SLOC Desc") {
+								row3 = row3 + arrData[i].OutputToBatchOutput.results[j].storelocdesc + '","';
 							} else if (defaultVariant[k].enabledKey === "Batch – Reserved By") {
 								row3 = row3 + arrData[i].OutputToBatchOutput.results[j].reservedby + '","';
 							} else if (defaultVariant[k].enabledKey === "Batch –Unrest") {
@@ -3494,6 +3498,11 @@ sap.ui.define([
 				label: 'Storage Location',
 				property: 'storageLocation'
 			}, {
+				// [+] Begin of STRY0014744 MY Ehancement
+				label: 'Storage Loc Desc',
+				property: 'storageLocationDesc'
+					// [+] End of STRY0014744 MY Ehancement
+			}, {
 				label: 'Old Code',
 				property: 'oldCode'
 			}, {
@@ -3890,6 +3899,8 @@ sap.ui.define([
 						row1 = row1 + "Serial No." + '","';
 					} else if (defaultVariant[k].enabledKey === "SLOC") {
 						row1 = row1 + "Storage Location" + '","';
+					} else if (defaultVariant[k].enabledKey === "SLOC Desc") {
+						row1 = row1 + "Storage Location Desc" + '","';
 					} else if (defaultVariant[k].enabledKey === "Batch") {
 						row1 = row1 + "Batch" + '","';
 					} else if (defaultVariant[k].enabledKey === "Exp. Date") {
@@ -3932,6 +3943,8 @@ sap.ui.define([
 							row = row + arrData[i].serialNum + '","';
 						} else if (defaultVariant[k].enabledKey === "SLOC") {
 							row = row + arrData[i].storageLocation + '","';
+						} else if (defaultVariant[k].enabledKey === "SLOC Desc") {
+							row = row + arrData[i].storagelocationDesc + '","';
 						} else if (defaultVariant[k].enabledKey === "Batch") {
 							row = row + arrData[i].batchNumber + '","';
 						} else if (defaultVariant[k].enabledKey === "Exp. Date") {
@@ -4018,6 +4031,7 @@ sap.ui.define([
 		},
 
 		onExportEndingStock: function () {
+
 			var arr = [];
 			var data = this.getView().getModel("endingStckTableModel").getData().results;
 			for (var i = 0; i < data.length; i++) {
@@ -4059,6 +4073,12 @@ sap.ui.define([
 						var key = {
 							label: 'Storage Location',
 							property: 'storageLocation'
+						};
+						cols.push(key);
+					} else if (defaultVariant[i].enabledKey === "SLOC Desc") {
+						var key = {
+							label: 'Storage Location Desc',
+							property: 'storageLocationDesc'
 						};
 						cols.push(key);
 					} else if (defaultVariant[i].enabledKey === "Real Batch") {
@@ -4223,6 +4243,12 @@ sap.ui.define([
 							property: 'storageLocation'
 						};
 						cols.push(key);
+					} else if (defaultVariant[i].enabledKey === "SLOC Desc") {
+						var key = {
+							label: 'Storage Location Desc',
+							property: 'storageLocationdesc'
+						};
+						cols.push(key);
 					} else if (defaultVariant[i].enabledKey === "Expired") {
 						var key = {
 							label: 'Expired',
@@ -4374,6 +4400,12 @@ sap.ui.define([
 							property: 'storageLocation'
 						};
 						cols.push(key);
+					} else if (defaultVariant[i].enabledKey === "SLOC Desc") {
+						var key = {
+							label: 'Storage Location Desc',
+							property: 'Storelocdesc'
+						};
+						cols.push(key);
 					} else if (defaultVariant[i].enabledKey === "GR/GI SLOC") {
 						var key = {
 							label: 'GR/GI Storage Location',
@@ -4462,7 +4494,6 @@ sap.ui.define([
 		},
 
 		ATPOverviewSearch: function () {
-
 			var that = this;
 			if (that.allAccess === false) {
 				MessageToast.show(this.resourceBundle.getText("NoDataAccess"));
@@ -4867,7 +4898,6 @@ sap.ui.define([
 		},
 
 		endingStockSearch: function () {
-
 			var that = this;
 			if (that.allAccess === false) {
 				MessageToast.show(this.resourceBundle.getText("NoDataAccess"));
@@ -5284,6 +5314,9 @@ sap.ui.define([
 			var oFilter = new sap.ui.model.Filter([new sap.ui.model.Filter("materialNum", sap.ui.model.FilterOperator.Contains, value),
 				new sap.ui.model.Filter("materialDesc", sap.ui.model.FilterOperator.Contains, value),
 				new sap.ui.model.Filter("storageLocation", sap.ui.model.FilterOperator.Contains, value),
+				// [+]Begin of  STRY0014744
+				new sap.ui.model.Filter("storageLocationDesc", sap.ui.model.FilterOperator.Contains, value),
+				// [+]Begin of  STRY0014744
 				new sap.ui.model.Filter("bigQuantity", sap.ui.model.FilterOperator.Contains, value),
 				new sap.ui.model.Filter("saleUnit", sap.ui.model.FilterOperator.Contains, value),
 				new sap.ui.model.Filter("vendorMatNum", sap.ui.model.FilterOperator.Contains, value),
@@ -6698,7 +6731,6 @@ sap.ui.define([
 		/////
 
 		StockLotSearch: function () {
-
 			var that = this;
 			if (that.allAccess === false) {
 				MessageToast.show(this.resourceBundle.getText("NoDataAccess"));
