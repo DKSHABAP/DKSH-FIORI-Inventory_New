@@ -142,9 +142,188 @@ sap.ui.define([
 			that.materialGroupDataAccess = "No Access";
 			that.materialGroup4DataAccess = "No Access";
 			that.plantDataAccess = "No Access";
-			that.materialDataAccess = "No Access"
-				// this.getView().getModel("baseModel").setProperty("/EndingStckAllMat", true);
+			that.materialDataAccess = "No Access";
+			// this.getView().getModel("baseModel").setProperty("/EndingStckAllMat", true);
 
+		},
+
+		_setDefaultMatGrp: function () {
+			var that = this;
+			var oComponent = this.getOwnerComponent();
+			var oModel = oComponent.getModel("ZDKSH_CC_INVENTORY_HDRLOOKUP_SRV");
+			//console.log(oModel.getMetadata());
+			var filters = [];
+			var lang = "";
+			var lang = "";
+			if (sap.ushell) {
+				if (sap.ui.getCore().getConfiguration().getLanguage() === "th") {
+					lang = "2";
+				} else {
+					lang = "EN";
+				}
+			} else {
+				lang = "EN";
+			}
+			lang = lang.toUpperCase();
+
+			var oFilter = new sap.ui.model.Filter({
+				filters: [
+					new sap.ui.model.Filter("language", sap.ui.model.FilterOperator.EQ, lang),
+					new sap.ui.model.Filter("materialGroup", sap.ui.model.FilterOperator.EQ, that.materialGroupDataAccess)
+				],
+				and: true
+			});
+			var oMultiInputold = that.byId(that._getId("MatGrpFrom"));
+			oMultiInputold.destroyTokens();
+
+			filters.push(oFilter);
+			oModel.read("/ZSearchHelp_MaterialGroupSet", {
+				async: false,
+				filters: filters,
+				success: function (oRetrievedResult, oResponse) {
+					var DefMatGrpModel = new sap.ui.model.json.JSONModel({
+						"results": oRetrievedResult.results
+					});
+					var oMultiInput = that.byId(that._getId("MatGrpFrom"));
+					//oMultiInput.removeAllTokens();
+					for (var i = 0; i < oRetrievedResult.results.length; i++) {
+						oMultiInput.addToken(new sap.m.Token({
+							text: oRetrievedResult.results[i].materialGroup
+						}));
+						that.MatGrp = "materialGroup eq" + "" + oRetrievedResult.results[i].materialGroup;
+						that.MatGrpFromSelectedItems = oRetrievedResult.results[i].materialGroup;
+					}
+				},
+				error: function (oError) {
+					/* do something */
+				}
+			});
+		},
+
+		_setDefaultPlant: function (tabName) {
+			// if (tabName !== "keyMat.Movement") {
+			var that = this;
+			var oComponent = this.getOwnerComponent();
+			var oModel = oComponent.getModel("ZDKSH_CC_INVENTORY_HDRLOOKUP_SRV");
+			//console.log(oModel.getMetadata());
+			var filters = [];
+			var lang = "";
+			var lang = "";
+			if (sap.ushell) {
+				if (sap.ui.getCore().getConfiguration().getLanguage() === "th") {
+					lang = "2";
+				} else {
+					lang = "EN";
+				}
+			} else {
+				lang = "EN";
+			}
+			lang = lang.toUpperCase();
+
+			var oFilter = new sap.ui.model.Filter({
+				filters: [
+					new sap.ui.model.Filter("language", sap.ui.model.FilterOperator.EQ, lang),
+					new sap.ui.model.Filter("plant", sap.ui.model.FilterOperator.EQ, that.plantDataAccess)
+				],
+				and: true
+			});
+			filters.push(oFilter);
+			oModel.read("/ZSearchHelp_PlantSet", {
+				async: false,
+				filters: filters,
+				success: function (oRetrievedResult, oResponse) {
+					var DefPlantModel = new sap.ui.model.json.JSONModel({
+						"results": oRetrievedResult.results
+					});
+
+					// if (tabName === "keyMat.Movement") {
+					// 	var oMultiInput = that.byId(that._getId("MatMovPlantFromId"));
+					// } else {
+					var oMultiInput = that.byId(that._getId("PlantFrom"));
+					// }
+					//oMultiInput.removeAllTokens();
+					//var oMultiInput = that.byId(that.getId("MatMovPlantFromId"));
+					for (var i = 0; i < oRetrievedResult.results.length; i++) {
+						oMultiInput.addToken(new sap.m.Token({
+							text: oRetrievedResult.results[i].plant
+						}));
+						that.plant = "plant eq" + "" + oRetrievedResult.results[i].plant;
+						that.plantFromSelectedItems = oRetrievedResult.results[i].plant;
+					}
+				},
+				error: function (oError) {
+					/* do something */
+				}
+			});
+			// }
+		},
+
+		_setDefaultSalesOrg: function () {
+			var that = this;
+			var oComponent = this.getOwnerComponent();
+			var oModel = oComponent.getModel("ZDKSH_CC_INVENTORY_HDRLOOKUP_SRV");
+			//console.log(oModel.getMetadata());
+			var filters = [];
+			var lang = "";
+			var lang = "";
+			if (sap.ushell) {
+				if (sap.ui.getCore().getConfiguration().getLanguage() === "th") {
+					lang = "2";
+				} else {
+					lang = "EN";
+				}
+			} else {
+				lang = "EN";
+			}
+			lang = lang.toUpperCase();
+
+			var oFilter = new sap.ui.model.Filter({
+				filters: [
+					new sap.ui.model.Filter("Language", sap.ui.model.FilterOperator.EQ, lang),
+					new sap.ui.model.Filter("Salesorg", sap.ui.model.FilterOperator.EQ, that.salesOrgDataAccess)
+				],
+				and: true
+			});
+			filters.push(oFilter);
+			oModel.read("/ZSearchHelp_SalesOrgSet", {
+				async: false,
+				filters: filters,
+				success: function (oRetrievedResult, oResponse) {
+					var DefSalesOrgModel = new sap.ui.model.json.JSONModel({
+						"results": oRetrievedResult.results
+					});
+					var oMultiInput = that.byId(that._getId("SalesOrgFrom"));
+					//oMultiInput.removeAllTokens();
+					for (var i = 0; i < oRetrievedResult.results.length; i++) {
+						oMultiInput.addToken(new sap.m.Token({
+							text: oRetrievedResult.results[i].Salesorg
+						}));
+						that.SalesOrg = "Salesorg eq" + "" + oRetrievedResult.results[i].Salesorg;
+						that.SalesOrgFromSelectedItems = oRetrievedResult.results[i].Salesorg;
+					}
+				},
+				error: function (oError) {
+					/* do something */
+				}
+			});
+		},
+
+		_getUser: function () {
+			var url = "/services/userapi/attributes";
+			var busyDialog = new sap.m.BusyDialog();
+			busyDialog.open();
+			this._doAjax(url, "GET", "", true).then(success => {
+				busyDialog.close();
+				var oUserModel = new sap.ui.model.json.JSONModel();
+				this.getView().setModel(oUserModel, "oUserModel");
+				this.getView().getModel("oUserModel").setProperty("/userID", success.name);
+				this.getView().getModel("oUserModel").setProperty("/email", success.email);
+				this._getUserDetail(success.name);
+				// this.getView().getModel("PersonalizationModel").setProperty("/variants", success.variantName);
+			}, fail => {
+				busyDialog.close();
+				MessageBox.error(fail.responseText);
+			});
 		},
 
 		_getUser: function () {
@@ -731,7 +910,8 @@ sap.ui.define([
 				var success = success.userPersonaDto;
 				if (this.FilterPersonalization.getModel("FilterPersonalization").getProperty("/results/action") === "Edit") {
 					that.getView().getModel("PersonalizationModel").setProperty("/personalizationData/userPersonaDto", success);
-					that.FilterPersonalization.getModel("FilterPersonalization").setProperty("/results/personalizationData/userPersonaDto", success);
+					that.FilterPersonalization.getModel("FilterPersonalization").setProperty("/results/personalizationData/userPersonaDto",
+						success);
 					that.FilterPersonalization.getModel("FilterPersonalization").refresh();
 					that.getView().getModel("PersonalizationModel").refresh();
 					if (that.FilterPersonalization.getModel("FilterPersonalization").getProperty("/results/personalizationData/currentVariant") ===
@@ -750,7 +930,8 @@ sap.ui.define([
 					// that.tabFrag.getModel("tabPersonalizationModel").setProperty("/personalizationData/userPersonaDto", success);
 
 					that.getView().getModel("PersonalizationModel").setProperty("/personalizationData/userPersonaDto", success);
-					that.FilterPersonalization.getModel("FilterPersonalization").setProperty("results/personalizationData/userPersonaDto", success);
+					that.FilterPersonalization.getModel("FilterPersonalization").setProperty("results/personalizationData/userPersonaDto",
+						success);
 					that.FilterPersonalization.getModel("FilterPersonalization").refresh();
 					that.getView().getModel("PersonalizationModel").refresh();
 					// that.tabFrag.getModel("tabPersonalizationModel").refresh();
@@ -1049,6 +1230,7 @@ sap.ui.define([
 						lang = "EN";
 					}
 					lang = lang.toUpperCase();
+
 					var oFilter = new sap.ui.model.Filter({
 						filters: [
 							new sap.ui.model.Filter("language", sap.ui.model.FilterOperator.EQ, lang),
@@ -1067,14 +1249,6 @@ sap.ui.define([
 							var MaterialGroupModel = new sap.ui.model.json.JSONModel({
 								"results": oData.results
 							});
-							// if (oData.results.length === 1) {
-							// 	var oMultiInput = that.byId(that._getId("MatGrpFrom"));
-							// 	oMultiInput.addToken(new Token({
-							// 		text: oData.results[0].materialGroup
-							// 	}));
-							// 	this.MatGrp = "materialGroup eq" + " " + oData.results[0].materialGroup;
-							// 	this.MatGrpFromSelectedItems = oData.results[0].materialGroup;
-							// }
 							that.MaterialGroup.setModel(MaterialGroupModel, "MaterialGroupModel");
 							that.MaterialGroup.open();
 						},
@@ -1093,6 +1267,7 @@ sap.ui.define([
 					});
 				} else {
 					that.MaterialGroup.open();
+					that.MatGrpFromSelectedItems;
 				}
 			}
 		},
@@ -1421,6 +1596,17 @@ sap.ui.define([
 				busyDialog.close();
 				MessageBox.error(fail.responseText);
 			});
+
+			this._setDefaultMatGrp();
+
+			if (tabName != "keyATPOverviewEnquiry") {
+				this._setDefaultPlant(tabName);
+			}
+
+			if (tabName === "keyATPOverviewEnquiry" || tabName === "keyStkLotView") {
+				this._setDefaultSalesOrg();
+			}
+
 		},
 
 		onPressPersonalization: function (oEvent) {
@@ -3099,6 +3285,7 @@ sap.ui.define([
 					return "ExpStckVenMatToId";
 				}
 			}
+
 			if (tab === "keyMat.Movement") {
 				if (field === "PlantFrom") {
 					return "MatMovPlantFromId";
@@ -3127,7 +3314,7 @@ sap.ui.define([
 				if (field === "MatDoc") {
 					return "MatMovMatDocFromId";
 				}
-				if (field = "matMov") {
+				if (field === "matMov") {
 					return "matMov";
 				}
 
