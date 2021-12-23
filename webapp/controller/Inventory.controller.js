@@ -151,7 +151,6 @@ sap.ui.define([
 			var that = this;
 			var oComponent = this.getOwnerComponent();
 			var oModel = oComponent.getModel("ZDKSH_CC_INVENTORY_HDRLOOKUP_SRV");
-			//console.log(oModel.getMetadata());
 			var filters = [];
 			var lang = "";
 			var lang = "";
@@ -185,7 +184,6 @@ sap.ui.define([
 						"results": oRetrievedResult.results
 					});
 					var oMultiInput = that.byId(that._getId("MatGrpFrom"));
-					//oMultiInput.removeAllTokens();
 					for (var i = 0; i < oRetrievedResult.results.length; i++) {
 						oMultiInput.addToken(new sap.m.Token({
 							text: oRetrievedResult.results[i].materialGroup
@@ -195,7 +193,7 @@ sap.ui.define([
 					}
 				},
 				error: function (oError) {
-					/* do something */
+					/* do nothing */
 				}
 			});
 		},
@@ -235,14 +233,7 @@ sap.ui.define([
 					var DefPlantModel = new sap.ui.model.json.JSONModel({
 						"results": oRetrievedResult.results
 					});
-
-					// if (tabName === "keyMat.Movement") {
-					// 	var oMultiInput = that.byId(that._getId("MatMovPlantFromId"));
-					// } else {
 					var oMultiInput = that.byId(that._getId("PlantFrom"));
-					// }
-					//oMultiInput.removeAllTokens();
-					//var oMultiInput = that.byId(that.getId("MatMovPlantFromId"));
 					for (var i = 0; i < oRetrievedResult.results.length; i++) {
 						oMultiInput.addToken(new sap.m.Token({
 							text: oRetrievedResult.results[i].plant
@@ -252,7 +243,7 @@ sap.ui.define([
 					}
 				},
 				error: function (oError) {
-					/* do something */
+					/* do nothing */
 				}
 			});
 			// }
@@ -1664,6 +1655,10 @@ sap.ui.define([
 
 				if (oEvent.getParameters().selectedContexts.length > 0) {
 					var oMultiInput = this.byId(this._getId("PlantFrom"));
+					// [+] start Jayamalar
+					oMultiInput.destroyTokens();
+					this.plantFromSelectedItems = [];
+					// [+] end Jayamalar
 					//first push
 					if (this.plantFromSelectedItems.length === 0) {
 						for (var i = 0; i < oEvent.getParameters().selectedContexts.length; i++) {
@@ -1959,6 +1954,7 @@ sap.ui.define([
 		},
 
 		onConfirmChangeMatGrp: function (oEvent) {
+			debugger;
 			this.getView().getModel("baseModel").getData().matGrpValueState = "None";
 			oEvent.getSource().getBinding("items").filter([]);
 			// to logic
@@ -1990,6 +1986,11 @@ sap.ui.define([
 			else {
 				if (oEvent.getParameters().selectedContexts.length > 0) {
 					var oMultiInput = this.byId(this._getId("MatGrpFrom"));
+					// [+] start added by JAYAMALARJ default
+					oMultiInput.destroyTokens();
+					this.MatGrpFromSelectedItems = [];
+					this.MatGrpToSelectedItems = [];
+					// [+] end added by JAYAMALARJ default
 					//first push
 					if (this.MatGrpFromSelectedItems.length === 0) {
 						for (var i = 0; i < oEvent.getParameters().selectedContexts.length; i++) {
