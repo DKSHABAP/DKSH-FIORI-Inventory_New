@@ -202,7 +202,6 @@ sap.ui.define([
 		},
 
 		_setDefaultPlant: function (tabName) {
-			// if (tabName !== "keyMat.Movement") {
 			var that = this;
 			var oComponent = this.getOwnerComponent();
 			var oModel = oComponent.getModel("ZDKSH_CC_INVENTORY_HDRLOOKUP_SRV");
