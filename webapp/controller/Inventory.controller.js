@@ -47,6 +47,7 @@ sap.ui.define([
 
 		onAfterRendering: function () {
 			this.resourceBundle = this.getView().getModel("i18n").getResourceBundle();
+
 		},
 
 		onInit: function () {
@@ -147,6 +148,7 @@ sap.ui.define([
 
 		},
 
+		// [+] START Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
 		_setDefaultMatGrp: function () {
 			var that = this;
 			var oComponent = this.getOwnerComponent();
@@ -185,11 +187,12 @@ sap.ui.define([
 					});
 					var oMultiInput = that.byId(that._getId("MatGrpFrom"));
 					for (var i = 0; i < oRetrievedResult.results.length; i++) {
+						that.MatGrpFromSelectedItems.push(oRetrievedResult.results[i].materialGroup);
 						oMultiInput.addToken(new sap.m.Token({
 							text: oRetrievedResult.results[i].materialGroup
 						}));
 						that.MatGrp = "materialGroup eq" + "" + oRetrievedResult.results[i].materialGroup;
-						that.MatGrpFromSelectedItems = oRetrievedResult.results[i].materialGroup;
+						//that.MatGrpFromSelectedItems = oRetrievedResult.results[i].materialGroup;
 					}
 				},
 				error: function (oError) {
@@ -235,11 +238,12 @@ sap.ui.define([
 					});
 					var oMultiInput = that.byId(that._getId("PlantFrom"));
 					for (var i = 0; i < oRetrievedResult.results.length; i++) {
+						that.plantFromSelectedItems.push(oRetrievedResult.results[i].plant);
 						oMultiInput.addToken(new sap.m.Token({
 							text: oRetrievedResult.results[i].plant
 						}));
 						that.plant = "plant eq" + "" + oRetrievedResult.results[i].plant;
-						that.plantFromSelectedItems = oRetrievedResult.results[i].plant;
+						//that.plantFromSelectedItems = oRetrievedResult.results[i].plant;
 					}
 				},
 				error: function (oError) {
@@ -286,11 +290,12 @@ sap.ui.define([
 					var oMultiInput = that.byId(that._getId("SalesOrgFrom"));
 					//oMultiInput.removeAllTokens();
 					for (var i = 0; i < oRetrievedResult.results.length; i++) {
+						that.salesOrgFromSelectedItems.push(oRetrievedResult.results[i].Salesorg);
 						oMultiInput.addToken(new sap.m.Token({
 							text: oRetrievedResult.results[i].Salesorg
 						}));
 						that.SalesOrg = "Salesorg eq" + "" + oRetrievedResult.results[i].Salesorg;
-						that.SalesOrgFromSelectedItems = oRetrievedResult.results[i].Salesorg;
+						//that.SalesOrgFromSelectedItems = oRetrievedResult.results[i].Salesorg;
 					}
 				},
 				error: function (oError) {
@@ -298,6 +303,7 @@ sap.ui.define([
 				}
 			});
 		},
+		// [+] END Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
 
 		_getUser: function () {
 			var url = "/services/userapi/attributes";
@@ -1587,17 +1593,15 @@ sap.ui.define([
 				busyDialog.close();
 				MessageBox.error(fail.responseText);
 			});
-
+			// [+] START Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
 			this._setDefaultMatGrp();
-
 			if (tabName != "keyATPOverviewEnquiry") {
 				this._setDefaultPlant(tabName);
 			}
-
 			if (tabName === "keyATPOverviewEnquiry" || tabName === "keyStkLotView") {
 				this._setDefaultSalesOrg();
 			}
-
+			// [+] END Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
 		},
 
 		onPressPersonalization: function (oEvent) {
@@ -1954,7 +1958,6 @@ sap.ui.define([
 		},
 
 		onConfirmChangeMatGrp: function (oEvent) {
-			debugger;
 			this.getView().getModel("baseModel").getData().matGrpValueState = "None";
 			oEvent.getSource().getBinding("items").filter([]);
 			// to logic
@@ -1986,11 +1989,11 @@ sap.ui.define([
 			else {
 				if (oEvent.getParameters().selectedContexts.length > 0) {
 					var oMultiInput = this.byId(this._getId("MatGrpFrom"));
-					// [+] start added by JAYAMALARJ default
+					// [+] START Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
 					oMultiInput.destroyTokens();
 					this.MatGrpFromSelectedItems = [];
 					this.MatGrpToSelectedItems = [];
-					// [+] end added by JAYAMALARJ default
+					// [+] END Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
 					//first push
 					if (this.MatGrpFromSelectedItems.length === 0) {
 						for (var i = 0; i < oEvent.getParameters().selectedContexts.length; i++) {
@@ -3686,10 +3689,10 @@ sap.ui.define([
 				label: 'Storage Location',
 				property: 'storageLocation'
 			}, {
-				// [+] Begin of STRY0014744 MY Ehancement
+				// [+] START Modification: STRY0014744:MY Enhancements SLOC Description -	JAYAMALARJ
 				label: 'Storage Loc Desc',
 				property: 'storageLocationDesc'
-					// [+] End of STRY0014744 MY Ehancement
+					// [+] END Modification: STRY0014744:MY Enhancements SLOC Description -	JAYAMALARJ
 			}, {
 				label: 'Old Code',
 				property: 'oldCode'
@@ -4263,12 +4266,14 @@ sap.ui.define([
 							property: 'storageLocation'
 						};
 						cols.push(key);
+						// [+] START Modification: STRY0014744:MY Enhancements SLOC Description -	JAYAMALARJ
 					} else if (defaultVariant[i].enabledKey === "SLOC Desc") {
 						var key = {
 							label: 'Storage Location Desc',
 							property: 'storageLocationDesc'
 						};
 						cols.push(key);
+						// [+] END Modification: STRY0014744:MY Enhancements SLOC Description -	JAYAMALARJ
 					} else if (defaultVariant[i].enabledKey === "Real Batch") {
 						var key = {
 							label: 'Real Batch',
@@ -5502,9 +5507,9 @@ sap.ui.define([
 			var oFilter = new sap.ui.model.Filter([new sap.ui.model.Filter("materialNum", sap.ui.model.FilterOperator.Contains, value),
 				new sap.ui.model.Filter("materialDesc", sap.ui.model.FilterOperator.Contains, value),
 				new sap.ui.model.Filter("storageLocation", sap.ui.model.FilterOperator.Contains, value),
-				// [+]Begin of  STRY0014744
+				// [+] START Modification: STRY0014744:MY Enhancements SLOC Description -	JAYAMALARJ
 				new sap.ui.model.Filter("storageLocationDesc", sap.ui.model.FilterOperator.Contains, value),
-				// [+]Begin of  STRY0014744
+				// [+] END Modification: STRY0014744:MY Enhancements SLOC Description -	JAYAMALARJ
 				new sap.ui.model.Filter("bigQuantity", sap.ui.model.FilterOperator.Contains, value),
 				new sap.ui.model.Filter("saleUnit", sap.ui.model.FilterOperator.Contains, value),
 				new sap.ui.model.Filter("vendorMatNum", sap.ui.model.FilterOperator.Contains, value),
