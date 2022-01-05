@@ -1624,7 +1624,6 @@ sap.ui.define([
 		// this.byId("EndStckPlantId");
 
 		onConfirmChangePlant: function (oEvent) {
-			debugger;
 			// to logic
 			this.getView().getModel("baseModel").getData().EndingStckplantValueState = "None";
 			this.getView().getModel("baseModel").refresh();
