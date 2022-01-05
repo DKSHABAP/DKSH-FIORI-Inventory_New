@@ -1624,6 +1624,7 @@ sap.ui.define([
 		// this.byId("EndStckPlantId");
 
 		onConfirmChangePlant: function (oEvent) {
+			debugger;
 			// to logic
 			this.getView().getModel("baseModel").getData().EndingStckplantValueState = "None";
 			this.getView().getModel("baseModel").refresh();
@@ -1655,13 +1656,8 @@ sap.ui.define([
 			}
 			//from logic and other
 			else {
-
 				if (oEvent.getParameters().selectedContexts.length > 0) {
 					var oMultiInput = this.byId(this._getId("PlantFrom"));
-					// [+] start Jayamalar
-					oMultiInput.destroyTokens();
-					this.plantFromSelectedItems = [];
-					// [+] end Jayamalar
 					//first push
 					if (this.plantFromSelectedItems.length === 0) {
 						for (var i = 0; i < oEvent.getParameters().selectedContexts.length; i++) {
@@ -1988,11 +1984,6 @@ sap.ui.define([
 			else {
 				if (oEvent.getParameters().selectedContexts.length > 0) {
 					var oMultiInput = this.byId(this._getId("MatGrpFrom"));
-					// [+] START Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
-					oMultiInput.destroyTokens();
-					this.MatGrpFromSelectedItems = [];
-					this.MatGrpToSelectedItems = [];
-					// [+] END Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
 					//first push
 					if (this.MatGrpFromSelectedItems.length === 0) {
 						for (var i = 0; i < oEvent.getParameters().selectedContexts.length; i++) {
