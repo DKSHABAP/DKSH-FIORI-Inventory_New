@@ -150,6 +150,7 @@ sap.ui.define([
 
 		// [+] START Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
 		_setDefaultMatGrp: function () {
+			debugger;
 			var that = this;
 			var oComponent = this.getOwnerComponent();
 			var oModel = oComponent.getModel("ZDKSH_CC_INVENTORY_HDRLOOKUP_SRV");
@@ -186,12 +187,14 @@ sap.ui.define([
 						"results": oRetrievedResult.results
 					});
 					var oMultiInput = that.byId(that._getId("MatGrpFrom"));
-					for (var i = 0; i < oRetrievedResult.results.length; i++) {
+					if (oRetrievedResult.results.length === 1) {
+						// for (var i = 0; i < oRetrievedResult.results.length; i++) {
 						that.MatGrpFromSelectedItems.push(oRetrievedResult.results[i].materialGroup);
 						oMultiInput.addToken(new sap.m.Token({
-							text: oRetrievedResult.results[i].materialGroup
+							// text: oRetrievedResult.results[i].materialGroup
+							text: oRetrievedResult.results[0].materialGroup
 						}));
-						that.MatGrp = "materialGroup eq" + "" + oRetrievedResult.results[i].materialGroup;
+						that.MatGrp = "materialGroup eq" + "" + oRetrievedResult.results[0].materialGroup;
 						//that.MatGrpFromSelectedItems = oRetrievedResult.results[i].materialGroup;
 					}
 				},
@@ -236,12 +239,14 @@ sap.ui.define([
 						"results": oRetrievedResult.results
 					});
 					var oMultiInput = that.byId(that._getId("PlantFrom"));
-					for (var i = 0; i < oRetrievedResult.results.length; i++) {
+					if (oRetrievedResult.results.length === 1) {
+					// for (var i = 0; i < oRetrievedResult.results.length; i++) {
 						that.plantFromSelectedItems.push(oRetrievedResult.results[i].plant);
 						oMultiInput.addToken(new sap.m.Token({
-							text: oRetrievedResult.results[i].plant
+							// text: oRetrievedResult.results[i].plant
+							text: oRetrievedResult.results[0].plant
 						}));
-						that.plant = "plant eq" + "" + oRetrievedResult.results[i].plant;
+						that.plant = "plant eq" + "" + oRetrievedResult.results[0].plant;
 						//that.plantFromSelectedItems = oRetrievedResult.results[i].plant;
 					}
 				},
@@ -288,12 +293,14 @@ sap.ui.define([
 					});
 					var oMultiInput = that.byId(that._getId("SalesOrgFrom"));
 					//oMultiInput.removeAllTokens();
-					for (var i = 0; i < oRetrievedResult.results.length; i++) {
+					if (oRetrievedResult.results.length === 1) {
+					// for (var i = 0; i < oRetrievedResult.results.length; i++) {
 						that.salesOrgFromSelectedItems.push(oRetrievedResult.results[i].Salesorg);
 						oMultiInput.addToken(new sap.m.Token({
-							text: oRetrievedResult.results[i].Salesorg
+							// text: oRetrievedResult.results[i].Salesorg
+							text: oRetrievedResult.results[0].Salesorg
 						}));
-						that.SalesOrg = "Salesorg eq" + "" + oRetrievedResult.results[i].Salesorg;
+						that.SalesOrg = "Salesorg eq" + "" + oRetrievedResult.results[0].Salesorg;
 						//that.SalesOrgFromSelectedItems = oRetrievedResult.results[i].Salesorg;
 					}
 				},
