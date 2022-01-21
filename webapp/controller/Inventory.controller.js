@@ -189,7 +189,7 @@ sap.ui.define([
 					var oMultiInput = that.byId(that._getId("MatGrpFrom"));
 					if (oRetrievedResult.results.length === 1) {
 						// for (var i = 0; i < oRetrievedResult.results.length; i++) {
-						that.MatGrpFromSelectedItems.push(oRetrievedResult.results[i].materialGroup);
+						that.MatGrpFromSelectedItems.push(oRetrievedResult.results[0].materialGroup);
 						oMultiInput.addToken(new sap.m.Token({
 							// text: oRetrievedResult.results[i].materialGroup
 							text: oRetrievedResult.results[0].materialGroup
@@ -241,7 +241,7 @@ sap.ui.define([
 					var oMultiInput = that.byId(that._getId("PlantFrom"));
 					if (oRetrievedResult.results.length === 1) {
 					// for (var i = 0; i < oRetrievedResult.results.length; i++) {
-						that.plantFromSelectedItems.push(oRetrievedResult.results[i].plant);
+						that.plantFromSelectedItems.push(oRetrievedResult.results[0].plant);
 						oMultiInput.addToken(new sap.m.Token({
 							// text: oRetrievedResult.results[i].plant
 							text: oRetrievedResult.results[0].plant
@@ -295,7 +295,7 @@ sap.ui.define([
 					//oMultiInput.removeAllTokens();
 					if (oRetrievedResult.results.length === 1) {
 					// for (var i = 0; i < oRetrievedResult.results.length; i++) {
-						that.salesOrgFromSelectedItems.push(oRetrievedResult.results[i].Salesorg);
+						that.salesOrgFromSelectedItems.push(oRetrievedResult.results[0].Salesorg);
 						oMultiInput.addToken(new sap.m.Token({
 							// text: oRetrievedResult.results[i].Salesorg
 							text: oRetrievedResult.results[0].Salesorg
