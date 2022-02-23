@@ -110,7 +110,7 @@
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 									</Column>
 									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/13/status}">
 										<Label text="{i18n>SLOCDesc}" design="Bold" tooltip="{i18n>SLOCDesc}"/>
 									</Column>
 									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
@@ -295,7 +295,7 @@
 										popinDisplay="Inline">
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 									</Column>
-									<Column visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}" minScreenWidth="XSmall" demandPopin="true"
+									<Column visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}" minScreenWidth="XSmall" demandPopin="true"
 										popinDisplay="Inline">
 										<Label text="{i18n>SLOCDesc}" design="Bold" tooltip="{i18n>SLOCDesc}"/>
 									</Column>
@@ -476,7 +476,7 @@
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 									</Column>
 									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/20/status}">
 										<Label text="{i18n>SLocDesc}" design="Bold" tooltip="{i18n>SLocDesc}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
@@ -648,7 +648,7 @@
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/18/status}">
 										<Label text="{i18n>SLOCDesc}" design="Bold" tooltip="{i18n>SLOCDesc}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
@@ -890,7 +890,7 @@ tokenUpdate="onDeleteBatchStkLot"/>-->
 														<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 													</Column>
 													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
-														visible="{PersonalizationModel>/personalizationData/userPersonaDto/16/status}">
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/22/status}">
 														<Label text="{i18n>SLocDesc}" design="Bold" tooltip="{i18n>SLocDesc}"/>
 													</Column>
 													<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline"
