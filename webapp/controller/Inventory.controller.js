@@ -4081,8 +4081,8 @@ sap.ui.define([
 						row1 = row1 + '"' + "Material Num" + '","' + "Material Desc" + '","';
 					} else if (defaultVariant[k].enabledKey === "Plant") {
 						row1 = row1 + "Plant" + '","';
-					} else if (defaultVariant[k].enabledKey === "Plant") {
-						row1 = row1 + "Plant" + '","';
+					} else if (defaultVariant[k].enabledKey === "Plant Desc") {
+						row1 = row1 + "Plant Desc" + '","';
 					} else if (defaultVariant[k].enabledKey === "Serial No.") {
 						row1 = row1 + "Serial No." + '","';
 					} else if (defaultVariant[k].enabledKey === "SLOC") {
