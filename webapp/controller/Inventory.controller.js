@@ -1561,6 +1561,7 @@ sap.ui.define([
 		},
 
 		_getPersonalizationDetails: function (tabName) {
+			debugger;
 			var that = this;
 			var screen = "Web";
 			if (sap.ui.Device.system.phone === true) {

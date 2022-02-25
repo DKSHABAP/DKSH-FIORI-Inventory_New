@@ -102,7 +102,7 @@
 										<Label text="{i18n>Plant}" design="Bold" tooltip="{i18n>Plant}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/14/status}">
 										<Label text="{i18n>PlantDesc}" design="Bold" tooltip="{i18n>PlantDesc}"/>
 									</Column>
 									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline"
@@ -165,7 +165,7 @@
 										<Label text="{ATPOverviewTableModel>storageLocation}"
 											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
 										<Label text="{ATPOverviewTableModel>storagelocationDesc}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
+											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocationDesc'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
 										<Label text="{ATPOverviewTableModel>batchNumber}"
 											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
 										<Label text="{path:'ATPOverviewTableModel>expiredDate', formatter:'.formatter.convertToDateToDispFormat'}"
