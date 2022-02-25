@@ -4127,6 +4127,8 @@ sap.ui.define([
 							row = row + '"' + arrData[i].materialNum + '","' + arrData[i].materialDesc + '","';
 						} else if (defaultVariant[k].enabledKey === "Plant") {
 							row = row + arrData[i].plant + '","';
+						} else if (defaultVariant[k].enabledKey === "Plant Desc") {
+							row = row + arrData[i].Plantdesc + '","';
 						} else if (defaultVariant[k].enabledKey === "Serial No.") {
 							row = row + arrData[i].serialNum + '","';
 						} else if (defaultVariant[k].enabledKey === "SLOC") {
@@ -4684,6 +4686,7 @@ sap.ui.define([
 		},
 
 		ATPOverviewSearch: function () {
+			debugger;
 			var that = this;
 			if (that.allAccess === false) {
 				MessageToast.show(this.resourceBundle.getText("NoDataAccess"));
