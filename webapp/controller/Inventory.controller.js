@@ -155,10 +155,6 @@ sap.ui.define([
 
 		// [+] START Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
 		_setDefaultMatGrp: function () {
-<<<<<<< Upstream, based on origin/Master
-			//debugger;
-=======
->>>>>>> 5fce370 STRY0015535
 			var that = this;
 			var oComponent = this.getOwnerComponent();
 			var oModel = oComponent.getModel("ZDKSH_CC_INVENTORY_HDRLOOKUP_SRV");
