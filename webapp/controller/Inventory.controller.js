@@ -1561,7 +1561,6 @@ sap.ui.define([
 		},
 
 		_getPersonalizationDetails: function (tabName) {
-			debugger;
 			var that = this;
 			var screen = "Web";
 			if (sap.ui.Device.system.phone === true) {
@@ -1631,7 +1630,6 @@ sap.ui.define([
 		// this.byId("EndStckPlantId");
 
 		onConfirmChangePlant: function (oEvent) {
-			debugger;
 			// to logic
 			this.getView().getModel("baseModel").getData().EndingStckplantValueState = "None";
 			this.getView().getModel("baseModel").refresh();
@@ -4686,7 +4684,6 @@ sap.ui.define([
 		},
 
 		ATPOverviewSearch: function () {
-			debugger;
 			var that = this;
 			if (that.allAccess === false) {
 				MessageToast.show(this.resourceBundle.getText("NoDataAccess"));
