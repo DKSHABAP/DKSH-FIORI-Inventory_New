@@ -310,23 +310,23 @@ sap.ui.define([
 		},
 		// [+] END Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
 
-		_getUser: function () {
-			var url = "/services/userapi/attributes";
-			var busyDialog = new sap.m.BusyDialog();
-			busyDialog.open();
-			this._doAjax(url, "GET", "", true).then(success => {
-				busyDialog.close();
-				var oUserModel = new sap.ui.model.json.JSONModel();
-				this.getView().setModel(oUserModel, "oUserModel");
-				this.getView().getModel("oUserModel").setProperty("/userID", success.name);
-				this.getView().getModel("oUserModel").setProperty("/email", success.email);
-				this._getUserDetail(success.name);
-				// this.getView().getModel("PersonalizationModel").setProperty("/variants", success.variantName);
-			}, fail => {
-				busyDialog.close();
-				MessageBox.error(fail.responseText);
-			});
-		},
+		// _getUser: function () {
+		// 	var url = "/services/userapi/attributes";
+		// 	var busyDialog = new sap.m.BusyDialog();
+		// 	busyDialog.open();
+		// 	this._doAjax(url, "GET", "", true).then(success => {
+		// 		busyDialog.close();
+		// 		var oUserModel = new sap.ui.model.json.JSONModel();
+		// 		this.getView().setModel(oUserModel, "oUserModel");
+		// 		this.getView().getModel("oUserModel").setProperty("/userID", success.name);
+		// 		this.getView().getModel("oUserModel").setProperty("/email", success.email);
+		// 		this._getUserDetail(success.name);
+		// 		// this.getView().getModel("PersonalizationModel").setProperty("/variants", success.variantName);
+		// 	}, fail => {
+		// 		busyDialog.close();
+		// 		MessageBox.error(fail.responseText);
+		// 	});
+		// },
 
 		_getUser: function () {
 			var url = "/services/userapi/attributes";
@@ -603,6 +603,7 @@ sap.ui.define([
 		},
 
 		onTabSelection: function (oEvent) {
+			debugger;
 			this.selectedTab = oEvent.getParameters().selectedKey;
 			if (this.selectedTab !== "KeySelCust") {
 				this.clearTabData();
@@ -627,6 +628,7 @@ sap.ui.define([
 		},
 
 		onReportSelection: function (oEvent) {
+			debugger;
 			this.selectedTab = oEvent.getSource().getSelectedKey();
 			this.getView().byId("ID_TAB_BAR_PROV_APP").setSelectedKey(oEvent.getSource().getSelectedKey());
 			if (this.selectedTab !== "KeySelCust") {
