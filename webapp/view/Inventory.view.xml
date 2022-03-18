@@ -320,11 +320,11 @@
 										<Label text="{i18n>SalesQty}" design="Bold" tooltip="{i18n>SalesQty}"/>
 									</Column>
 									<Column demandPopin="false" minScreenWidth="Small" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}">
 										<Label text="{i18n>Value}" design="Bold" tooltip="{i18n>Value}"/>
 									</Column>
 									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}">
 										<Label text="{i18n>SerialNo}" design="Bold" tooltip="{i18n>SerialNo}"/>
 									</Column>
 								</columns>
