@@ -18,7 +18,7 @@ sap.ui.define([
 		 * @memberOf incture.com.ConnectClient_Inventory.view.Inventory
 		 */
 
-		_doAjax: function (sUrl, sMethod, oData, bAbort) {
+		_doAjax: function (sUrl, sMethod, oData, bAbort, synVal) {
 			if (bAbort && this.PrevAjax) {
 				this.PrevAjax.abort();
 			}
@@ -27,6 +27,7 @@ sap.ui.define([
 			}
 			var xhr = $.ajax({
 				url: sUrl,
+				async: synVal, //++changing to synchronous
 				method: sMethod,
 				headers: {
 					'Accept': 'application/json,text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
@@ -239,7 +240,7 @@ sap.ui.define([
 					});
 					var oMultiInput = that.byId(that._getId("PlantFrom"));
 					if (oRetrievedResult.results.length === 1) {
-					// for (var i = 0; i < oRetrievedResult.results.length; i++) {
+						// for (var i = 0; i < oRetrievedResult.results.length; i++) {
 						that.plantFromSelectedItems.push(oRetrievedResult.results[0].plant);
 						oMultiInput.addToken(new sap.m.Token({
 							// text: oRetrievedResult.results[i].plant
@@ -293,7 +294,7 @@ sap.ui.define([
 					var oMultiInput = that.byId(that._getId("SalesOrgFrom"));
 					//oMultiInput.removeAllTokens();
 					if (oRetrievedResult.results.length === 1) {
-					// for (var i = 0; i < oRetrievedResult.results.length; i++) {
+						// for (var i = 0; i < oRetrievedResult.results.length; i++) {
 						that.salesOrgFromSelectedItems.push(oRetrievedResult.results[0].Salesorg);
 						oMultiInput.addToken(new sap.m.Token({
 							// text: oRetrievedResult.results[i].Salesorg
@@ -332,7 +333,7 @@ sap.ui.define([
 			var url = "/services/userapi/attributes";
 			var busyDialog = new sap.m.BusyDialog();
 			busyDialog.open();
-			this._doAjax(url, "GET", "", true).then(success => {
+			this._doAjax(url, "GET", "", true, true).then(success => {
 				busyDialog.close();
 				var oUserModel = new sap.ui.model.json.JSONModel();
 				this.getView().setModel(oUserModel, "oUserModel");
@@ -603,7 +604,6 @@ sap.ui.define([
 		},
 
 		onTabSelection: function (oEvent) {
-			debugger;
 			this.selectedTab = oEvent.getParameters().selectedKey;
 			if (this.selectedTab !== "KeySelCust") {
 				this.clearTabData();
@@ -628,14 +628,18 @@ sap.ui.define([
 		},
 
 		onReportSelection: function (oEvent) {
-			debugger;
-			this.selectedTab = oEvent.getSource().getSelectedKey();
-			this.getView().byId("ID_TAB_BAR_PROV_APP").setSelectedKey(oEvent.getSource().getSelectedKey());
-			if (this.selectedTab !== "KeySelCust") {
-				this.clearTabData();
-				this._getPersonalizationDetails(this.selectedTab);
+			try {
+				this.selectedTab = oEvent.getSource().getSelectedKey();
+				this.getView().byId("ID_TAB_BAR_PROV_APP").setSelectedKey(oEvent.getSource().getSelectedKey());
+				if (this.selectedTab !== "KeySelCust") {
+					this.clearTabData();
+					this._getPersonalizationDetails(this.selectedTab);
+				}
+			} catch (e) {
+				MessageBox.error("Error report selection");
+				console.log(e);
+				return;
 			}
-			return;
 		},
 
 		onVariantEdit: function () {
@@ -1577,7 +1581,7 @@ sap.ui.define([
 			};
 			var busyDialog = new sap.m.BusyDialog();
 			busyDialog.open();
-			this._doAjax(url, "POST", payload, true).then(success => {
+			this._doAjax(url, "POST", payload, true, false).then(success => {
 				busyDialog.close();
 				if (success.userPersonaDto !== null) {
 					that.getView().getModel("PersonalizationModel").setProperty("/personalizationData", success);
