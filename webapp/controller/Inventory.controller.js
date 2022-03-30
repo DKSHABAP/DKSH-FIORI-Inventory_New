@@ -27,7 +27,7 @@ sap.ui.define([
 			}
 			var xhr = $.ajax({
 				url: sUrl,
-				async: synVal, //++changing to synchronous
+				async: synVal, //++changing to synchronous/Jaya
 				method: sMethod,
 				headers: {
 					'Accept': 'application/json,text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
