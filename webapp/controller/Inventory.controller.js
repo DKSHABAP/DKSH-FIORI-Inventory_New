@@ -110,7 +110,7 @@ sap.ui.define([
 			this.getView().getModel("baseModel").setProperty("/batchLevel", false);
 			this.getView().getModel("baseModel").setProperty("/blocked", false);
 			//modify by XRAINERH on 30Aug2022 2:25PM
-			//begin - STRY0017819
+			//begin - STRY0017819.
 			//this.getView().getModel("baseModel").setProperty("/sLocLevel", false);
 			this.getView().getModel("baseModel").setProperty("/sLocLevel", true);
 			//end - STRY0017819
