@@ -62,6 +62,7 @@ sap.ui.define([
 			// ga('send', 'pageview', "/InventoryTest");
 			// this.postingDate = [];
 			// this.salesOrgFromSelectedItems = [];
+			this.SlocLevel = "";
 			this.selectedSalesOrg = [];
 			this.plantToSelectedItems = [];
 			this.selectedObjects = [];
@@ -108,7 +109,11 @@ sap.ui.define([
 			this.getView().getModel("baseModel").setProperty("/EndingStckSelAllMaterial", true);
 			this.getView().getModel("baseModel").setProperty("/batchLevel", false);
 			this.getView().getModel("baseModel").setProperty("/blocked", false);
-			this.getView().getModel("baseModel").setProperty("/sLocLevel", false);
+			//modify by XRAINERH on 30Aug2022 2:25PM
+			//begin - STRY0017819
+			//this.getView().getModel("baseModel").setProperty("/sLocLevel", false);
+			this.getView().getModel("baseModel").setProperty("/sLocLevel", true);
+			//end - STRY0017819
 			this.getView().getModel("baseModel").setProperty("/serialNo", false);
 			this.getView().getModel("baseModel").setProperty("/excludeFda", false);
 			this.getView().getModel("baseModel").setProperty("/salesUnit", false);
@@ -150,7 +155,7 @@ sap.ui.define([
 
 		// [+] START Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
 		_setDefaultMatGrp: function () {
-			debugger;
+			//debugger;
 			var that = this;
 			var oComponent = this.getOwnerComponent();
 			var oModel = oComponent.getModel("ZDKSH_CC_INVENTORY_HDRLOOKUP_SRV");
@@ -1631,7 +1636,7 @@ sap.ui.define([
 		// this.byId("EndStckPlantId");
 
 		onConfirmChangePlant: function (oEvent) {
-			debugger;
+			//debugger;
 			// to logic
 			this.getView().getModel("baseModel").getData().EndingStckplantValueState = "None";
 			this.getView().getModel("baseModel").refresh();
@@ -3641,7 +3646,11 @@ sap.ui.define([
 			this.getView().getModel("baseModel").setProperty("/enableVendorMat", true);
 			this.getView().getModel("baseModel").setProperty("/EndingStckSelAllMaterial", true);
 			this.getView().getModel("baseModel").setProperty("/batchLevel", false);
-			this.getView().getModel("baseModel").setProperty("/sLocLevel", false);
+			//modify by XRAINERH on 30Aug2022 2:25PM
+			//begin - STRY0017819
+			//this.getView().getModel("baseModel").setProperty("/sLocLevel", false);
+			this.getView().getModel("baseModel").setProperty("/sLocLevel", true);
+			//end - STRY0017819
 			this.getView().getModel("baseModel").setProperty("/serialNo", false);
 			this.getView().getModel("baseModel").setProperty("/excludeFda", false);
 			this.getView().getModel("baseModel").setProperty("/salesUnit", false);
@@ -4964,15 +4973,23 @@ sap.ui.define([
 				// 	url = url + " " + "and" + " " + mat;
 				// }
 			}
-
+			
+			//debugger;
 			// sloc checkbox
-			if (this.SlocLevel !== "" && this.SlocLevel !== undefined) {
+			if( SearchPara.sLocLevel ){
 				if (url.length === 93) {
 					url = url + this.SlocLevel;
 				} else {
-					url = url + " " + "and" + " " + this.SlocLevel;
+					url = url + " " + "and" + " " + "storageLocLevel eq " + "'X'";
 				}
 			}
+			// if (this.SlocLevel !== "" && this.SlocLevel !== undefined) {
+			// 	if (url.length === 93) {
+			// 		url = url + this.SlocLevel;
+			// 	} else {
+			// 		url = url + " " + "and" + " " + this.SlocLevel;
+			// 	}
+			// }
 			if (this.BatchLevel !== "" && this.BatchLevel !== undefined) {
 				if (url.length === 93) {
 					url = url + this.BatchLevel;
