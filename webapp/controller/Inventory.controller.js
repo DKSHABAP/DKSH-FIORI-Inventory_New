@@ -150,6 +150,7 @@ sap.ui.define([
 		},
 
 		// [+] START Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
+		
 		_setDefaultMatGrp: function () {
 			var that = this;
 			var oComponent = this.getOwnerComponent();
