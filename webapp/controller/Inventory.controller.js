@@ -18,7 +18,7 @@ sap.ui.define([
 		 * @memberOf incture.com.ConnectClient_Inventory.view.Inventory
 		 */
 
-		_doAjax: function (sUrl, sMethod, oData, bAbort) {
+		_doAjax: function (sUrl, sMethod, oData, bAbort, synVal) {
 			if (bAbort && this.PrevAjax) {
 				this.PrevAjax.abort();
 			}
@@ -27,6 +27,7 @@ sap.ui.define([
 			}
 			var xhr = $.ajax({
 				url: sUrl,
+				async: synVal, //++changing to synchronous/Jaya
 				method: sMethod,
 				headers: {
 					'Accept': 'application/json,text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
@@ -154,6 +155,7 @@ sap.ui.define([
 		},
 
 		// [+] START Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
+		
 		_setDefaultMatGrp: function () {
 			var that = this;
 			var oComponent = this.getOwnerComponent();
@@ -244,7 +246,7 @@ sap.ui.define([
 					});
 					var oMultiInput = that.byId(that._getId("PlantFrom"));
 					if (oRetrievedResult.results.length === 1) {
-					// for (var i = 0; i < oRetrievedResult.results.length; i++) {
+						// for (var i = 0; i < oRetrievedResult.results.length; i++) {
 						that.plantFromSelectedItems.push(oRetrievedResult.results[0].plant);
 						oMultiInput.addToken(new sap.m.Token({
 							// text: oRetrievedResult.results[i].plant
@@ -298,7 +300,7 @@ sap.ui.define([
 					var oMultiInput = that.byId(that._getId("SalesOrgFrom"));
 					//oMultiInput.removeAllTokens();
 					if (oRetrievedResult.results.length === 1) {
-					// for (var i = 0; i < oRetrievedResult.results.length; i++) {
+						// for (var i = 0; i < oRetrievedResult.results.length; i++) {
 						that.salesOrgFromSelectedItems.push(oRetrievedResult.results[0].Salesorg);
 						oMultiInput.addToken(new sap.m.Token({
 							// text: oRetrievedResult.results[i].Salesorg
@@ -315,29 +317,29 @@ sap.ui.define([
 		},
 		// [+] END Modification: STRY0014745:MY Enhancements Defaulting mandatory fields -	JAYAMALARJ
 
-		_getUser: function () {
-			var url = "/services/userapi/attributes";
-			var busyDialog = new sap.m.BusyDialog();
-			busyDialog.open();
-			this._doAjax(url, "GET", "", true).then(success => {
-				busyDialog.close();
-				var oUserModel = new sap.ui.model.json.JSONModel();
-				this.getView().setModel(oUserModel, "oUserModel");
-				this.getView().getModel("oUserModel").setProperty("/userID", success.name);
-				this.getView().getModel("oUserModel").setProperty("/email", success.email);
-				this._getUserDetail(success.name);
-				// this.getView().getModel("PersonalizationModel").setProperty("/variants", success.variantName);
-			}, fail => {
-				busyDialog.close();
-				MessageBox.error(fail.responseText);
-			});
-		},
+		// _getUser: function () {
+		// 	var url = "/services/userapi/attributes";
+		// 	var busyDialog = new sap.m.BusyDialog();
+		// 	busyDialog.open();
+		// 	this._doAjax(url, "GET", "", true).then(success => {
+		// 		busyDialog.close();
+		// 		var oUserModel = new sap.ui.model.json.JSONModel();
+		// 		this.getView().setModel(oUserModel, "oUserModel");
+		// 		this.getView().getModel("oUserModel").setProperty("/userID", success.name);
+		// 		this.getView().getModel("oUserModel").setProperty("/email", success.email);
+		// 		this._getUserDetail(success.name);
+		// 		// this.getView().getModel("PersonalizationModel").setProperty("/variants", success.variantName);
+		// 	}, fail => {
+		// 		busyDialog.close();
+		// 		MessageBox.error(fail.responseText);
+		// 	});
+		// },
 
 		_getUser: function () {
 			var url = "/services/userapi/attributes";
 			var busyDialog = new sap.m.BusyDialog();
 			busyDialog.open();
-			this._doAjax(url, "GET", "", true).then(success => {
+			this._doAjax(url, "GET", "", true, true).then(success => {
 				busyDialog.close();
 				var oUserModel = new sap.ui.model.json.JSONModel();
 				this.getView().setModel(oUserModel, "oUserModel");
@@ -632,13 +634,18 @@ sap.ui.define([
 		},
 
 		onReportSelection: function (oEvent) {
-			this.selectedTab = oEvent.getSource().getSelectedKey();
-			this.getView().byId("ID_TAB_BAR_PROV_APP").setSelectedKey(oEvent.getSource().getSelectedKey());
-			if (this.selectedTab !== "KeySelCust") {
-				this.clearTabData();
-				this._getPersonalizationDetails(this.selectedTab);
+			try {
+				this.selectedTab = oEvent.getSource().getSelectedKey();
+				this.getView().byId("ID_TAB_BAR_PROV_APP").setSelectedKey(oEvent.getSource().getSelectedKey());
+				if (this.selectedTab !== "KeySelCust") {
+					this.clearTabData();
+					this._getPersonalizationDetails(this.selectedTab);
+				}
+			} catch (e) {
+				MessageBox.error("Error report selection");
+				console.log(e);
+				return;
 			}
-			return;
 		},
 
 		onVariantEdit: function () {
@@ -1580,7 +1587,7 @@ sap.ui.define([
 			};
 			var busyDialog = new sap.m.BusyDialog();
 			busyDialog.open();
-			this._doAjax(url, "POST", payload, true).then(success => {
+			this._doAjax(url, "POST", payload, true, false).then(success => {
 				busyDialog.close();
 				if (success.userPersonaDto !== null) {
 					that.getView().getModel("PersonalizationModel").setProperty("/personalizationData", success);
@@ -1635,7 +1642,6 @@ sap.ui.define([
 		// this.byId("EndStckPlantId");
 
 		onConfirmChangePlant: function (oEvent) {
-			//debugger;
 			// to logic
 			this.getView().getModel("baseModel").getData().EndingStckplantValueState = "None";
 			this.getView().getModel("baseModel").refresh();
@@ -4089,8 +4095,8 @@ sap.ui.define([
 						row1 = row1 + '"' + "Material Num" + '","' + "Material Desc" + '","';
 					} else if (defaultVariant[k].enabledKey === "Plant") {
 						row1 = row1 + "Plant" + '","';
-					} else if (defaultVariant[k].enabledKey === "Plant") {
-						row1 = row1 + "Plant" + '","';
+					} else if (defaultVariant[k].enabledKey === "Plant Desc") {
+						row1 = row1 + "Plant Desc" + '","';
 					} else if (defaultVariant[k].enabledKey === "Serial No.") {
 						row1 = row1 + "Serial No." + '","';
 					} else if (defaultVariant[k].enabledKey === "SLOC") {
@@ -4135,6 +4141,8 @@ sap.ui.define([
 							row = row + '"' + arrData[i].materialNum + '","' + arrData[i].materialDesc + '","';
 						} else if (defaultVariant[k].enabledKey === "Plant") {
 							row = row + arrData[i].plant + '","';
+						} else if (defaultVariant[k].enabledKey === "Plant Desc") {
+							row = row + arrData[i].Plantdesc + '","';
 						} else if (defaultVariant[k].enabledKey === "Serial No.") {
 							row = row + arrData[i].serialNum + '","';
 						} else if (defaultVariant[k].enabledKey === "SLOC") {

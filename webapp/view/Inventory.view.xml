@@ -102,53 +102,53 @@
 										<Label text="{i18n>Plant}" design="Bold" tooltip="{i18n>Plant}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/14/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}">
 										<Label text="{i18n>PlantDesc}" design="Bold" tooltip="{i18n>PlantDesc}"/>
 									</Column>
 									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}">
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 									</Column>
 									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/13/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}">
 										<Label text="{i18n>SLOCDesc}" design="Bold" tooltip="{i18n>SLOCDesc}"/>
 									</Column>
 									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}">
 										<Label text="{i18n>Batch}" design="Bold" tooltip="{i18n>Batch}"/>
 									</Column>
 									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/6/status}">
 										<Label text="{i18n>ExpDate}" design="Bold" tooltip="{i18n>ExpDate}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/7/status}">
 										<Label text="{i18n>StockQty}" design="Bold" tooltip="{i18n>StockQty}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/6/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}">
 										<Label text="{i18n>ReqQty}" design="Bold" tooltip="{i18n>ReqQty}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/7/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}">
 										<Label text="{i18n>ConfirmQty}" design="Bold" tooltip="{i18n>ConfirmQty}"/>
 									</Column>
 									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}">
 										<Label text="{i18n>ATPQty}" design="Bold" tooltip="{i18n>ATPQty}"/></Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
 										<Label text="{i18n>ShortQty}" design="Bold" tooltip="{i18n>ShortQty}"/></Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/12/status}">
 										<Label text="{i18n>Unit}" design="Bold" tooltip="{i18n>Unit}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/13/status}">
 										<Label text="{i18n>LTP/Price}" design="Bold" tooltip="{i18n>LTP/Price}"/>
 									</Column>
 									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/12/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/14/status}">
 										<Label text="{i18n>SerialNo}" design="Bold" tooltip="{i18n>SerialNo}"/>
 									</Column>
 								</columns>
@@ -295,27 +295,27 @@
 										popinDisplay="Inline">
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 									</Column>
-									<Column visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}" minScreenWidth="XSmall" demandPopin="true"
+									<Column visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}" minScreenWidth="XSmall" demandPopin="true"
 										popinDisplay="Inline">
 										<Label text="{i18n>SLOCDesc}" design="Bold" tooltip="{i18n>SLOCDesc}"/>
 									</Column>
 									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}">
 										<Label text="{i18n>RealBatch}" design="Bold" tooltip="{i18n>RealBatch}"/>
 									</Column>
 									<Column demandPopin="false" minScreenWidth="Small" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/6/status}">
 										<Label text="{i18n>ExpDate}" design="Bold" tooltip="{i18n>ExpDate}"/>
 									</Column>
 									<Column demandPopin="false" minScreenWidth="Small" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/6/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/7/status}">
 										<Label text="{i18n>ManuDate}" design="Bold" tooltip="{i18n>ManuDate}"/>
 									</Column>
 									<Column demandPopin="false" minScreenWidth="Small" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/7/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}">
 										<Label text="{i18n>PerPack}" design="Bold" tooltip="{i18n>PerPack}"/>
 									</Column>
-									<Column popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}" minScreenWidth="XSmall"
+									<Column popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}" minScreenWidth="XSmall"
 										demandPopin="true">
 										<Label text="{i18n>SalesQty}" design="Bold" tooltip="{i18n>SalesQty}"/>
 									</Column>
@@ -476,39 +476,39 @@
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 									</Column>
 									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/20/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/12/status}">
 										<Label text="{i18n>SLocDesc}" design="Bold" tooltip="{i18n>SLocDesc}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/12/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/13/status}">
 										<Label text="{i18n>Expired}" design="Bold" tooltip="{i18n>Expired}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/13/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/14/status}">
 										<Label text="{i18n>3Months}" design="Bold" tooltip="{i18n>3Months}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/14/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/15/status}">
 										<Label text="{i18n>6Months}" design="Bold" tooltip="{i18n>6Months}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/15/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/16/status}">
 										<Label text="{i18n>9Months}" design="Bold" tooltip="{i18n>9Months}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/16/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/17/status}">
 										<Label text="{i18n>12Months}" design="Bold" tooltip="{i18n>12Months}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/17/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/18/status}">
 										<Label text="{i18n>15Months}" design="Bold" tooltip="{i18n>15Months}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/18/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/19/status}">
 										<Label text="{i18n>18Months}" design="Bold" tooltip="{i18n>18Months}"/>
 									</Column>
 									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
-										visible="{tabPersonalizationModel>/personalizationData/userPersonaDto/19/status}">
+										visible="{tabPersonalizationModel>/personalizationData/userPersonaDto/20/status}">
 										<Label text="{i18n>SerialNo}" design="Bold" tooltip="{i18n>SerialNo}"/>
 									</Column>
 								</columns>
@@ -648,19 +648,19 @@
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/18/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}">
 										<Label text="{i18n>SLOCDesc}" design="Bold" tooltip="{i18n>SLOCDesc}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}">
 										<Label text="{i18n>GR/GIlocation}" design="Bold" tooltip="{i18n>GR/GIlocation}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
 										<Label text="{i18n>PerPack}" design="Bold" tooltip="{i18n>PerPack}"/>
 									</Column>
 									<Column minScreenWidth="Desktop" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/12/status}">
 										<Label text="{i18n>Qty}" design="Bold" tooltip="{i18n>Qty}"/>
 									</Column>
 									<!--<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"-->
@@ -668,27 +668,27 @@
 									<!--	<Label text="{i18n>BaseUnit}" design="Bold"/>-->
 									<!--</Column>-->
 									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/12/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/13/status}">
 										<Label text="{i18n>SalesQty}" design="Bold" tooltip="{i18n>SalesQty}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/13/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/14/status}">
 										<Label text="{i18n>SpcIND}" design="Bold" tooltip="{i18n>SpcIND}"/>
 									</Column>
 									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/14/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/15/status}">
 										<Label text="{i18n>Movement}" design="Bold" tooltip="Movement"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/15/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/16/status}">
 										<Label text="{i18n>DONumber}" design="Bold" tooltip="DO Number"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/16/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/17/status}">
 										<Label text="{i18n>HeaderNote}" design="Bold" tooltip="Header Note"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/17/status}">
+										visible="{PersonalizationModel>/personalizationData/userPersonaDto/18/status}">
 										<Label text="{i18n>SerialNo}" design="Bold"/>
 									</Column>
 								</columns>
@@ -890,26 +890,26 @@ tokenUpdate="onDeleteBatchStkLot"/>-->
 														<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 													</Column>
 													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
-														visible="{PersonalizationModel>/personalizationData/userPersonaDto/22/status}">
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/17/status}">
 														<Label text="{i18n>SLocDesc}" design="Bold" tooltip="{i18n>SLocDesc}"/>
 													</Column>
 													<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline"
-														visible="{PersonalizationModel>/personalizationData/userPersonaDto/17/status}">
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/18/status}">
 														<Label text="{i18n>resvdBy}" design="Bold" tooltip="{i18n>resvdBy}"/>
 													</Column>
 													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
-														visible="{PersonalizationModel>/personalizationData/userPersonaDto/18/status}">
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/19/status}">
 														<Label text="{i18n>Unrest}" design="Bold" tooltip="{i18n>Unrest}"/>
 													</Column>
 													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
-														visible="{PersonalizationModel>/personalizationData/userPersonaDto/19/status}">
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/20/status}">
 														<Label text="{i18n>Blocked}" design="Bold" tooltip="{i18n>Blocked}"/></Column>
 													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
-														visible="{PersonalizationModel>/personalizationData/userPersonaDto/20/status}">
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/21/status}">
 														<Label text="{i18n>QI}" design="Bold" tooltip="{i18n>QI}"/>
 													</Column>
 													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
-														visible="{PersonalizationModel>/personalizationData/userPersonaDto/21/status}">
+														visible="{PersonalizationModel>/personalizationData/userPersonaDto/22/status}">
 														<Label text="{i18n>SerialNo}" design="Bold" tooltip="{i18n>SerialNo}"/>
 													</Column>
 												</columns>
