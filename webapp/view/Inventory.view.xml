@@ -246,7 +246,9 @@
 										change="onChangeVenMatFrom" value="{baseModel>/vendMatFrom}"/>
 									<MultiInput id="EndStckVenMatToId" placeholder="{i18n>To}" showValueHelp="false" tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom"
 										enabled="{baseModel>/enableVendorMat}" value="{baseModel>/vendMatTo}"/>
-									<Label></Label>
+									<!--Begin - STRY0019044-->
+									<Label text="By Month/ By Date" design="Bold" required="true"></Label>
+									<!--End - STRY0019044-->
 									<VBox>
 										<RadioButton text="{i18n>ByMonth}" groupName="Grp2" select="onChangeEndingPer" selected="{baseModel>/EndingStckSelEndPrd}"></RadioButton>
 										<!--<Label text="Date" design="Bold"></Label>-->
