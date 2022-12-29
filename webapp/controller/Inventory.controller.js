@@ -1631,6 +1631,19 @@ sap.ui.define([
 			var FilterPersonalization = new sap.ui.model.json.JSONModel({
 				"results": this.getView().getModel("PersonalizationModel").getData()
 			});
+			debugger;
+			//
+			try {
+				if ( FilterPersonalization.oData.results.personalizationData.userPersonaDto !== undefined ){
+					for (var i = 0; i < FilterPersonalization.oData.results.personalizationData.userPersonaDto.length; i++){
+						if (FilterPersonalization.oData.results.personalizationData.userPersonaDto[i].enabledKey == "QI Stock" ){
+							FilterPersonalization.oData.results.personalizationData.userPersonaDto[i].enabledKey = "Quality Inspection Stock";
+						}
+					}
+				}
+			} catch (e) {
+			}
+			
 			this.FilterPersonalization.setModel(FilterPersonalization, "FilterPersonalization");
 			this.FilterPersonalization.getModel("FilterPersonalization").setProperty("/results/enableCheckBox", false);
 			this.FilterPersonalization.getModel("FilterPersonalization").setProperty("/results/selectVarVisible", true);
