@@ -1643,7 +1643,7 @@ sap.ui.define([
 				}
 			} catch (e) {
 			}
-			
+			//
 			this.FilterPersonalization.setModel(FilterPersonalization, "FilterPersonalization");
 			this.FilterPersonalization.getModel("FilterPersonalization").setProperty("/results/enableCheckBox", false);
 			this.FilterPersonalization.getModel("FilterPersonalization").setProperty("/results/selectVarVisible", true);
