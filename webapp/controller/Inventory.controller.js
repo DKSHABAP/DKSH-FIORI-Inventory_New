@@ -1632,18 +1632,19 @@ sap.ui.define([
 				"results": this.getView().getModel("PersonalizationModel").getData()
 			});
 			debugger;
-			//
+			//modify by XRAINERH 29Dec2022 09:12AM
+			//begin - STRY0019045
 			try {
 				if ( FilterPersonalization.oData.results.personalizationData.userPersonaDto !== undefined ){
 					for (var i = 0; i < FilterPersonalization.oData.results.personalizationData.userPersonaDto.length; i++){
-						if (FilterPersonalization.oData.results.personalizationData.userPersonaDto[i].enabledKey == "QI Stock" ){
+						if (FilterPersonalization.oData.results.personalizationData.userPersonaDto[i].enabledKey.trim() == "QI Stock" ){
 							FilterPersonalization.oData.results.personalizationData.userPersonaDto[i].enabledKey = "Quality Inspection Stock";
 						}
 					}
 				}
 			} catch (e) {
 			}
-			//
+			//end - STRY0019045
 			this.FilterPersonalization.setModel(FilterPersonalization, "FilterPersonalization");
 			this.FilterPersonalization.getModel("FilterPersonalization").setProperty("/results/enableCheckBox", false);
 			this.FilterPersonalization.getModel("FilterPersonalization").setProperty("/results/selectVarVisible", true);

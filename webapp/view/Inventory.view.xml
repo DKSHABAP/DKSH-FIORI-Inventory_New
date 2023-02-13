@@ -853,6 +853,8 @@ tokenUpdate="onDeleteBatchStkLot"/>-->
 													<Label text="{i18n>avlbl}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}"></Label>
 													<Text text="{stockLotModel>availQty}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}"/>
 													<core:Title/>
+													<!--modify by XRAINERH 29Dec2022 01:32PM-->
+													<!--begin - STRY0019045-->
 													<Label text="{i18n>qistk}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}"></Label>
 													<Text text="{stockLotModel>stockInspection}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}"/>
 													<Label text="{i18n>blkstk}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/7/status}"></Label>
@@ -861,6 +863,7 @@ tokenUpdate="onDeleteBatchStkLot"/>-->
 													<Text text="{stockLotModel>principalMatGroup}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}"/>
 													<Label text="{i18n>MaterialGroup4}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}"></Label>
 													<Text text="{stockLotModel>materialGroup4}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}"/>
+													<!--end - STRY0019045-->
 												</f:content>
 											</f:SimpleForm>
 											<!--<ScrollContainer class="crtMinListHeight crtScrollBar" horizontal="false" vertical="true" height="{baseModel>/invoiceTableLength}">-->
