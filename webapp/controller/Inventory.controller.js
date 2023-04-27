@@ -243,8 +243,9 @@ sap.ui.define([
 						"results": oRetrievedResult.results
 					});
 					var oMultiInput = that.byId(that._getId("PlantFrom"));
+					oMultiInput.destroyTokens();
 					if (oRetrievedResult.results.length === 1) {
-					// for (var i = 0; i < oRetrievedResult.results.length; i++) {
+						// for (var i = 0; i < oRetrievedResult.results.length; i++) {
 						that.plantFromSelectedItems.push(oRetrievedResult.results[0].plant);
 						oMultiInput.addToken(new sap.m.Token({
 							// text: oRetrievedResult.results[i].plant
@@ -298,7 +299,7 @@ sap.ui.define([
 					var oMultiInput = that.byId(that._getId("SalesOrgFrom"));
 					//oMultiInput.removeAllTokens();
 					if (oRetrievedResult.results.length === 1) {
-					// for (var i = 0; i < oRetrievedResult.results.length; i++) {
+						// for (var i = 0; i < oRetrievedResult.results.length; i++) {
 						that.salesOrgFromSelectedItems.push(oRetrievedResult.results[0].Salesorg);
 						oMultiInput.addToken(new sap.m.Token({
 							// text: oRetrievedResult.results[i].Salesorg
@@ -2360,17 +2361,21 @@ sap.ui.define([
 		},
 
 		onChangePostingDateFrom: function (oEvent) {
-			this.getView().getModel("baseModel").getData().postingDateValueStateFrom = "None";
-
-			// SearchPara.matGrpValueState = "Error";
-			var date = oEvent.getParameters().value;
-			if (date === NaN || date === "") {
-				date = "";
+			if (oEvent.getParameters().valid) {
+				this.getView().getModel("baseModel").getData().postingDateValueStateFrom = "None";
+				// SearchPara.matGrpValueState = "Error";
+				var date = oEvent.getParameters().value;
+				if (date === NaN || date === "") {
+					date = "";
+				}
+				var d = this.formatter.dateTimeFormat(date);
+				// var d = new Date(date).getFullYear().toString() + new Date(date).getMonth().toString() + new Date(date).getDate().toString();
+				// this.postingDate = "(postingDate ge datetime" + "'" + d + "'";
+				this.postingDateFrom = d;
+			} else {
+				// this.getView().getModel("baseModel").getData().postingDateValueStateFrom = "Error";
+				this.getView().getModel("baseModel").getData().postingDateFrom = null;
 			}
-			var d = this.formatter.dateTimeFormat(date);
-			// var d = new Date(date).getFullYear().toString() + new Date(date).getMonth().toString() + new Date(date).getDate().toString();
-			// this.postingDate = "(postingDate ge datetime" + "'" + d + "'";
-			this.postingDateFrom = d;
 		},
 
 		oncheckSelect: function (oEvent) {
@@ -2387,15 +2392,20 @@ sap.ui.define([
 				MessageToast.show("Add Posting Date from");
 				return;
 			} else {
-				this.getView().getModel("baseModel").getData().postingDateValueStateTo = "None";
-				var date = oEvent.getParameters().value;
-				if (date === NaN || date === "") {
-					date = "";
+				if (oEvent.getParameters().valid) {
+					this.getView().getModel("baseModel").getData().postingDateValueStateTo = "None";
+					var date = oEvent.getParameters().value;
+					if (date === NaN || date === "") {
+						date = "";
+					}
+					var d = this.formatter.dateTimeFormat(date);
+					// var d = new Date(date).getFullYear().toString() + new Date(date).getMonth().toString() + new Date(date).getDate().toString();
+					// this.postingDate = this.postingDate + " and " + "postingDate le datetime" + "'" + d + "')";
+					this.postingDateTo = d;
+				} else {
+					// this.getView().getModel("baseModel").getData().postingDateValueStateTo = "Error";
+					this.getView().getModel("baseModel").getData().postingDateTo = null;
 				}
-				var d = this.formatter.dateTimeFormat(date);
-				// var d = new Date(date).getFullYear().toString() + new Date(date).getMonth().toString() + new Date(date).getDate().toString();
-				// this.postingDate = this.postingDate + " and " + "postingDate le datetime" + "'" + d + "')";
-				this.postingDateTo = d;
 			}
 		},
 
@@ -4972,10 +4982,10 @@ sap.ui.define([
 				// 	url = url + " " + "and" + " " + mat;
 				// }
 			}
-			
+
 			//debugger;
 			// sloc checkbox
-			if( SearchPara.sLocLevel ){
+			if (SearchPara.sLocLevel) {
 				if (url.length === 93) {
 					url = url + this.SlocLevel;
 				} else {
