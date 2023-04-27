@@ -299,6 +299,7 @@ sap.ui.define([
 						"results": oRetrievedResult.results
 					});
 					var oMultiInput = that.byId(that._getId("SalesOrgFrom"));
+					oMultiInput.destroyTokens();
 					//oMultiInput.removeAllTokens();
 					if (oRetrievedResult.results.length === 1) {
 						// for (var i = 0; i < oRetrievedResult.results.length; i++) {
