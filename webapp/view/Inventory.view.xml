@@ -1,6 +1,4 @@
-<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:u="sap.uxap"
-	xmlns:layout="sap.ui.layout" controllerName="incture.com.ConnectClient_Inventory.controller.Inventory"
-	xmlns:html="http://www.w3.org/1999/xhtml">
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:f="sap.ui.layout.form" xmlns:u="sap.uxap" xmlns:layout="sap.ui.layout" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="incture.com.ConnectClient_Inventory.controller.Inventory">
 	<html:iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WG969CM" height="0" width="0" style="display:none; visibility:hidden"></html:iframe>
 	<Page id="page" class="sapUiSizeCompact" showHeader="false">
 		<content>
@@ -8,8 +6,7 @@
 				<items>
 					<!--for Tracking Details-->
 					<IconTabFilter key="KeySelCust" text="{i18n>SelectReportTitle}">
-						<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" columnsL="1" columnsM="1" emptySpanL="5"
-							emptySpanM="5" class="sapUiSizeCompact">
+						<f:SimpleForm editable="true" layout="ResponsiveGridLayout" labelSpanL="4" labelSpanM="4" columnsL="1" columnsM="1" emptySpanL="5" emptySpanM="5" class="sapUiSizeCompact">
 							<f:content>
 								<Label text="{i18n>Report}" design="Bold"/>
 								<ComboBox placeholder="" change="onReportSelection" showValueStateMessage="false">
@@ -26,79 +23,64 @@
 					<IconTabFilter key="keyATPOverviewEnquiry" text="{i18n>ATPOverview}">
 						<!--<core:Fragment fragmentName="incture.com.Inventory.Fragments.ATPOverviewFrag" type="XML"/>-->
 						<OverflowToolbar class="dkshToolbarStyle customTitle">
-							<Label text="{i18n>Search}" design="Bold"></Label>
+							<Label text="{i18n>Search}" design="Bold"/>
 							<ToolbarSpacer/>
 							<Button text="{i18n>CollapseSearch}" tooltip="{i18n>CollapseSearch}" press="onPressCollapse" visible="{baseModel>/CollapseVisiblity}"/>
 							<Button text="{i18n>ExpandSearch}" tooltip="{i18n>ExpandSearch}" press="onPressOpen" visible="{baseModel>/openVisiblity}"/>
 						</OverflowToolbar>
 						<VBox>
-							<f:SimpleForm minWidth="1024" layout="ResponsiveGridLayout" maxContainerCols="2" editable="true" labelSpanL="4" labelSpanM="4"
-								emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2" visible="{baseModel>/SearchVisiblity}">
+							<f:SimpleForm minWidth="1024" layout="ResponsiveGridLayout" maxContainerCols="2" editable="true" labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2" visible="{baseModel>/SearchVisiblity}">
 								<f:content>
 									<core:Title/>
 									<!--Sales Org-->
-									<Label text="{i18n>SalesOrg}" design="Bold" required="true"></Label>
-									<MultiInput id="ATPSalesOrgFromID" value="{baseModel>/salesOrgFrom}" tokenUpdate="onDeleteSalesOrg" placeholder="{i18n>SelectSalesOrg}"
-										showValueHelp="true" valueHelpRequest="valueHelpRequestSalesOrg" valueState="{baseModel>/SalesOrgValueState}"/>
+									<Label text="{i18n>SalesOrg}" design="Bold" required="true"/>
+									<MultiInput id="ATPSalesOrgFromID" value="{baseModel>/salesOrgFrom}" tokenUpdate="onDeleteSalesOrg" placeholder="{i18n>SelectSalesOrg}" showValueHelp="true" valueHelpRequest="valueHelpRequestSalesOrg" valueState="{baseModel>/SalesOrgValueState}"/>
 									<!--Material Group-->
-									<Label text="{i18n>MaterialGroup}" design="Bold" required="true"></Label>
-									<MultiInput id="ATPMatGrpFromId" value="{baseModel>/matGrpFrom}" tokenUpdate="onDeleteMatGrp" placeholder="{i18n>From}" showValueHelp="true"
-										valueHelpRequest="valueHelpRequestMaterialGrp" valueState="{baseModel>/matGrpValueState}"/>
-									<MultiInput value="{baseModel>/matGrpTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp"
-										enabled="{baseModel>/enablematGrpTo}" id="ATPMatGrpToId" tokenUpdate="onDeleteMatGrp"/>
+									<Label text="{i18n>MaterialGroup}" design="Bold" required="true"/>
+									<MultiInput id="ATPMatGrpFromId" value="{baseModel>/matGrpFrom}" tokenUpdate="onDeleteMatGrp" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp" valueState="{baseModel>/matGrpValueState}"/>
+									<MultiInput value="{baseModel>/matGrpTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp" enabled="{baseModel>/enablematGrpTo}" id="ATPMatGrpToId" tokenUpdate="onDeleteMatGrp"/>
 									<!--{i18n>MaterialGroup}4-->
-									<Label text="{i18n>MaterialGroup4}" design="Bold"></Label>
-									<MultiInput id="ATPMatGrp4FromId" value="{baseModel>/matGrp4From}" placeholder="{i18n>From}" showValueHelp="true"
-										valueHelpRequest="valueHelpRequestMaterialGrp4" tokenUpdate="onDeleteMatGrp4"/>
-									<MultiInput id="ATPMatGrp4ToId" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp4"
-										enabled="{baseModel>/enablematGrp4To}" tokenUpdate="onDeleteMatGrp4" value="{baseModel>/matGrp4To}"/>
+									<Label text="{i18n>MaterialGroup4}" design="Bold"/>
+									<MultiInput id="ATPMatGrp4FromId" value="{baseModel>/matGrp4From}" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp4" tokenUpdate="onDeleteMatGrp4"/>
+									<MultiInput id="ATPMatGrp4ToId" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp4" enabled="{baseModel>/enablematGrp4To}" tokenUpdate="onDeleteMatGrp4" value="{baseModel>/matGrp4To}"/>
 									<core:Title/>
 									<!--Material-->
-									<Label text="{i18n>Material}" design="Bold"></Label>
-									<MultiInput placeholder="{i18n>From}" showValueHelp="false" value="{baseModel>/matFrom}" id="ATPMatFromId"
-										tokenUpdate="onMaterialFromDelete" change="onMaterialFromChange"/>
-									<MultiInput placeholder="{i18n>To}" showValueHelp="false" value="{baseModel>/matTo}" id="ATPMatToId" enabled="{baseModel>/enablematTo}"
-										change="onMaterialFromChange" tokenUpdate="onMaterialFromDelete"/>
+									<Label text="{i18n>Material}" design="Bold"/>
+									<MultiInput placeholder="{i18n>From}" showValueHelp="false" value="{baseModel>/matFrom}" id="ATPMatFromId" tokenUpdate="onMaterialFromDelete" change="onMaterialFromChange"/>
+									<MultiInput placeholder="{i18n>To}" showValueHelp="false" value="{baseModel>/matTo}" id="ATPMatToId" enabled="{baseModel>/enablematTo}" change="onMaterialFromChange" tokenUpdate="onMaterialFromDelete"/>
 									<!--SLOC-->
-									<Label text="{i18n>SLoc}" design="Bold"></Label>
-									<MultiInput value="{baseModel>/SLocFrom}" tokenUpdate="onDeleteStoLoc" placeholder="{i18n>From}" showValueHelp="true"
-										valueHelpRequest="valueHelpRequestStoLoc" id="ATPSLocFromId"/>
-									<MultiInput value="{baseModel>/SLocTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestStoLoc"
-										enabled="{baseModel>/enableSLocTo}" id="ATPSLocToId" tokenUpdate="onDeleteStoLoc"/>
+									<Label text="{i18n>SLoc}" design="Bold"/>
+									<MultiInput value="{baseModel>/SLocFrom}" tokenUpdate="onDeleteStoLoc" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestStoLoc" id="ATPSLocFromId"/>
+									<MultiInput value="{baseModel>/SLocTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestStoLoc" enabled="{baseModel>/enableSLocTo}" id="ATPSLocToId" tokenUpdate="onDeleteStoLoc"/>
 									<!--Vendor Mat-->
-									<Label text="{i18n>VendorMat}" design="Bold"></Label>
-									<MultiInput id="ATPVenMatFromId" value="{baseModel>/vendMatFrom}" placeholder="{i18n>From}" showValueHelp="false"
-										tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom"/>
-									<MultiInput id="ATPVenMatToId" value="{baseModel>/vendMatTo}" placeholder="{i18n>To}" showValueHelp="false" tokenUpdate="onDeleteVenMat"
-										change="onChangeVenMatFrom" enabled="{baseModel>/enableVendorMat}"/>
-									<Label></Label>
-									<CheckBox text="{i18n>BatchLevel}" tooltip="{i18n>BatchLevel}" select="onChangeBatchLevel" selected="{baseModel>/batchLevel}"></CheckBox>
-									<CheckBox text="{i18n>SLocLevel}" tooltip="{i18n>SerialNo}" select="onChangeSLocLevel" selected="{baseModel>/sLocLevel}"></CheckBox>
-									<Label></Label>
-									<CheckBox text="{i18n>SerialNo}" select="oncheckSelect" selected="{baseModel>/serialNo}"></CheckBox>
-									<Label></Label>
-									<Button text="{i18n>Search}" icon="sap-icon://search" press="ATPOverviewSearch" type="Accept"></Button>
-									<Button text="{i18n>Clear}" icon="sap-icon://refresh" press="clearTabData" type="Reject"></Button>
+									<Label text="{i18n>VendorMat}" design="Bold"/>
+									<MultiInput id="ATPVenMatFromId" value="{baseModel>/vendMatFrom}" placeholder="{i18n>From}" showValueHelp="false" tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom"/>
+									<MultiInput id="ATPVenMatToId" value="{baseModel>/vendMatTo}" placeholder="{i18n>To}" showValueHelp="false" tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom" enabled="{baseModel>/enableVendorMat}"/>
+									<Label/>
+									<CheckBox text="{i18n>BatchLevel}" tooltip="{i18n>BatchLevel}" select="onChangeBatchLevel" selected="{baseModel>/batchLevel}"/>
+									<CheckBox text="{i18n>SLocLevel}" tooltip="{i18n>SerialNo}" select="onChangeSLocLevel" selected="{baseModel>/sLocLevel}"/>
+									<Label/>
+									<CheckBox text="{i18n>SerialNo}" select="oncheckSelect" selected="{baseModel>/serialNo}"/>
+									<Label/>
+									<Button text="{i18n>Search}" icon="sap-icon://search" press="ATPOverviewSearch" type="Accept"/>
+									<Button text="{i18n>Clear}" icon="sap-icon://refresh" press="clearTabData" type="Reject"/>
 								</f:content>
 							</f:SimpleForm>
-							<Table alternateRowColors="true" class="sapUiSizeCompact" popinLayout="GridSmall" items="{ATPOverviewTableModel>/results}" growing="true"
-								growingThreshold="10" growingScrollToLoad="true" fixedLayout="false" inset="false" id="ATPOverviewTableID" sticky="ColumnHeaders">
+							<Table alternateRowColors="true" class="sapUiSizeCompact" popinLayout="GridSmall" items="{ATPOverviewTableModel>/results}" growing="true" growingThreshold="10" growingScrollToLoad="true" fixedLayout="false" inset="false" id="ATPOverviewTableID" sticky="ColumnHeaders">
 								<headerToolbar sticky="HeaderToolbar">
 									<Toolbar>
-										<Label text="{ATPOverviewTableModel>/dataLength}" design="Bold"></Label>
-										<ToolbarSpacer></ToolbarSpacer>
-										<SearchField width="30%" search="onSearchATP" liveChange="onSearchATP"></SearchField>
+										<Label text="{ATPOverviewTableModel>/dataLength}" design="Bold"/>
+										<ToolbarSpacer/>
+										<SearchField width="30%" search="onSearchATP" liveChange="onSearchATP"/>
 										<Button text="{i18n>Export}" icon="sap-icon://download" press="onExportATPoverview" type="Emphasized"/>
 										<Button icon="sap-icon://action-settings" press="onPressPersonalization"/>
 									</Toolbar>
 								</headerToolbar>
 								<columns>
-									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/0/status}">
+									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/0/status}">
 										<Label text="{i18n>Material}" design="Bold" tooltip="{i18n>Material}"/>
 									</Column>
-									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}">
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}">
 										<Label text="{i18n>Plant}" design="Bold" tooltip="{i18n>Plant}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
@@ -154,38 +136,21 @@
 								</columns>
 								<items>
 									<ColumnListItem type="Navigation" press="onPressDetailATP">
-										<Label
-											text=" {parts:[{path:'ATPOverviewTableModel>materialNum'},{path:'ATPOverviewTableModel>materialDesc'}],formatter:'.formatter.concatenateStrings'}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"
-											wrapping="true"></Label>
-										<Label text="{ATPOverviewTableModel>plant}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
-										<Label text="{ATPOverviewTableModel>Plantdesc}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
-										<Label text="{ATPOverviewTableModel>storageLocation}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
-										<Label text="{ATPOverviewTableModel>storagelocationDesc}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocationDesc'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
-										<Label text="{ATPOverviewTableModel>batchNumber}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
-										<Label text="{path:'ATPOverviewTableModel>expiredDate', formatter:'.formatter.convertToDateToDispFormat'}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
-										<Label text="{ATPOverviewTableModel>stockQty}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
-										<Label text="{ATPOverviewTableModel>requiredQty}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
-										<Label text="{ATPOverviewTableModel>confirmQty}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
-										<Label text="{ATPOverviewTableModel>atpQty}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
-										<Label text="{path:'ATPOverviewTableModel>shortQty', formatter:'.formatter.shortQty'}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
-										<Label text="{ATPOverviewTableModel>baseUnit}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
-										<Label text="{ATPOverviewTableModel>ltpPrice}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
-										<Label text="{ATPOverviewTableModel>serialNum}"
-											design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel>storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel>serialNum'}],formatter:'.formatter.rowDesign'}"></Label>
+										<Label text=" {parts:[{path:'ATPOverviewTableModel>materialNum'},{path:'ATPOverviewTableModel&gt;materialDesc'}],formatter:'.formatter.concatenateStrings'}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}" wrapping="true"/>
+										<Label text="{ATPOverviewTableModel>plant}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}"/>
+										<Label text="{ATPOverviewTableModel>Plantdesc}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}"/>
+										<Label text="{ATPOverviewTableModel>storageLocation}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}"/>
+										<Label text="{ATPOverviewTableModel>storagelocationDesc}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocationDesc'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}"/>
+										<Label text="{ATPOverviewTableModel>batchNumber}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}"/>
+										<Label text="{path:'ATPOverviewTableModel>expiredDate', formatter:'.formatter.convertToDateToDispFormat'}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}"/>
+										<Label text="{ATPOverviewTableModel>stockQty}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}"/>
+										<Label text="{ATPOverviewTableModel>requiredQty}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}"/>
+										<Label text="{ATPOverviewTableModel>confirmQty}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}"/>
+										<Label text="{ATPOverviewTableModel>atpQty}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}"/>
+										<Label text="{path:'ATPOverviewTableModel>shortQty', formatter:'.formatter.shortQty'}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}"/>
+										<Label text="{ATPOverviewTableModel>baseUnit}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}"/>
+										<Label text="{ATPOverviewTableModel>ltpPrice}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}"/>
+										<Label text="{ATPOverviewTableModel>serialNum}" design="{parts:[{path:'ATPOverviewTableModel>plant'},{path:'ATPOverviewTableModel&gt;storageLocation'},{path:'ATPOverviewTableModel>batchNumber'},{path:'ATPOverviewTableModel&gt;serialNum'}],formatter:'.formatter.rowDesign'}"/>
 									</ColumnListItem>
 								</items>
 							</Table>
@@ -195,44 +160,36 @@
 					<IconTabFilter key="keyEndingStockView" text="{i18n>EndingStock}">
 						<!--<core:Fragment fragmentName="incture.com.Inventory.Fragments.EndingStock" type="XML"/>-->
 						<OverflowToolbar class="dkshToolbarStyle customTitle">
-							<Label text="{i18n>Search}" design="Bold"></Label>
+							<Label text="{i18n>Search}" design="Bold"/>
 							<ToolbarSpacer/>
 							<Button text="{i18n>CollapseSearch}" tooltip="{i18n>CollapseSearch}" press="onPressCollapse" visible="{baseModel>/CollapseVisiblity}"/>
 							<Button text="{i18n>ExpandSearch}" tooltip="{i18n>ExpandSearch}" press="onPressOpen" visible="{baseModel>/openVisiblity}"/>
 						</OverflowToolbar>
 						<VBox>
-							<f:SimpleForm minWidth="1024" layout="ResponsiveGridLayout" maxContainerCols="2" editable="true" labelSpanL="4" labelSpanM="4"
-								emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2" visible="{baseModel>/SearchVisiblity}">
+							<f:SimpleForm minWidth="1024" layout="ResponsiveGridLayout" maxContainerCols="2" editable="true" labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2" visible="{baseModel>/SearchVisiblity}">
 								<f:content>
 									<core:Title/>
-									<Label text="{i18n>Plant}" design="Bold" required="true"></Label>
-									<MultiInput id="EndStckPlantFromId" value="{baseModel>/plantFrom}" placeholder="{i18n>EnterPlant}" showValueHelp="true"
-										valueHelpRequest="valueHelpRequestPlant" valueState="{baseModel>/EndingStckplantValueState}" tokenUpdate="onDeleteEndStckPlant"></MultiInput>
-									<Label text="{i18n>SLoc}" design="Bold"></Label>
-									<MultiInput value="{baseModel>/SLocFrom}" tokenUpdate="onDeleteStoLoc" placeholder="{i18n>From}" showValueHelp="true"
-										valueHelpRequest="valueHelpRequestStoLoc" id="EndStckSLocFromId"/>
-									<MultiInput value="{baseModel>/SLocTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestStoLoc"
-										enabled="{baseModel>/enableSLocTo}" id="EndStckSLocToId" tokenUpdate="onDeleteStoLoc"/>
+									<Label text="{i18n>Plant}" design="Bold" required="true"/>
+									<MultiInput id="EndStckPlantFromId" value="{baseModel>/plantFrom}" placeholder="{i18n>EnterPlant}" showValueHelp="true" valueHelpRequest="valueHelpRequestPlant" valueState="{baseModel>/EndingStckplantValueState}" tokenUpdate="onDeleteEndStckPlant"/>
+									<Label text="{i18n>SLoc}" design="Bold"/>
+									<MultiInput value="{baseModel>/SLocFrom}" tokenUpdate="onDeleteStoLoc" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestStoLoc" id="EndStckSLocFromId"/>
+									<MultiInput value="{baseModel>/SLocTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestStoLoc" enabled="{baseModel>/enableSLocTo}" id="EndStckSLocToId" tokenUpdate="onDeleteStoLoc"/>
 									<!--Material Grp-->
-									<Label text="{i18n>MaterialGroup}" design="Bold" required="true"></Label>
-									<MultiInput id="EndStckMatGrpFromId" value="{baseModel>/matGrpFrom}" tokenUpdate="onDeleteMatGrp" placeholder="{i18n>From}"
-										showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp" valueState="{baseModel>/matGrpValueState}"/>
-									<MultiInput value="{baseModel>/matGrpTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp"
-										enabled="{baseModel>/enablematGrpTo}" id="EndStckMatGrpToId" tokenUpdate="onDeleteMatGrp"/>
-									<Label text="{i18n>MaterialGroup4}" design="Bold"></Label>
-									<MultiInput id="EndStckMatGrp4FromId" value="{baseModel>/matGrp4From}" placeholder="{i18n>From}" showValueHelp="true"
-										valueHelpRequest="valueHelpRequestMaterialGrp4" tokenUpdate="onDeleteMatGrp4"/>
-									<MultiInput id="EndStckMatGrp4ToId" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp4"
-										enabled="{baseModel>/enablematGrp4To}" tokenUpdate="onDeleteMatGrp4" value="{baseModel>/matGrp4To}"/>
-									<Label></Label>
+									<Label text="{i18n>MaterialGroup}" design="Bold" required="true"/>
+									<MultiInput id="EndStckMatGrpFromId" value="{baseModel>/matGrpFrom}" tokenUpdate="onDeleteMatGrp" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp" valueState="{baseModel>/matGrpValueState}"/>
+									<MultiInput value="{baseModel>/matGrpTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp" enabled="{baseModel>/enablematGrpTo}" id="EndStckMatGrpToId" tokenUpdate="onDeleteMatGrp"/>
+									<Label text="{i18n>MaterialGroup4}" design="Bold"/>
+									<MultiInput id="EndStckMatGrp4FromId" value="{baseModel>/matGrp4From}" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp4" tokenUpdate="onDeleteMatGrp4"/>
+									<MultiInput id="EndStckMatGrp4ToId" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp4" enabled="{baseModel>/enablematGrp4To}" tokenUpdate="onDeleteMatGrp4" value="{baseModel>/matGrp4To}"/>
+									<Label/>
 									<!--radio btns-->
-									<RadioButton text="{i18n>VendorConsMaterial}" groupName="Grp" select="onChangeVenConsMat" selected="{baseModel>/EndingStckSelVenConsMat}"></RadioButton>
-									<RadioButton text="{i18n>OwnStockMaterial}" groupName="Grp" select="onChangeOwnStkMat" selected="{baseModel>/EndingStckSelchngeOwnStkMat}"></RadioButton>
-									<Label></Label>
-									<RadioButton text="{i18n>AllMaterial}" groupName="Grp" select="onChangeAllMat" selected="{baseModel>/EndingStckSelAllMaterial}"></RadioButton>
-									<Label></Label>
-									<CheckBox text="{i18n>ExcludeFDAStock}" select="onChangeExcFDAStck" selected="{baseModel>/excludeFda}"></CheckBox>
-									<CheckBox text="{i18n>SerialNo}" select="oncheckSelect" selected="{baseModel>/serialNo}"></CheckBox>
+									<RadioButton text="{i18n>VendorConsMaterial}" groupName="Grp" select="onChangeVenConsMat" selected="{baseModel>/EndingStckSelVenConsMat}"/>
+									<RadioButton text="{i18n>OwnStockMaterial}" groupName="Grp" select="onChangeOwnStkMat" selected="{baseModel>/EndingStckSelchngeOwnStkMat}"/>
+									<Label/>
+									<RadioButton text="{i18n>AllMaterial}" groupName="Grp" select="onChangeAllMat" selected="{baseModel>/EndingStckSelAllMaterial}"/>
+									<Label/>
+									<CheckBox text="{i18n>ExcludeFDAStock}" select="onChangeExcFDAStck" selected="{baseModel>/excludeFda}"/>
+									<CheckBox text="{i18n>SerialNo}" select="oncheckSelect" selected="{baseModel>/serialNo}"/>
 									<core:Title/>
 									<!--Material Grp4-->
 									<!--Material-->
@@ -250,51 +207,45 @@
 									<Label text="By Month/ By Date" design="Bold" required="true"></Label>
 									<!--End - STRY0019044-->
 									<VBox>
-										<RadioButton text="{i18n>ByMonth}" groupName="Grp2" select="onChangeEndingPer" selected="{baseModel>/EndingStckSelEndPrd}"></RadioButton>
+										<RadioButton text="{i18n>ByMonth}" groupName="Grp2" select="onChangeEndingPer" selected="{baseModel>/EndingStckSelEndPrd}"/>
 										<!--<Label text="Date" design="Bold"></Label>-->
 										<DatePicker id="DP10" value="{baseModel>/month}" displayFormat="MM-y" change="onChangeMonth" class="sapUiSmallMarginBottom"/>
 									</VBox>
-									<Label></Label>
+									<Label/>
 									<VBox>
-										<RadioButton text="{i18n>ByasatDate}" groupName="Grp2" select="onChangeAsDate" selected="{baseModel>/EndingStckSelByAsDte}"></RadioButton>
+										<RadioButton text="{i18n>ByasatDate}" groupName="Grp2" select="onChangeAsDate" selected="{baseModel>/EndingStckSelByAsDte}"/>
 										<DatePicker value="{baseModel>/endingStockDateFrom}" placeholder="{i18n>From}" class="sapUiSmallMarginBottom" change="onChangeFromDate"/>
 									</VBox>
 									<!--date-->
 									<!--<DatePicker value="{baseModel>/endingStockDateTo}" placeholder="{i18n>To}" class="sapUiSmallMarginBottom" change="onChangeToDate"/>-->
 									<!--<Label text="Month" design="Bold"/>-->
-									<Label></Label>
-									<Button text="{i18n>Search}" icon="sap-icon://search" press="endingStockSearch" type="Accept"></Button>
-									<Button text="{i18n>Clear}" icon="sap-icon://refresh" press="clearTabData" type="Reject"></Button>
+									<Label/>
+									<Button text="{i18n>Search}" icon="sap-icon://search" press="endingStockSearch" type="Accept"/>
+									<Button text="{i18n>Clear}" icon="sap-icon://refresh" press="clearTabData" type="Reject"/>
 								</f:content>
 							</f:SimpleForm>
-							<Table alternateRowColors="true" class="sapUiSizeCompact" growing="true" growingThreshold="10" growingScrollToLoad="true"
-								fixedLayout="false" inset="false" popinLayout="GridSmall" items="{endingStckTableModel>/results}" id="endingStockTableId"
-								sticky="ColumnHeaders">
+							<Table alternateRowColors="true" class="sapUiSizeCompact" growing="true" growingThreshold="10" growingScrollToLoad="true" fixedLayout="false" inset="false" popinLayout="GridSmall" items="{endingStckTableModel>/results}" id="endingStockTableId" sticky="ColumnHeaders">
 								<!--items="{endingStckTableModel>/results}"-->
 								<headerToolbar>
 									<Toolbar>
-										<Label text="{endingStckTableModel>/dataLength}" design="Bold"></Label>
-										<ToolbarSpacer></ToolbarSpacer>
-										<SearchField width="30%" search="onSearchEndingStock" liveChange="onSearchEndingStock"></SearchField>
+										<Label text="{endingStckTableModel>/dataLength}" design="Bold"/>
+										<ToolbarSpacer/>
+										<SearchField width="30%" search="onSearchEndingStock" liveChange="onSearchEndingStock"/>
 										<Button text="{i18n>Export}" icon="sap-icon://download" press="onExportEndingStock" type="Emphasized"/>
 										<Button icon="sap-icon://action-settings" press="onPressPersonalization"/>
 									</Toolbar>
-								</headerToolbar >
+								</headerToolbar>
 								<columns>
-									<Column visible="{PersonalizationModel>/personalizationData/userPersonaDto/0/status}" minScreenWidth="XSmall" demandPopin="true"
-										popinDisplay="Inline">
+									<Column visible="{PersonalizationModel>/personalizationData/userPersonaDto/0/status}" minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline">
 										<Label text="{i18n>Material}" design="Bold" tooltip="{i18n>Material}"/>
 									</Column>
-									<Column demandPopin="false" minScreenWidth="Small" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}">
+									<Column demandPopin="false" minScreenWidth="Small" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}">
 										<Label text="{i18n>OldMatNo}" design="Bold" tooltip="{i18n>OldMatNo}"/>
 									</Column>
-									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}">
+									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}">
 										<Label text="{i18n>VendorMat}" design="Bold" tooltip="{i18n>VendorMat}"/>
 									</Column>
-									<Column visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}" minScreenWidth="XSmall" demandPopin="true"
-										popinDisplay="Inline">
+									<Column visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}" minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline">
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 									</Column>
 									<Column visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}" minScreenWidth="XSmall" demandPopin="true"
@@ -321,31 +272,27 @@
 										demandPopin="true">
 										<Label text="{i18n>SalesQty}" design="Bold" tooltip="{i18n>SalesQty}"/>
 									</Column>
-									<Column demandPopin="false" minScreenWidth="Small" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}">
+									<Column demandPopin="false" minScreenWidth="Small" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}">
 										<Label text="{i18n>Value}" design="Bold" tooltip="{i18n>Value}"/>
 									</Column>
-									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}">
+									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}">
 										<Label text="{i18n>SerialNo}" design="Bold" tooltip="{i18n>SerialNo}"/>
 									</Column>
 								</columns>
 								<items>
 									<ColumnListItem type="Navigation" press="onPressDetailEndStk">
-										<Text
-											text=" {parts:[{path:'endingStckTableModel>materialNum'},{path:'endingStckTableModel>materialDesc'}],formatter:'.formatter.concatenateStrings'}"></Text>
-										<Text text="{endingStckTableModel>oldCode}"></Text>
-										<Text text="{endingStckTableModel>vendorMaterial}"></Text>
-										<Text text="{endingStckTableModel>storageLocation}"></Text>
-										<Text text="{endingStckTableModel>storageLocationDesc}"></Text>
-										<Text text="{endingStckTableModel>realBatch}"></Text>
-										<Text text="{path:'endingStckTableModel>expireDate',formatter:'.formatter.date'}"></Text>
-										<Text text="{path:'endingStckTableModel>manufDate',formatter:'.formatter.manufDate'}"></Text>
-										<Text text="{endingStckTableModel>perPack}"></Text>
-										<Text
-											text=" {parts:[{path:'endingStckTableModel>bigQuantity'},{path:'endingStckTableModel>saleUnit'}],formatter:'.formatter.concatenateStrings'}"></Text>
-										<Text text="{endingStckTableModel>value}"></Text>
-										<Text text="{endingStckTableModel>serialNum}"></Text>
+										<Text text=" {parts:[{path:'endingStckTableModel>materialNum'},{path:'endingStckTableModel&gt;materialDesc'}],formatter:'.formatter.concatenateStrings'}"/>
+										<Text text="{endingStckTableModel>oldCode}"/>
+										<Text text="{endingStckTableModel>vendorMaterial}"/>
+										<Text text="{endingStckTableModel>storageLocation}"/>
+										<Text text="{endingStckTableModel>storageLocationDesc}"/>
+										<Text text="{endingStckTableModel>realBatch}"/>
+										<Text text="{path:'endingStckTableModel>expireDate',formatter:'.formatter.date'}"/>
+										<Text text="{path:'endingStckTableModel>manufDate',formatter:'.formatter.manufDate'}"/>
+										<Text text="{endingStckTableModel>perPack}"/>
+										<Text text=" {parts:[{path:'endingStckTableModel>bigQuantity'},{path:'endingStckTableModel&gt;saleUnit'}],formatter:'.formatter.concatenateStrings'}"/>
+										<Text text="{endingStckTableModel>value}"/>
+										<Text text="{endingStckTableModel>serialNum}"/>
 									</ColumnListItem>
 								</items>
 							</Table>
@@ -354,127 +301,102 @@
 					<!--EXPIRY STOCK-->
 					<IconTabFilter key="keyExpiryStockView" text="{i18n>ExpiryStock}">
 						<OverflowToolbar class="dkshToolbarStyle customTitle">
-							<Label text="{i18n>Search}" design="Bold"></Label>
+							<Label text="{i18n>Search}" design="Bold"/>
 							<ToolbarSpacer/>
 							<Button text="{i18n>CollapseSearch}" tooltip="{i18n>CollapseSearch}" press="onPressCollapse" visible="{baseModel>/CollapseVisiblity}"/>
 							<Button text="{i18n>ExpandSearch}" tooltip="{i18n>ExpandSearch}" press="onPressOpen" visible="{baseModel>/openVisiblity}"/>
 						</OverflowToolbar>
 						<!--<core:Fragment fragmentName="incture.com.Inventory.Fragments.ExpiryStock" type="XML"/>-->
 						<VBox>
-							<f:SimpleForm minWidth="1024" layout="ResponsiveGridLayout" maxContainerCols="2" editable="true" labelSpanL="4" labelSpanM="4"
-								emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2" visible="{baseModel>/SearchVisiblity}">
+							<f:SimpleForm minWidth="1024" layout="ResponsiveGridLayout" maxContainerCols="2" editable="true" labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2" visible="{baseModel>/SearchVisiblity}">
 								<f:content>
 									<core:Title/>
-									<Label text="{i18n>Plant}" design="Bold" required="true"></Label>
-									<MultiInput value="{baseModel>/plantFrom}" placeholder="{i18n>EnterPlant}" showValueHelp="true" valueHelpRequest="valueHelpRequestPlant"
-										valueState="{baseModel>/EndingStckplantValueState}" tokenUpdate="onDeleteEndStckPlant" id="ExpStckPlantFromId"/>
-									<Label text="{i18n>SLoc}" design="Bold"></Label>
+									<Label text="{i18n>Plant}" design="Bold" required="true"/>
+									<MultiInput value="{baseModel>/plantFrom}" placeholder="{i18n>EnterPlant}" showValueHelp="true" valueHelpRequest="valueHelpRequestPlant" valueState="{baseModel>/EndingStckplantValueState}" tokenUpdate="onDeleteEndStckPlant" id="ExpStckPlantFromId"/>
+									<Label text="{i18n>SLoc}" design="Bold"/>
 									<!--<HBox alignContent="SpaceAround">-->
-									<MultiInput value="{baseModel>/SLocFrom}" tokenUpdate="onDeleteStoLoc" placeholder="{i18n>From}" showValueHelp="true"
-										valueHelpRequest="valueHelpRequestStoLoc" id="ExpStckSLocFromId"/>
-									<MultiInput value="{baseModel>/SLocTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestStoLoc"
-										enabled="{baseModel>/enableSLocTo}" id="ExpStckSLocToId" tokenUpdate="onDeleteStoLoc"/>
+									<MultiInput value="{baseModel>/SLocFrom}" tokenUpdate="onDeleteStoLoc" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestStoLoc" id="ExpStckSLocFromId"/>
+									<MultiInput value="{baseModel>/SLocTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestStoLoc" enabled="{baseModel>/enableSLocTo}" id="ExpStckSLocToId" tokenUpdate="onDeleteStoLoc"/>
 									<!--</HBox>-->
-									<Label text="{i18n>MaterialGroup}" design="Bold" required="true"></Label>
+									<Label text="{i18n>MaterialGroup}" design="Bold" required="true"/>
 									<!--<HBox alignContent="SpaceAround">-->
-									<MultiInput id="ExpStckMatGrpFromId" value="{baseModel>/matGrpFrom}" tokenUpdate="onDeleteMatGrp" placeholder="{i18n>From}"
-										showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp" valueState="{baseModel>/matGrpValueState}"/>
-									<MultiInput value="{baseModel>/matGrpTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp"
-										enabled="{baseModel>/enablematGrpTo}" id="ExpStckMatGrpToId" tokenUpdate="onDeleteMatGrp"/>
+									<MultiInput id="ExpStckMatGrpFromId" value="{baseModel>/matGrpFrom}" tokenUpdate="onDeleteMatGrp" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp" valueState="{baseModel>/matGrpValueState}"/>
+									<MultiInput value="{baseModel>/matGrpTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp" enabled="{baseModel>/enablematGrpTo}" id="ExpStckMatGrpToId" tokenUpdate="onDeleteMatGrp"/>
 									<!--</HBox>-->
-									<Label text="{i18n>VendorMat}" design="Bold"></Label>
-									<MultiInput id="ExpStckVenMatFromId" placeholder="{i18n>From}" showValueHelp="false" tokenUpdate="onDeleteVenMat"
-										change="onChangeVenMatFrom" value="{baseModel>/vendMatFrom}"/>
-									<MultiInput id="ExpStckVenMatToId" placeholder="{i18n>To}" showValueHelp="false" tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom"
-										enabled="{baseModel>/enableVendorMat}" value="{baseModel>/vendMatTo}"/>
-									<Label></Label>
-									<RadioButton text="{i18n>SalesUnit}" groupName="expiryStockGrp" select="onChangeSalesUnit" selected="{baseModel>/salesUnit}"></RadioButton>
-									<RadioButton text="{i18n>BaseUnit}" groupName="expiryStockGrp" select="onChangeBaseUnit" selected="{baseModel>/baseUnit}"></RadioButton>
+									<Label text="{i18n>VendorMat}" design="Bold"/>
+									<MultiInput id="ExpStckVenMatFromId" placeholder="{i18n>From}" showValueHelp="false" tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom" value="{baseModel>/vendMatFrom}"/>
+									<MultiInput id="ExpStckVenMatToId" placeholder="{i18n>To}" showValueHelp="false" tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom" enabled="{baseModel>/enableVendorMat}" value="{baseModel>/vendMatTo}"/>
+									<Label/>
+									<RadioButton text="{i18n>SalesUnit}" groupName="expiryStockGrp" select="onChangeSalesUnit" selected="{baseModel>/salesUnit}"/>
+									<RadioButton text="{i18n>BaseUnit}" groupName="expiryStockGrp" select="onChangeBaseUnit" selected="{baseModel>/baseUnit}"/>
 									<core:Title/>
-									<Label text="{i18n>MaterialGroup4}" design="Bold"></Label>
+									<Label text="{i18n>MaterialGroup4}" design="Bold"/>
 									<!--<HBox alignContent="SpaceAround">-->
-									<MultiInput id="ExpStckMatGrp4FromId" value="{baseModel>/matGrp4From}" placeholder="{i18n>From}" showValueHelp="true"
-										valueHelpRequest="valueHelpRequestMaterialGrp4" tokenUpdate="onDeleteMatGrp4"/>
-									<MultiInput id="ExpStckMatGrp4ToId" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp4"
-										enabled="{baseModel>/enablematGrp4To}" change="onMaterialToChange" tokenUpdate="onDeleteMatGrp4" value="{baseModel>/matGrp4To}"/>
+									<MultiInput id="ExpStckMatGrp4FromId" value="{baseModel>/matGrp4From}" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp4" tokenUpdate="onDeleteMatGrp4"/>
+									<MultiInput id="ExpStckMatGrp4ToId" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp4" enabled="{baseModel>/enablematGrp4To}" change="onMaterialToChange" tokenUpdate="onDeleteMatGrp4" value="{baseModel>/matGrp4To}"/>
 									<!--</HBox>-->
-									<Label text="{i18n>Material}" design="Bold"></Label>
+									<Label text="{i18n>Material}" design="Bold"/>
 									<!--<HBox alignContent="SpaceAround">-->
-									<MultiInput placeholder="{i18n>From}" showValueHelp="false" id="ExpStckMatFromId" tokenUpdate="onMaterialFromDelete"
-										change="onMaterialFromChange" value="{baseModel>/matFrom}"/>
-									<MultiInput placeholder="{i18n>To}" showValueHelp="false" id="ExpStckMatToId" enabled="{baseModel>/enablematTo}"
-										change="onMaterialFromChange" tokenUpdate="onMaterialFromDelete" value="{baseModel>/matTo}"/>
+									<MultiInput placeholder="{i18n>From}" showValueHelp="false" id="ExpStckMatFromId" tokenUpdate="onMaterialFromDelete" change="onMaterialFromChange" value="{baseModel>/matFrom}"/>
+									<MultiInput placeholder="{i18n>To}" showValueHelp="false" id="ExpStckMatToId" enabled="{baseModel>/enablematTo}" change="onMaterialFromChange" tokenUpdate="onMaterialFromDelete" value="{baseModel>/matTo}"/>
 									<!--</HBox>-->
-									<Label></Label>
-									<CheckBox text="{i18n>Unrestricted}" select="onChangeUnrestricted" selected="{baseModel>/unrestricted}"></CheckBox>
-									<CheckBox text="{i18n>QI}" select="onChangeInspection" selected="{baseModel>/QI}"></CheckBox>
-									<Label></Label>
-									<CheckBox text="{i18n>Blocked}" select="onChangeBlocked" selected="{baseModel>/blocked}"></CheckBox>
-									<CheckBox text="{i18n>ExcludeFDAStock}" select="onChangeExcFDAStck" selected="{baseModel>/excludeFda}"></CheckBox>
-									<Label></Label>
-									<CheckBox text="{i18n>SerialNo}" select="oncheckSelect" selected="{baseModel>/serialNo}"></CheckBox>
-									<Label></Label>
-									<Button text="{i18n>Search}" icon="sap-icon://search" press="expiryStockSearch" type="Accept"></Button>
-									<Button text="{i18n>Clear}" icon="sap-icon://refresh" press="clearTabData" type="Reject"></Button>
+									<Label/>
+									<CheckBox text="{i18n>Unrestricted}" select="onChangeUnrestricted" selected="{baseModel>/unrestricted}"/>
+									<CheckBox text="{i18n>QI}" select="onChangeInspection" selected="{baseModel>/QI}"/>
+									<Label/>
+									<CheckBox text="{i18n>Blocked}" select="onChangeBlocked" selected="{baseModel>/blocked}"/>
+									<CheckBox text="{i18n>ExcludeFDAStock}" select="onChangeExcFDAStck" selected="{baseModel>/excludeFda}"/>
+									<Label/>
+									<CheckBox text="{i18n>SerialNo}" select="oncheckSelect" selected="{baseModel>/serialNo}"/>
+									<Label/>
+									<Button text="{i18n>Search}" icon="sap-icon://search" press="expiryStockSearch" type="Accept"/>
+									<Button text="{i18n>Clear}" icon="sap-icon://refresh" press="clearTabData" type="Reject"/>
 								</f:content>
 							</f:SimpleForm>
-							<Table alternateRowColors="true" class="sapUiSizeCompact" items="{expiryStckTableModel>/results}" popinLayout="GridSmall" growing="true"
-								growingThreshold="10" growingScrollToLoad="true" id="expiryStockTableId" sticky="ColumnHeaders">
+							<Table alternateRowColors="true" class="sapUiSizeCompact" items="{expiryStckTableModel>/results}" popinLayout="GridSmall" growing="true" growingThreshold="10" growingScrollToLoad="true" id="expiryStockTableId" sticky="ColumnHeaders">
 								<headerToolbar>
 									<Toolbar>
-										<Label text="{expiryStckTableModel>/dataLength}" design="Bold"></Label>
-										<ToolbarSpacer></ToolbarSpacer>
-										<SearchField width="30%" search="onSearchExpiryStock" liveChange="onSearchExpiryStock"></SearchField>
+										<Label text="{expiryStckTableModel>/dataLength}" design="Bold"/>
+										<ToolbarSpacer/>
+										<SearchField width="30%" search="onSearchExpiryStock" liveChange="onSearchExpiryStock"/>
 										<Button text="{i18n>Export}" icon="sap-icon://download" press="onExportExpiryStock" type="Emphasized"/>
 										<Button icon="sap-icon://action-settings" press="onPressPersonalization"/>
 									</Toolbar>
 								</headerToolbar>
 								<columns>
-									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/0/status}">
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/0/status}">
 										<Label text="{i18n>MaterialGroup}" design="Bold" tooltip="{i18n>MaterialGroup}"/>
 									</Column>
-									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}">
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}">
 										<Label text="{i18n>MaterialGroup4}" design="Bold" tooltip="{i18n>MaterialGroup4}"/>
 									</Column>
-									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}">
+									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}">
 										<Label text="{i18n>Material}" design="Bold" tooltip="{i18n>Material}"/>
 									</Column>
-									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}">
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}">
 										<Label text="{i18n>VendorMat}" design="Bold" tooltip="{i18n>VendorMat}"/>
 									</Column>
-									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}">
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}">
 										<Label text="{i18n>Batch}" design="Bold" tooltip="{i18n>Batch}"/>
 									</Column>
-									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}">
+									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}">
 										<Label text="{i18n>LongBatch}" design="Bold" tooltip="{i18n>LongBatch}"/>
 									</Column>
-									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/6/status}">
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/6/status}">
 										<Label text="{i18n>Value}" design="Bold" tooltip="{i18n>Value}"/>
 									</Column>
-									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/7/status}">
+									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/7/status}">
 										<Label text="{i18n>RSLDays}" design="Bold" tooltip="{i18n>RSLDays}"/>
 									</Column>
-									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}">
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}">
 										<Label text="{i18n>ExpDate}" design="Bold" tooltip="{i18n>ExpDate}"/></Column>
-									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}">
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}">
 										<Label text="{i18n>ManuDate}" design="Bold" tooltip="{i18n>ManuDate}"/>
 									</Column>
-									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}">
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}">
 										<Label text="{i18n>Unit}" design="Bold" tooltip="{i18n>Unit}"/>
 									</Column>
-									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
+									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 									</Column>
 									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
@@ -516,31 +438,26 @@
 								</columns>
 								<items>
 									<ColumnListItem type="Navigation" press="onPressDetailExpStk">
-										<Text
-											text=" {parts:[{path:'expiryStckTableModel>materialGroup'},{path:'expiryStckTableModel>matGroupDesc'}],formatter:'.formatter.concatenateStrings'}"
-											wrapping="true"></Text>
-										<Text
-											text=" {parts:[{path:'expiryStckTableModel>materialGroup4'},{path:'expiryStckTableModel>matGroup4Desc'}],formatter:'.formatter.concatenateStrings'}"
-											wrapping="true"></Text>
-										<Text
-											text=" {parts:[{path:'expiryStckTableModel>materialNum'},{path:'expiryStckTableModel>materialDesc'}],formatter:'.formatter.concatenateStrings'}"></Text>
-										<Text text="{expiryStckTableModel>prodInsMemo}"></Text>
-										<Text text="{expiryStckTableModel>batch}"></Text>
+										<Text text=" {parts:[{path:'expiryStckTableModel>materialGroup'},{path:'expiryStckTableModel&gt;matGroupDesc'}],formatter:'.formatter.concatenateStrings'}" wrapping="true"/>
+										<Text text=" {parts:[{path:'expiryStckTableModel>materialGroup4'},{path:'expiryStckTableModel&gt;matGroup4Desc'}],formatter:'.formatter.concatenateStrings'}" wrapping="true"/>
+										<Text text=" {parts:[{path:'expiryStckTableModel>materialNum'},{path:'expiryStckTableModel&gt;materialDesc'}],formatter:'.formatter.concatenateStrings'}"/>
+										<Text text="{expiryStckTableModel>prodInsMemo}"/>
+										<Text text="{expiryStckTableModel>batch}"/>
 										<Text text="{expiryStckTableModel>characteristicValue}"/>
-										<Text text="{expiryStckTableModel>rate}"></Text>
+										<Text text="{expiryStckTableModel>rate}"/>
 										<Text text="{expiryStckTableModel>rslDays}"/>
-										<Text text="{path:'expiryStckTableModel>shelflLifeDate',formatter:'.formatter.date'}"></Text>
-										<Text text="{path:'expiryStckTableModel>manufDate',formatter:'.formatter.manufDate'}"></Text>
-										<Text text="{expiryStckTableModel>baseUOM}"></Text>
+										<Text text="{path:'expiryStckTableModel>shelflLifeDate',formatter:'.formatter.date'}"/>
+										<Text text="{path:'expiryStckTableModel>manufDate',formatter:'.formatter.manufDate'}"/>
+										<Text text="{expiryStckTableModel>baseUOM}"/>
 										<Text text="{expiryStckTableModel>storageLocation}"/>
 										<Text text="{expiryStckTableModel>storageLocationdesc}"/>
-										<Text text="{expiryStckTableModel>expired}"></Text>
-										<Text text="{expiryStckTableModel>expired3}"></Text>
+										<Text text="{expiryStckTableModel>expired}"/>
+										<Text text="{expiryStckTableModel>expired3}"/>
 										<Text text="{expiryStckTableModel>expired6}"/>
-										<Text text="{expiryStckTableModel>expired9}"></Text>
-										<Text text="{expiryStckTableModel>expired12}"></Text>
-										<Text text="{expiryStckTableModel>expired15}"></Text>
-										<Text text="{expiryStckTableModel>expired18}"></Text>
+										<Text text="{expiryStckTableModel>expired9}"/>
+										<Text text="{expiryStckTableModel>expired12}"/>
+										<Text text="{expiryStckTableModel>expired15}"/>
+										<Text text="{expiryStckTableModel>expired18}"/>
 										<Text text="{expiryStckTableModel>serialNum}"/>
 									</ColumnListItem>
 								</items>
@@ -551,102 +468,79 @@
 					<IconTabFilter key="keyMat.Movement" text="{i18n>MaterialMovement}">
 						<!--<core:Fragment fragmentName="incture.com.Inventory.Fragments.MatMov" type="XML"/>-->
 						<OverflowToolbar class="dkshToolbarStyle customTitle">
-							<Label text="{i18n>Search}" design="Bold"></Label>
+							<Label text="{i18n>Search}" design="Bold"/>
 							<ToolbarSpacer/>
 							<Button text="{i18n>CollapseSearch}" tooltip="{i18n>CollapseSearch}" press="onPressCollapse" visible="{baseModel>/CollapseVisiblity}"/>
 							<Button text="{i18n>ExpandSearch}" tooltip="{i18n>ExpandSearch}" press="onPressOpen" visible="{baseModel>/openVisiblity}"/>
 						</OverflowToolbar>
 						<VBox>
-							<f:SimpleForm minWidth="1024" layout="ResponsiveGridLayout" maxContainerCols="2" editable="true" labelSpanL="4" labelSpanM="4"
-								emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2" visible="{baseModel>/SearchVisiblity}">
+							<f:SimpleForm minWidth="1024" layout="ResponsiveGridLayout" maxContainerCols="2" editable="true" labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2" visible="{baseModel>/SearchVisiblity}">
 								<f:content>
 									<core:Title/>
-									<Label text="{i18n>Plant}" design="Bold" required="true"></Label>
-									<MultiInput value="{baseModel>/plantFrom}" placeholder="{i18n>EnterPlant}" showValueHelp="true" valueHelpRequest="valueHelpRequestPlant"
-										valueState="{baseModel>/EndingStckplantValueState}" tokenUpdate="onDeleteEndStckPlant" id="MatMovPlantFromId"/>
-									<Label text="{i18n>SLoc}" design="Bold"></Label>
-									<MultiInput value="{baseModel>/SLocFrom}" tokenUpdate="onDeleteStoLoc" placeholder="{i18n>From}" showValueHelp="true"
-										valueHelpRequest="valueHelpRequestStoLoc" id="MatMovSLocFromId" valueState="{baseModel>/EndingStckSLocValueState}"/>
-									<Label text="{i18n>MaterialGroup}" design="Bold" required="true"></Label>
-									<MultiInput id="MatMovMatGrpFromId" value="{baseModel>/matGrpFrom}" tokenUpdate="onDeleteMatGrp" placeholder="{i18n>From}"
-										showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp"/>
-									<Label text="{i18n>Batch}" design="Bold"></Label>
-									<MultiInput value="{baseModel>/batchFrom}" placeholder="{i18n>EnterBatch}" showValueHelp="false" id="MatMovBatchFromId"
-										change="onChangeBatch" tokenUpdate="onDeleteBatch"/>
-									<Label text="{i18n>VendorMat}" design="Bold"></Label>
-									<MultiInput id="MatMovVenMatFromId" placeholder="{i18n>From}" showValueHelp="false" tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom"
-										value="{baseModel>/vendMatFrom}"/>
-									<MultiInput id="MatMovkVenMatToId" placeholder="{i18n>To}" showValueHelp="false" tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom"
-										enabled="{baseModel>/enableVendorMat}" value="{baseModel>/vendMatTo}"/>
+									<Label text="{i18n>Plant}" design="Bold" required="true"/>
+									<MultiInput value="{baseModel>/plantFrom}" placeholder="{i18n>EnterPlant}" showValueHelp="true" valueHelpRequest="valueHelpRequestPlant" valueState="{baseModel>/EndingStckplantValueState}" tokenUpdate="onDeleteEndStckPlant" id="MatMovPlantFromId"/>
+									<Label text="{i18n>SLoc}" design="Bold"/>
+									<MultiInput value="{baseModel>/SLocFrom}" tokenUpdate="onDeleteStoLoc" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestStoLoc" id="MatMovSLocFromId" valueState="{baseModel>/EndingStckSLocValueState}"/>
+									<Label text="{i18n>MaterialGroup}" design="Bold" required="true"/>
+									<MultiInput id="MatMovMatGrpFromId" value="{baseModel>/matGrpFrom}" tokenUpdate="onDeleteMatGrp" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp"/>
+									<Label text="{i18n>Batch}" design="Bold"/>
+									<MultiInput value="{baseModel>/batchFrom}" placeholder="{i18n>EnterBatch}" showValueHelp="false" id="MatMovBatchFromId" change="onChangeBatch" tokenUpdate="onDeleteBatch"/>
+									<Label text="{i18n>VendorMat}" design="Bold"/>
+									<MultiInput id="MatMovVenMatFromId" placeholder="{i18n>From}" showValueHelp="false" tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom" value="{baseModel>/vendMatFrom}"/>
+									<MultiInput id="MatMovkVenMatToId" placeholder="{i18n>To}" showValueHelp="false" tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom" enabled="{baseModel>/enableVendorMat}" value="{baseModel>/vendMatTo}"/>
 									<core:Title/>
-									<Label text="{i18n>MaterialGroup4}" design="Bold"></Label>
-									<MultiInput id="MatMovMatGrp4FromId" value="{baseModel>/matGrp4From}" placeholder="{i18n>From}" showValueHelp="true"
-										valueHelpRequest="valueHelpRequestMaterialGrp4" tokenUpdate="onDeleteMatGrp4"/>
-									<Label text="{i18n>Material}" design="Bold"></Label>
-									<MultiInput placeholder="" showValueHelp="false" id="MatMovMatFromId" tokenUpdate="onMaterialFromDelete" change="onMaterialFromChange"
-										value="{baseModel>/matFrom}"/>
-									<Label text="{i18n>PostingDate}" design="Bold" required="true"></Label>
-									<DatePicker placeholder="{i18n>From}" change="onChangePostingDateFrom" valueState="{baseModel>/postingDateValueStateFrom}"
-										value="{baseModel>/postingDateFrom}"/>
-									<DatePicker placeholder="{i18n>To}" change="onChangePostingDateTo" valueState="{baseModel>/postingDateValueStateTo}"
-										value="{baseModel>/postingDateTo}"/>
-									<Label text="{i18n>MovementType}" design="Bold"></Label>
-									<MultiInput value="{baseModel>/movementTypeFrom}" placeholder="{i18n>EnterMovementType}" change="onChangeMatMov"
-										tokenUpdate="onDeleteMatMov" id="matMov" showValueHelp="false"/>
-									<Label text="{i18n>MaterialDocument}" design="Bold"></Label>
-									<MultiInput value="{baseModel>/matDocFrom}" placeholder="{i18n>EnterMaterialDocument}" showValueHelp="false" id="MatMovMatDocFromId"
-										change="onChangeMatDoc" tokenUpdate="onDeleteMatDoc"/>
-									<Label></Label>
-									<CheckBox text="{i18n>SerialNo}" select="oncheckSelect" selected="{baseModel>/serialNo}"></CheckBox>
-									<Label></Label>
-									<Button text="{i18n>Search}" icon="sap-icon://search" press="matMovSearch" type="Accept"></Button>
-									<Button text="{i18n>Clear}" icon="sap-icon://refresh" press="clearTabData" type="Reject"></Button>
+									<Label text="{i18n>MaterialGroup4}" design="Bold"/>
+									<MultiInput id="MatMovMatGrp4FromId" value="{baseModel>/matGrp4From}" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp4" tokenUpdate="onDeleteMatGrp4"/>
+									<Label text="{i18n>Material}" design="Bold"/>
+									<MultiInput placeholder="" showValueHelp="false" id="MatMovMatFromId" tokenUpdate="onMaterialFromDelete" change="onMaterialFromChange" value="{baseModel>/matFrom}"/>
+									<Label text="{i18n>PostingDate}" design="Bold" required="true"/>
+									<DatePicker placeholder="{i18n>From}" change="onChangePostingDateFrom" valueState="{baseModel>/postingDateValueStateFrom}" value="{baseModel>/postingDateFrom}" enabled="true" valueHelpOnly="true"/>
+									<DatePicker placeholder="{i18n>To}" change="onChangePostingDateTo" valueState="{baseModel>/postingDateValueStateTo}" value="{baseModel>/postingDateTo}" enabled="true" valueHelpOnly="true"/>
+									<Label text="{i18n>MovementType}" design="Bold"/>
+									<MultiInput value="{baseModel>/movementTypeFrom}" placeholder="{i18n>EnterMovementType}" change="onChangeMatMov" tokenUpdate="onDeleteMatMov" id="matMov" showValueHelp="false"/>
+									<Label text="{i18n>MaterialDocument}" design="Bold"/>
+									<MultiInput value="{baseModel>/matDocFrom}" placeholder="{i18n>EnterMaterialDocument}" showValueHelp="false" id="MatMovMatDocFromId" change="onChangeMatDoc" tokenUpdate="onDeleteMatDoc"/>
+									<Label/>
+									<CheckBox text="{i18n>SerialNo}" select="oncheckSelect" selected="{baseModel>/serialNo}"/>
+									<Label/>
+									<Button text="{i18n>Search}" icon="sap-icon://search" press="matMovSearch" type="Accept"/>
+									<Button text="{i18n>Clear}" icon="sap-icon://refresh" press="clearTabData" type="Reject"/>
 								</f:content>
 							</f:SimpleForm>
-							<Table alternateRowColors="true" class="sapUiSizeCompact" popinLayout="GridSmall" items="{mavMovTableModel>/results}" growing="true"
-								growingThreshold="10" growingScrollToLoad="true" id="matMovTableId" sticky="ColumnHeaders">
+							<Table alternateRowColors="true" class="sapUiSizeCompact" popinLayout="GridSmall" items="{mavMovTableModel>/results}" growing="true" growingThreshold="10" growingScrollToLoad="true" id="matMovTableId" sticky="ColumnHeaders">
 								<headerToolbar>
 									<Toolbar>
-										<Label text="{mavMovTableModel>/dataLength}" design="Bold"></Label>
-										<ToolbarSpacer></ToolbarSpacer>
-										<SearchField width="30%" search="onSearchMatMov" liveChange="onSearchMatMov"></SearchField>
+										<Label text="{mavMovTableModel>/dataLength}" design="Bold"/>
+										<ToolbarSpacer/>
+										<SearchField width="30%" search="onSearchMatMov" liveChange="onSearchMatMov"/>
 										<Button text="{i18n>Export}" icon="sap-icon://download" press="onExportMatMov" type="Emphasized"/>
 										<Button icon="sap-icon://action-settings" press="onPressPersonalization"/>
 									</Toolbar>
 								</headerToolbar>
 								<columns>
-									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/0/status}">
+									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/0/status}">
 										<Label text="{i18n>MatDoc}" design="Bold" tooltip="{i18n>MatDoc}"/>
 									</Column>
-									<Column minScreenWidth="Desktop" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}">
+									<Column minScreenWidth="Desktop" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}">
 										<Label text="{i18n>Date}" design="Bold" tooltip="{i18n>Date}"/>
 									</Column>
-									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}">
+									<Column minScreenWidth="XSmall" demandPopin="true" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}">
 										<Label text="{i18n>Material}" design="Bold" tooltip="{i18n>Material}"/>
 									</Column>
-									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}">
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}">
 										<Label text="{i18n>VendorMat}" design="Bold" tooltip="{i18n>VendorMat}"/>
 									</Column>
-									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}">
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}">
 										<Label text="{i18n>MaterialGroup}" design="Bold" tooltip="{i18n>MaterialGroup}"/>
 									</Column>
-									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}">
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}">
 										<Label text="{i18n>MaterialGroup4}" design="Bold" tooltip="{i18n>MaterialGroup4}"/>
 									</Column>
-									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/6/status}">
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/6/status}">
 										<Label text="{i18n>ExpDate} " design="Bold" tooltip="{i18n>ExpDate}"/></Column>
-									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/7/status}">
+									<Column minScreenWidth="Desktop" demandPopin="true" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/7/status}">
 										<Label text="{i18n>RealBatch}" design="Bold" tooltip="{i18n>RealBatch}"/></Column>
-									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
-										visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}">
+									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}">
 										<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 									</Column>
 									<Column minScreenWidth="Small" demandPopin="false" popinDisplay="Inline"
@@ -696,39 +590,29 @@
 								</columns>
 								<items>
 									<ColumnListItem type="Navigation" press="onPressDetailMatMov">
-										<Text text="{mavMovTableModel>materialDocument}"></Text>
-										<Text text="{path:'mavMovTableModel>postingDate',formatter:'.formatter.date'}"></Text>
-										<Text
-											text=" {parts:[{path:'mavMovTableModel>materialNum'},{path:'mavMovTableModel>materialDesc'}],formatter:'.formatter.concatenateStrings'}"
-											wrapping="true"></Text>
-										<Text text="{mavMovTableModel>vendorMaterial}"></Text>
-										<Text
-											text=" {parts:[{path:'mavMovTableModel>materialGroup'},{path:'mavMovTableModel>materialGroupDesc'}],formatter:'.formatter.concatenateStrings'}"
-											wrapping="true"></Text>
-										<Text
-											text=" {parts:[{path:'mavMovTableModel>materialGroup4'},{path:'mavMovTableModel>materialGroup4Desc'}],formatter:'.formatter.concatenateStrings'}"
-											wrapping="true"></Text>
-										<Text text="{path:'mavMovTableModel>shelflLifeDate',formatter:'.formatter.date'}"></Text>
-										<Text text="{mavMovTableModel>batchNumber}"></Text>
-										<Text text="{mavMovTableModel>storageLocation}"></Text>
-										<Text text="{mavMovTableModel>Storelocdesc}"></Text>
-										<Text text="{mavMovTableModel>receivingStorageLocation}"></Text>
-										<Text text="{mavMovTableModel>packSize}"></Text>
-										<Text text=" {parts:[{path:'mavMovTableModel>quantity'},{path:'mavMovTableModel>baseUnit'}],formatter:'.formatter.concatenateStrings'}"
-											wrapping="true"></Text>
+										<Text text="{mavMovTableModel>materialDocument}"/>
+										<Text text="{path:'mavMovTableModel>postingDate',formatter:'.formatter.date'}"/>
+										<Text text=" {parts:[{path:'mavMovTableModel>materialNum'},{path:'mavMovTableModel&gt;materialDesc'}],formatter:'.formatter.concatenateStrings'}" wrapping="true"/>
+										<Text text="{mavMovTableModel>vendorMaterial}"/>
+										<Text text=" {parts:[{path:'mavMovTableModel>materialGroup'},{path:'mavMovTableModel&gt;materialGroupDesc'}],formatter:'.formatter.concatenateStrings'}" wrapping="true"/>
+										<Text text=" {parts:[{path:'mavMovTableModel>materialGroup4'},{path:'mavMovTableModel&gt;materialGroup4Desc'}],formatter:'.formatter.concatenateStrings'}" wrapping="true"/>
+										<Text text="{path:'mavMovTableModel>shelflLifeDate',formatter:'.formatter.date'}"/>
+										<Text text="{mavMovTableModel>batchNumber}"/>
+										<Text text="{mavMovTableModel>storageLocation}"/>
+										<Text text="{mavMovTableModel>Storelocdesc}"/>
+										<Text text="{mavMovTableModel>receivingStorageLocation}"/>
+										<Text text="{mavMovTableModel>packSize}"/>
+										<Text text=" {parts:[{path:'mavMovTableModel>quantity'},{path:'mavMovTableModel&gt;baseUnit'}],formatter:'.formatter.concatenateStrings'}" wrapping="true"/>
 										<!--<Text text="{mavMovTableModel>baseUnit}"></Text>-->
-										<Text text=" {parts:[{path:'mavMovTableModel>bigQuantity'},{path:'mavMovTableModel>saleUnit'}],formatter:'.formatter.concatenateStrings'}"
-											wrapping="true"></Text>
+										<Text text=" {parts:[{path:'mavMovTableModel>bigQuantity'},{path:'mavMovTableModel&gt;saleUnit'}],formatter:'.formatter.concatenateStrings'}" wrapping="true"/>
 										<!--<Text text="{mavMovTableModel>}"></Text>-->
-										<Text text="{mavMovTableModel>splStockIndicator}"></Text>
+										<Text text="{mavMovTableModel>splStockIndicator}"/>
 										<!--<Text text="{mavMovTableModel>}"></Text>-->
-										<Text
-											text=" {parts:[{path:'mavMovTableModel>movementType'},{path:'mavMovTableModel>textStockType'}],formatter:'.formatter.concatenateStrings'}"
-											wrapping="true"></Text>
+										<Text text=" {parts:[{path:'mavMovTableModel>movementType'},{path:'mavMovTableModel&gt;textStockType'}],formatter:'.formatter.concatenateStrings'}" wrapping="true"/>
 										<!--<Text text="{mavMovTableModel>textStockType}"></Text>-->
-										<Text text="{mavMovTableModel>referenceDocNum}"></Text>
-										<Text text="{mavMovTableModel>headerNote}"></Text>
-										<Text text="{mavMovTableModel>serialNum}"></Text>
+										<Text text="{mavMovTableModel>referenceDocNum}"/>
+										<Text text="{mavMovTableModel>headerNote}"/>
+										<Text text="{mavMovTableModel>serialNum}"/>
 									</ColumnListItem>
 								</items>
 							</Table>
@@ -739,88 +623,72 @@
 					<IconTabFilter key="keyStkLotView" text="{i18n>StockLotandControlList}">
 						<!-- <core:Fragment fragmentName="incture.com.Inventory.Fragments.StockLot" type="XML"/>-->
 						<OverflowToolbar class="dkshToolbarStyle customTitle">
-							<Label text="{i18n>Search}" design="Bold"></Label>
+							<Label text="{i18n>Search}" design="Bold"/>
 							<ToolbarSpacer/>
 							<Button text="{i18n>CollapseSearch}" tooltip="{i18n>CollapseSearch}" press="onPressCollapse" visible="{baseModel>/CollapseVisiblity}"/>
 							<Button text="{i18n>ExpandSearch}" tooltip="{i18n>ExpandSearch}" press="onPressOpen" visible="{baseModel>/openVisiblity}"/>
 						</OverflowToolbar>
 						<VBox>
-							<f:SimpleForm minWidth="1024" layout="ResponsiveGridLayout" maxContainerCols="2" editable="true" labelSpanL="4" labelSpanM="4"
-								emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2" visible="{baseModel>/SearchVisiblity}">
+							<f:SimpleForm minWidth="1024" layout="ResponsiveGridLayout" maxContainerCols="2" editable="true" labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2" visible="{baseModel>/SearchVisiblity}">
 								<f:content>
 									<core:Title/>
-									<Label text="{i18n>Plant}" design="Bold" required="true"></Label>
-									<MultiInput id="StockLotPlantFromId" value="{baseModel>/plantFrom}" placeholder="{i18n>From}" showValueHelp="true"
-										valueHelpRequest="valueHelpRequestPlant" valueState="{baseModel>/StockLotplantValueState}" tokenUpdate="onDeleteStockLotPlant"></MultiInput>
-									<MultiInput id="StockLotPlantToId" value="{baseModel>/plantTo}" placeholder="{i18n>To}" showValueHelp="true"
-										valueHelpRequest="valueHelpRequestPlant" enabled="{baseModel>/enablePlantTo}" tokenUpdate="onDeleteStockLotPlant"></MultiInput>
-									<Label text="{i18n>SLoc}" design="Bold"></Label>
-									<MultiInput value="{baseModel>/SLocFrom}" tokenUpdate="onDeleteStoLoc" placeholder="{i18n>From}" showValueHelp="true"
-										valueHelpRequest="valueHelpRequestStoLoc" id="StockLotSlocFromId"/>
-									<MultiInput value="{baseModel>/SLocTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestStoLoc"
-										enabled="{baseModel>/enableSLocTo}" id="StockLotSlocToId" tokenUpdate="onDeleteStoLoc"/>
-									<Label text="{i18n>MaterialGroup}" design="Bold" required="true"></Label>
-									<MultiInput id="StockLotMatGrpFromId" value="{baseModel>/matGrpFrom}" tokenUpdate="onDeleteMatGrp" placeholder="{i18n>From}"
-										showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp" valueState="{baseModel>/matGrpValueState}"/>
-									<MultiInput value="{baseModel>/matGrpTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp"
-										enabled="{baseModel>/enablematGrpTo}" id="StockLotMatGrpToId" tokenUpdate="onDeleteMatGrp"/>
+									<Label text="{i18n>Plant}" design="Bold" required="true"/>
+									<MultiInput id="StockLotPlantFromId" value="{baseModel>/plantFrom}" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestPlant" valueState="{baseModel>/StockLotplantValueState}" tokenUpdate="onDeleteStockLotPlant"/>
+									<MultiInput id="StockLotPlantToId" value="{baseModel>/plantTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestPlant" enabled="{baseModel>/enablePlantTo}" tokenUpdate="onDeleteStockLotPlant"/>
+									<Label text="{i18n>SLoc}" design="Bold"/>
+									<MultiInput value="{baseModel>/SLocFrom}" tokenUpdate="onDeleteStoLoc" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestStoLoc" id="StockLotSlocFromId"/>
+									<MultiInput value="{baseModel>/SLocTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestStoLoc" enabled="{baseModel>/enableSLocTo}" id="StockLotSlocToId" tokenUpdate="onDeleteStoLoc"/>
+									<Label text="{i18n>MaterialGroup}" design="Bold" required="true"/>
+									<MultiInput id="StockLotMatGrpFromId" value="{baseModel>/matGrpFrom}" tokenUpdate="onDeleteMatGrp" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp" valueState="{baseModel>/matGrpValueState}"/>
+									<MultiInput value="{baseModel>/matGrpTo}" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp" enabled="{baseModel>/enablematGrpTo}" id="StockLotMatGrpToId" tokenUpdate="onDeleteMatGrp"/>
 									<!--<Label text="Batch" design="Bold"></Label>
 <MultiInput value="" placeholder="Enter Batch" showValueHelp="false" id="stockLotBatchFromId" change="onChangeBatchStkLot"
 tokenUpdate="onDeleteBatchStkLot"/>-->
-									<Label text="{i18n>ExpiryDate}" design="Bold"></Label>
+									<Label text="{i18n>ExpiryDate}" design="Bold"/>
 									<DatePicker placeholder="{i18n>From}" change="handleChangeExpDateFrom" class="sapUiSmallMarginBottom" value="{baseModel>/expDateFrom}"/>
 									<DatePicker placeholder="{i18n>To}" change="handleChangeExpDateTo" class="sapUiSmallMarginBottom" value="{baseModel>/expDateTo}"/>
-									<Label></Label>
-									<RadioButton text="{i18n>onlyUnres}" groupName="Grp1" select="onChangeOnlyUnrestStkLot" selected="{baseModel>/onlyUnrestStkLotVal}"></RadioButton>
-									<RadioButton text="{i18n>onlyQI}" groupName="Grp1" select="onChangeOnlyQIStkLot" selected="{baseModel>/onlyQIStkLotVal}"></RadioButton>
-									<Label></Label>
-									<RadioButton text="{i18n>shwAllStk}" groupName="Grp1" select="onChangeShowAllStocksStkLot" selected="{baseModel>/ShowAllStocksStkLotVal}"></RadioButton>
+									<Label/>
+									<RadioButton text="{i18n>onlyUnres}" groupName="Grp1" select="onChangeOnlyUnrestStkLot" selected="{baseModel>/onlyUnrestStkLotVal}"/>
+									<RadioButton text="{i18n>onlyQI}" groupName="Grp1" select="onChangeOnlyQIStkLot" selected="{baseModel>/onlyQIStkLotVal}"/>
+									<Label/>
+									<RadioButton text="{i18n>shwAllStk}" groupName="Grp1" select="onChangeShowAllStocksStkLot" selected="{baseModel>/ShowAllStocksStkLotVal}"/>
 									<!--<Label></Label>-->
 									<core:Title/>
-									<Label text="{i18n>SalesOrg}" design="Bold" required="true"></Label>
-									<MultiInput id="StkLotSalesOrgFromID" value="{baseModel>/salesOrgFrom}" tokenUpdate="onDeleteSalesOrg" placeholder="{i18n>From}"
-										showValueHelp="true" valueHelpRequest="valueHelpRequestSalesOrg" valueState="{baseModel>/SalesOrgValueState}"/>
-									<MultiInput id="StkLotSalesOrgToID" value="{baseModel>/salesOrgTo}" tokenUpdate="onDeleteSalesOrg" placeholder="{i18n>To}"
-										showValueHelp="true" valueHelpRequest="valueHelpRequestSalesOrg" valueState="{baseModel>/SalesOrgValueState}"
-										enabled="{baseModel>/enableSalesOrgTo}"/>
-									<Label text="{i18n>MaterialGroup4}" design="Bold"></Label>
-									<MultiInput id="StkLotMatGrp4FromId" value="{baseModel>/matGrp4From}" placeholder="{i18n>From}" showValueHelp="true"
-										valueHelpRequest="valueHelpRequestMaterialGrp4" tokenUpdate="onDeleteMatGrp4"/>
-									<MultiInput id="StkLotMatGrp4ToId" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp4"
-										enabled="{baseModel>/enablematGrp4To}" tokenUpdate="onDeleteMatGrp4" value="{baseModel>/matGrp4To}"/>
-									<Label text="{i18n>Material}" design="Bold"></Label>
-									<MultiInput placeholder="{i18n>From}" showValueHelp="false" id="StkLotMatFromId" tokenUpdate="onMaterialFromDelete"
-										change="onMaterialFromChange" value="{baseModel>/matFrom}"/>
-									<MultiInput placeholder="{i18n>To}" showValueHelp="false" id="StkLotMatToId" enabled="{baseModel>/enablematTo}"
-										change="onMaterialFromChange" tokenUpdate="onMaterialFromDelete" value="{baseModel>/matTo}"/>
-									<Label text="{i18n>VendorMat}" design="Bold"></Label>
-									<MultiInput id="StkLotVenMatFromId" placeholder="{i18n>From}" showValueHelp="false" tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom"
-										value="{baseModel>/vendMatFrom}"/>
-									<MultiInput id="StkLotVenMatToId" placeholder="{i18n>To}" showValueHelp="false" tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom"
-										enabled="{baseModel>/enableVendorMat}" value="{baseModel>/vendMatTo}"/>
-									<Label></Label>
-									<CheckBox text="{i18n>Batch}" select="onChangeBatchLevelStkLot" selected="{baseModel>/batchLevel}"></CheckBox>
-									<CheckBox text="{i18n>shwSaleUnitQty}" select="onChangeShowSalesUqtyStkLot" selected="{baseModel>/ShowSalesUqtyStkLotVal}"></CheckBox>
-									<Label></Label>
-									<CheckBox text="{i18n>incRawMat}" select="onSelRawMat" selected="{baseModel>/rawMaterial}"></CheckBox>
-									<CheckBox text="{i18n>shwQtyInOrder}" select="onSelShowQty" selected="{baseModel>/showQTY}"></CheckBox>
-									<Label></Label>
-									<CheckBox text="Include Sales materials" select="onIncSalesMat" selected="{baseModel>/salesMat}"></CheckBox>
-									<CheckBox text="{i18n>shwzerostk}" select="onShowZeroStk" selected="{baseModel>/showStock}"></CheckBox>
-									<Label></Label>
-									<CheckBox text="{i18n>incBufStk}" select="onChangeIncBufferStockStkLot" selected="{baseModel>/IncBufferStockStkLotVal}"></CheckBox>
-									<CheckBox text="{i18n>SerialNo}" select="oncheckSelect" selected="{baseModel>/serialNo}"></CheckBox>
-									<Label></Label>
-									<Button text="{i18n>Search}" icon="sap-icon://search" press="StockLotSearch" type="Accept"></Button>
-									<Button text="{i18n>Clear}" icon="sap-icon://refresh" press="clearTabData" type="Reject"></Button>
+									<Label text="{i18n>SalesOrg}" design="Bold" required="true"/>
+									<MultiInput id="StkLotSalesOrgFromID" value="{baseModel>/salesOrgFrom}" tokenUpdate="onDeleteSalesOrg" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestSalesOrg" valueState="{baseModel>/SalesOrgValueState}"/>
+									<MultiInput id="StkLotSalesOrgToID" value="{baseModel>/salesOrgTo}" tokenUpdate="onDeleteSalesOrg" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestSalesOrg" valueState="{baseModel>/SalesOrgValueState}" enabled="{baseModel>/enableSalesOrgTo}"/>
+									<Label text="{i18n>MaterialGroup4}" design="Bold"/>
+									<MultiInput id="StkLotMatGrp4FromId" value="{baseModel>/matGrp4From}" placeholder="{i18n>From}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp4" tokenUpdate="onDeleteMatGrp4"/>
+									<MultiInput id="StkLotMatGrp4ToId" placeholder="{i18n>To}" showValueHelp="true" valueHelpRequest="valueHelpRequestMaterialGrp4" enabled="{baseModel>/enablematGrp4To}" tokenUpdate="onDeleteMatGrp4" value="{baseModel>/matGrp4To}"/>
+									<Label text="{i18n>Material}" design="Bold"/>
+									<MultiInput placeholder="{i18n>From}" showValueHelp="false" id="StkLotMatFromId" tokenUpdate="onMaterialFromDelete" change="onMaterialFromChange" value="{baseModel>/matFrom}"/>
+									<MultiInput placeholder="{i18n>To}" showValueHelp="false" id="StkLotMatToId" enabled="{baseModel>/enablematTo}" change="onMaterialFromChange" tokenUpdate="onMaterialFromDelete" value="{baseModel>/matTo}"/>
+									<Label text="{i18n>VendorMat}" design="Bold"/>
+									<MultiInput id="StkLotVenMatFromId" placeholder="{i18n>From}" showValueHelp="false" tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom" value="{baseModel>/vendMatFrom}"/>
+									<MultiInput id="StkLotVenMatToId" placeholder="{i18n>To}" showValueHelp="false" tokenUpdate="onDeleteVenMat" change="onChangeVenMatFrom" enabled="{baseModel>/enableVendorMat}" value="{baseModel>/vendMatTo}"/>
+									<Label/>
+									<CheckBox text="{i18n>Batch}" select="onChangeBatchLevelStkLot" selected="{baseModel>/batchLevel}"/>
+									<CheckBox text="{i18n>shwSaleUnitQty}" select="onChangeShowSalesUqtyStkLot" selected="{baseModel>/ShowSalesUqtyStkLotVal}"/>
+									<Label/>
+									<CheckBox text="{i18n>incRawMat}" select="onSelRawMat" selected="{baseModel>/rawMaterial}"/>
+									<CheckBox text="{i18n>shwQtyInOrder}" select="onSelShowQty" selected="{baseModel>/showQTY}"/>
+									<Label/>
+									<CheckBox text="Include Sales materials" select="onIncSalesMat" selected="{baseModel>/salesMat}"/>
+									<CheckBox text="{i18n>shwzerostk}" select="onShowZeroStk" selected="{baseModel>/showStock}"/>
+									<Label/>
+									<CheckBox text="{i18n>incBufStk}" select="onChangeIncBufferStockStkLot" selected="{baseModel>/IncBufferStockStkLotVal}"/>
+									<CheckBox text="{i18n>SerialNo}" select="oncheckSelect" selected="{baseModel>/serialNo}"/>
+									<Label/>
+									<Button text="{i18n>Search}" icon="sap-icon://search" press="StockLotSearch" type="Accept"/>
+									<Button text="{i18n>Clear}" icon="sap-icon://refresh" press="clearTabData" type="Reject"/>
 								</f:content>
 							</f:SimpleForm>
 							<!--<ScrollContainer vertical="true" width="100%" height="30rem">-->
 							<!--</ScrollContainer>-->
 							<OverflowToolbar>
-								<Label text="{stockLotModel>/dataLength}" design="Bold"></Label>
-								<ToolbarSpacer></ToolbarSpacer>
-								<SearchField id="idSearchStkLot" search="filterSTkLot" liveChange="filterSTkLot" width="30%"></SearchField>
+								<Label text="{stockLotModel>/dataLength}" design="Bold"/>
+								<ToolbarSpacer/>
+								<SearchField id="idSearchStkLot" search="filterSTkLot" liveChange="filterSTkLot" width="30%"/>
 								<Button text="{i18n>Export}" icon="sap-icon://download" press="onExptStkLot" type="Emphasized"/>
 								<Button icon="sap-icon://action-settings" press="onPressPersonalization"/>
 							</OverflowToolbar>
@@ -828,70 +696,59 @@ tokenUpdate="onDeleteBatchStkLot"/>-->
 								<items>
 									<Panel expandable="true" width="auto" class="sapUiResponsiveMargin">
 										<headerToolbar sticky="HeaderToolbar" class="stickyheader">
-											<OverflowToolbar >
-												<Text text=" {parts:[{path:'stockLotModel>materialNum'},{path:'stockLotModel>materialDesc'}],formatter:'.formatter.concatenateStrings'}"
-													visible="{PersonalizationModel>/personalizationData/userPersonaDto/0/status}"></Text>
+											<OverflowToolbar>
+												<Text text=" {parts:[{path:'stockLotModel>materialNum'},{path:'stockLotModel&gt;materialDesc'}],formatter:'.formatter.concatenateStrings'}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/0/status}"/>
 												<Label text="{i18n>UNR}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/6/status}" design="Bold"/>
-												<Label
-													text="{parts:[{path:'stockLotModel>unrestrictedStock' },{path:'stockLotModel>salesUOM' }],formatter:'.formatter.concatenateStringsStkLt' }"
-													visible="{PersonalizationModel>/personalizationData/userPersonaDto/6/status}"/>
+												<Label text="{parts:[{path:'stockLotModel>unrestrictedStock' },{path:'stockLotModel&gt;salesUOM' }],formatter:'.formatter.concatenateStringsStkLt' }" visible="{PersonalizationModel>/personalizationData/userPersonaDto/6/status}"/>
 											</OverflowToolbar>
 										</headerToolbar>
 										<content>
-											<f:SimpleForm minWidth="1024" layout="ResponsiveGridLayout" maxContainerCols="2" editable="true" labelSpanL="4" labelSpanM="4"
-												emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2">
+											<f:SimpleForm minWidth="1024" layout="ResponsiveGridLayout" maxContainerCols="2" editable="true" labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="2" columnsM="2">
 												<f:content>
 													<core:Title/>
-													<Label text="{i18n>VendrMat}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}"></Label>
+													<Label text="{i18n>VendrMat}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}"/>
 													<Text text="{stockLotModel>vendorMatNum}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/1/status}"/>
-													<Label text="{i18n>ltpPrc}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}"></Label>
+													<Label text="{i18n>ltpPrc}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}"/>
 													<Text text="{stockLotModel>ltp}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/2/status}"/>
-													<Label text="{i18n>onOrder}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}"></Label>
+													<Label text="{i18n>onOrder}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}"/>
 													<Text text="{stockLotModel>onOrderQty}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/4/status}"/>
-													<Label text="{i18n>onHnd}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}"></Label>
+													<Label text="{i18n>onHnd}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}"/>
 													<Text text="{stockLotModel>onHandQty}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/3/status}"/>
-													<Label text="{i18n>avlbl}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}"></Label>
+													<Label text="{i18n>avlbl}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}"/>
 													<Text text="{stockLotModel>availQty}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/5/status}"/>
 													<core:Title/>
 													<!--modify by XRAINERH 29Dec2022 01:32PM-->
 													<!--begin - STRY0019045-->
 													<Label text="{i18n>qistk}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}"></Label>
 													<Text text="{stockLotModel>stockInspection}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/8/status}"/>
-													<Label text="{i18n>blkstk}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/7/status}"></Label>
+													<Label text="{i18n>blkstk}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/7/status}"/>
 													<Text text="{stockLotModel>blockedStock}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/7/status}"/>
-													<Label text="{i18n>matGrp}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}"></Label>
+													<Label text="{i18n>matGrp}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}"/>
 													<Text text="{stockLotModel>principalMatGroup}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/9/status}"/>
-													<Label text="{i18n>MaterialGroup4}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}"></Label>
+													<Label text="{i18n>MaterialGroup4}" design="Bold" visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}"/>
 													<Text text="{stockLotModel>materialGroup4}" visible="{PersonalizationModel>/personalizationData/userPersonaDto/10/status}"/>
 													<!--end - STRY0019045-->
 												</f:content>
 											</f:SimpleForm>
 											<!--<ScrollContainer class="crtMinListHeight crtScrollBar" horizontal="false" vertical="true" height="{baseModel>/invoiceTableLength}">-->
-											<Table alternateRowColors="true" class="sapUiSizeCompact" popinLayout="GridSmall" items="{stockLotModel>OutputToBatchOutput/results}"
-												sticky="ColumnHeaders">
+											<Table alternateRowColors="true" class="sapUiSizeCompact" popinLayout="GridSmall" items="{stockLotModel>OutputToBatchOutput/results}" sticky="ColumnHeaders">
 												<columns>
-													<Column demandPopin="true" minScreenWidth="XSmall" popinDisplay="Inline"
-														visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
+													<Column demandPopin="true" minScreenWidth="XSmall" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/11/status}">
 														<Label text="{i18n>Batch}" design="Bold" tooltip="{i18n>Batch}"/>
 													</Column>
-													<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline"
-														visible="{PersonalizationModel>/personalizationData/userPersonaDto/12/status}">
+													<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/12/status}">
 														<Label text="{i18n>recvDt}" design="Bold" tooltip="{i18n>recvDt}"/>
 													</Column>
-													<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline"
-														visible="{PersonalizationModel>/personalizationData/userPersonaDto/13/status}">
+													<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/13/status}">
 														<Label text="{i18n>ManuDate}" design="Bold" tooltip="{i18n>ManuDate}"/>
 													</Column>
-													<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline"
-														visible="{PersonalizationModel>/personalizationData/userPersonaDto/14/status}">
+													<Column demandPopin="false" minScreenWidth="Tablet" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/14/status}">
 														<Label text="{i18n>ExpDate}" design="Bold" tooltip="{i18n>ExpDate}"/>
 													</Column>
-													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
-														visible="{PersonalizationModel>/personalizationData/userPersonaDto/15/status}">
+													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/15/status}">
 														<Label text="{i18n>Qty}" design="Bold" tooltip="{i18n>Qty}"/>
 													</Column>
-													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
-														visible="{PersonalizationModel>/personalizationData/userPersonaDto/16/status}">
+													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline" visible="{PersonalizationModel>/personalizationData/userPersonaDto/16/status}">
 														<Label text="{i18n>SLoc}" design="Bold" tooltip="{i18n>SLoc}"/>
 													</Column>
 													<Column demandPopin="true" minScreenWidth="Tablet" popinDisplay="Inline"
@@ -920,19 +777,19 @@ tokenUpdate="onDeleteBatchStkLot"/>-->
 												</columns>
 												<items>
 													<ColumnListItem type="Navigation" press="navigateStkLot">
-														<Text text="{stockLotModel>batchNum}"></Text>
-														<Text text="{path: 'stockLotModel>createdOn', formatter: '.formatter.convertToDateToDispFormat'}"></Text>
-														<Text text="{path: 'stockLotModel>manufDate', formatter: '.formatter.convertToDateToDispFormatManuf'}"></Text>
-														<Text text="{path: 'stockLotModel>shelfLifeDate', formatter: '.formatter.convertToDateToDispFormatExp'}"></Text>
-														<Text text="{stockLotModel>qtyUnrestrictedStock}"></Text>
-														<Text text="{stockLotModel>storageLocation}"></Text>
-														<Text text="{stockLotModel>storelocdesc}"></Text>
-														<Text text="{stockLotModel>reservedby}"></Text>
-														<Text text="{stockLotModel>batchQty}"></Text>
-														<Text text="{stockLotModel>blockStock}"></Text>
-														<Text text="{stockLotModel>stockInspection}"></Text>
+														<Text text="{stockLotModel>batchNum}"/>
+														<Text text="{path: 'stockLotModel>createdOn', formatter: '.formatter.convertToDateToDispFormat'}"/>
+														<Text text="{path: 'stockLotModel>manufDate', formatter: '.formatter.convertToDateToDispFormatManuf'}"/>
+														<Text text="{path: 'stockLotModel>shelfLifeDate', formatter: '.formatter.convertToDateToDispFormatExp'}"/>
+														<Text text="{stockLotModel>qtyUnrestrictedStock}"/>
+														<Text text="{stockLotModel>storageLocation}"/>
+														<Text text="{stockLotModel>storelocdesc}"/>
+														<Text text="{stockLotModel>reservedby}"/>
+														<Text text="{stockLotModel>batchQty}"/>
+														<Text text="{stockLotModel>blockStock}"/>
+														<Text text="{stockLotModel>stockInspection}"/>
 														<!--<Text text="{stockLotModel>reservedby}"/>-->
-														<Text text="{stockLotModel>serialNum}"></Text>
+														<Text text="{stockLotModel>serialNum}"/>
 													</ColumnListItem>
 												</items>
 											</Table>
