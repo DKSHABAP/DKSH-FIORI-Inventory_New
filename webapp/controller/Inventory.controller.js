@@ -699,15 +699,19 @@ sap.ui.define([
 		},
 
 		handleChangeExpDateFrom: function (oEvent) {
-			var date = oEvent.getParameters().value;
-			if (date === NaN || date === "") {
-				date = "";
-			}
-			var d = this.formatter.dateTimeFormat(date);
+			if (oEvent.getParameters().valid) {
+				var date = oEvent.getParameters().value;
+				if (date === NaN || date === "") {
+					date = "";
+				}
+				var d = this.formatter.dateTimeFormat(date);
 
-			// var d = new Date(date).getFullYear().toString() + new Date(date).getMonth().toString() + new Date(date).getDate().toString();
-			// this.expiryDate = "( expiredDate ge datetime" + "'" + d + "'";
-			this.expiryDateFrom = d;
+				// var d = new Date(date).getFullYear().toString() + new Date(date).getMonth().toString() + new Date(date).getDate().toString();
+				// this.expiryDate = "( expiredDate ge datetime" + "'" + d + "'";
+				this.expiryDateFrom = d;
+			} else {
+				this.getView().getModel("baseModel").getData().expDateFrom = null;
+			}
 		},
 
 		handleChangeExpDateTo: function (oEvent) {
@@ -715,16 +719,20 @@ sap.ui.define([
 				MessageToast.show("Add Expiry Date from");
 				return;
 			} else {
-				/* this.getView().getModel("baseModel").getData().postingDateValueStateTo = "None";*/
-				var date = oEvent.getParameters().value;
-				if (date === NaN || date === "") {
-					date = "";
-				}
+				if (oEvent.getParameters().valid) {
+					/* this.getView().getModel("baseModel").getData().postingDateValueStateTo = "None";*/
+					var date = oEvent.getParameters().value;
+					if (date === NaN || date === "") {
+						date = "";
+					}
 
-				var d = this.formatter.dateTimeFormat(date);
-				// var d = new Date(date).getFullYear().toString() + new Date(date).getMonth().toString() + new Date(date).getDate().toString();
-				// this.expiryDate = this.expiryDate + " and " + "expiredDate le datetime" + "'" + d + "' )";
-				this.expiryDateTo = d;
+					var d = this.formatter.dateTimeFormat(date);
+					// var d = new Date(date).getFullYear().toString() + new Date(date).getMonth().toString() + new Date(date).getDate().toString();
+					// this.expiryDate = this.expiryDate + " and " + "expiredDate le datetime" + "'" + d + "' )";
+					this.expiryDateTo = d;
+				} else {
+					this.getView().getModel("baseModel").getData().expDateTo = null;
+				}
 			}
 		},
 
@@ -2410,22 +2418,26 @@ sap.ui.define([
 		},
 
 		onChangeMonth: function (oEvent) {
-			var date = new Date(oEvent.getParameters().value);
-			// if(date.length === 1)
-			// {\
-			if (date === NaN) {
-				date = "";
-			}
-			if (date.getMonth().toString().length === 1 && date.getMonth() < 9) {
-				var spMonth = date.getFullYear().toString() + "0" + (date.getMonth() + 1);
+			if (oEvent.getParameters().valid) {
+				var date = new Date(oEvent.getParameters().value);
+				// if(date.length === 1)
+				// {\
+				if (date === NaN) {
+					date = "";
+				}
+				if (date.getMonth().toString().length === 1 && date.getMonth() < 9) {
+					var spMonth = date.getFullYear().toString() + "0" + (date.getMonth() + 1);
+				} else {
+					var spMonth = date.getFullYear().toString() + (date.getMonth() + 1);
+				}
+				// }
+				// else{
+				// 	var spMonth = date.getFullYear()+date.getMonth();
+				// }
+				this.spMonth = "spMonth eq" + "'" + spMonth + "'";
 			} else {
-				var spMonth = date.getFullYear().toString() + (date.getMonth() + 1);
+				this.getView().getModel("baseModel").getData().month = null;
 			}
-			// }
-			// else{
-			// 	var spMonth = date.getFullYear()+date.getMonth();
-			// }
-			this.spMonth = "spMonth eq" + "'" + spMonth + "'";
 		},
 
 		onExptStkLot: function () {
@@ -3095,16 +3107,20 @@ sap.ui.define([
 		},
 
 		onChangeFromDate: function (oEvent) {
-			var date = oEvent.getParameters().value;
-			if (date === NaN || date === "") {
-				date = "";
-			}
-			var d = this.formatter.dateTimeFormat(date);
-			// var d = new Date(date).getFullYear().toString() + new Date(date).getMonth().toString() + new Date(date).getDate().toString();
-			// this.expiryDate = "expiredDate ge datetime" + "'" + d + "'";
+			if (oEvent.getParameters().valid) {
+				var date = oEvent.getParameters().value;
+				if (date === NaN || date === "") {
+					date = "";
+				}
+				var d = this.formatter.dateTimeFormat(date);
+				// var d = new Date(date).getFullYear().toString() + new Date(date).getMonth().toString() + new Date(date).getDate().toString();
+				// this.expiryDate = "expiredDate ge datetime" + "'" + d + "'";
 
-			if (date) {
-				this.endingStckDateFrom = "currentDate eq datetime" + "'" + d + "'";
+				if (date) {
+					this.endingStckDateFrom = "currentDate eq datetime" + "'" + d + "'";
+				}
+			} else {
+				this.getView().getModel("baseModel").getData().endingStockDateFrom = null;
 			}
 		},
 

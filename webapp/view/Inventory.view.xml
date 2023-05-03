@@ -460,8 +460,8 @@
 									<Label text="{i18n>Material}" design="Bold"/>
 									<MultiInput placeholder="" showValueHelp="false" id="MatMovMatFromId" tokenUpdate="onMaterialFromDelete" change="onMaterialFromChange" value="{baseModel>/matFrom}"/>
 									<Label text="{i18n>PostingDate}" design="Bold" required="true"/>
-									<DatePicker placeholder="{i18n>From}" change="onChangePostingDateFrom" valueState="{baseModel>/postingDateValueStateFrom}" value="{baseModel>/postingDateFrom}" enabled="true" valueHelpOnly="true"/>
-									<DatePicker placeholder="{i18n>To}" change="onChangePostingDateTo" valueState="{baseModel>/postingDateValueStateTo}" value="{baseModel>/postingDateTo}" enabled="true" valueHelpOnly="true"/>
+									<DatePicker placeholder="{i18n>From}" change="onChangePostingDateFrom" valueState="{baseModel>/postingDateValueStateFrom}" value="{baseModel>/postingDateFrom}" />
+									<DatePicker placeholder="{i18n>To}" change="onChangePostingDateTo" valueState="{baseModel>/postingDateValueStateTo}" value="{baseModel>/postingDateTo}" />
 									<Label text="{i18n>MovementType}" design="Bold"/>
 									<MultiInput value="{baseModel>/movementTypeFrom}" placeholder="{i18n>EnterMovementType}" change="onChangeMatMov" tokenUpdate="onDeleteMatMov" id="matMov" showValueHelp="false"/>
 									<Label text="{i18n>MaterialDocument}" design="Bold"/>
