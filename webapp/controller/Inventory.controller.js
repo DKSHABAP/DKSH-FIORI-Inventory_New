@@ -700,7 +700,7 @@ sap.ui.define([
 
 		handleChangeExpDateFrom: function (oEvent) {
 			if (oEvent.getParameters().valid) {
-				var date = oEvent.getParameters().value;
+				var date = this.getView().getModel("baseModel").getData().expDateFrom;
 				if (date === NaN || date === "") {
 					date = "";
 				}
@@ -721,7 +721,7 @@ sap.ui.define([
 			} else {
 				if (oEvent.getParameters().valid) {
 					/* this.getView().getModel("baseModel").getData().postingDateValueStateTo = "None";*/
-					var date = oEvent.getParameters().value;
+					var date = this.getView().getModel("baseModel").getData().expDateTo;
 					if (date === NaN || date === "") {
 						date = "";
 					}
@@ -2372,7 +2372,7 @@ sap.ui.define([
 			if (oEvent.getParameters().valid) {
 				this.getView().getModel("baseModel").getData().postingDateValueStateFrom = "None";
 				// SearchPara.matGrpValueState = "Error";
-				var date = oEvent.getParameters().value;
+				var date = this.getView().getModel("baseModel").getData().postingDateFrom;
 				if (date === NaN || date === "") {
 					date = "";
 				}
@@ -2402,7 +2402,7 @@ sap.ui.define([
 			} else {
 				if (oEvent.getParameters().valid) {
 					this.getView().getModel("baseModel").getData().postingDateValueStateTo = "None";
-					var date = oEvent.getParameters().value;
+					var date = this.getView().getModel("baseModel").getData().postingDateTo;
 					if (date === NaN || date === "") {
 						date = "";
 					}
@@ -2419,7 +2419,7 @@ sap.ui.define([
 
 		onChangeMonth: function (oEvent) {
 			if (oEvent.getParameters().valid) {
-				var date = new Date(oEvent.getParameters().value);
+				var date = this.getView().getModel("baseModel").getData().month;
 				// if(date.length === 1)
 				// {\
 				if (date === NaN) {
@@ -3108,7 +3108,7 @@ sap.ui.define([
 
 		onChangeFromDate: function (oEvent) {
 			if (oEvent.getParameters().valid) {
-				var date = oEvent.getParameters().value;
+				var date = this.getView().getModel("baseModel").getData().endingStockDateFrom;
 				if (date === NaN || date === "") {
 					date = "";
 				}
@@ -3653,14 +3653,14 @@ sap.ui.define([
 			this.getView().getModel("baseModel").setProperty("/SLocTo", "");
 			this.getView().getModel("baseModel").setProperty("/SLocFrom", "");
 			this.getView().getModel("baseModel").setProperty("/enableSLocTo", true);
-			this.getView().getModel("baseModel").setProperty("/postingDateFrom", "");
-			this.getView().getModel("baseModel").setProperty("/postingDateTo", "");
-			this.getView().getModel("baseModel").setProperty("/endingStockDateFrom", "");
+			this.getView().getModel("baseModel").setProperty("/postingDateFrom", null);
+			this.getView().getModel("baseModel").setProperty("/postingDateTo", null);
+			this.getView().getModel("baseModel").setProperty("/endingStockDateFrom", null);
 			this.getView().getModel("baseModel").setProperty("/movementTypeFrom", "");
 			this.getView().getModel("baseModel").setProperty("/matDocFrom", "");
-			this.getView().getModel("baseModel").setProperty("/expDateFrom", "");
-			this.getView().getModel("baseModel").setProperty("/expDateTo", "");
-			this.getView().getModel("baseModel").setProperty("/month", "");
+			this.getView().getModel("baseModel").setProperty("/expDateFrom", null);
+			this.getView().getModel("baseModel").setProperty("/expDateTo", null);
+			this.getView().getModel("baseModel").setProperty("/month", null);
 			this.getView().getModel("baseModel").setProperty("/vendMatFrom", "");
 			this.getView().getModel("baseModel").setProperty("/vendMatTo", "");
 			this.getView().getModel("baseModel").setProperty("/enablematTo", true);

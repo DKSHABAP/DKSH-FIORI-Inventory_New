@@ -190,12 +190,12 @@
 									<VBox>
 										<RadioButton text="{i18n>ByMonth}" groupName="Grp2" select="onChangeEndingPer" selected="{baseModel>/EndingStckSelEndPrd}"/>
 										<!--<Label text="Date" design="Bold"></Label>-->
-										<DatePicker id="DP10" value="{baseModel>/month}" displayFormat="MM-y" change="onChangeMonth" class="sapUiSmallMarginBottom"/>
+										<DatePicker id="DP10" dateValue="{baseModel>/month}" displayFormat="MM-y" change="onChangeMonth" class="sapUiSmallMarginBottom"/>
 									</VBox>
 									<Label/>
 									<VBox>
 										<RadioButton text="{i18n>ByasatDate}" groupName="Grp2" select="onChangeAsDate" selected="{baseModel>/EndingStckSelByAsDte}"/>
-										<DatePicker value="{baseModel>/endingStockDateFrom}" placeholder="{i18n>From}" class="sapUiSmallMarginBottom" change="onChangeFromDate"/>
+										<DatePicker dateValue="{baseModel>/endingStockDateFrom}" placeholder="{i18n>From}" class="sapUiSmallMarginBottom" change="onChangeFromDate"/>
 									</VBox>
 									<!--date-->
 									<!--<DatePicker value="{baseModel>/endingStockDateTo}" placeholder="{i18n>To}" class="sapUiSmallMarginBottom" change="onChangeToDate"/>-->
@@ -460,8 +460,8 @@
 									<Label text="{i18n>Material}" design="Bold"/>
 									<MultiInput placeholder="" showValueHelp="false" id="MatMovMatFromId" tokenUpdate="onMaterialFromDelete" change="onMaterialFromChange" value="{baseModel>/matFrom}"/>
 									<Label text="{i18n>PostingDate}" design="Bold" required="true"/>
-									<DatePicker placeholder="{i18n>From}" change="onChangePostingDateFrom" valueState="{baseModel>/postingDateValueStateFrom}" value="{baseModel>/postingDateFrom}" />
-									<DatePicker placeholder="{i18n>To}" change="onChangePostingDateTo" valueState="{baseModel>/postingDateValueStateTo}" value="{baseModel>/postingDateTo}" />
+									<DatePicker placeholder="{i18n>From}" change="onChangePostingDateFrom" valueState="{baseModel>/postingDateValueStateFrom}" dateValue="{baseModel>/postingDateFrom}" />
+									<DatePicker placeholder="{i18n>To}" change="onChangePostingDateTo" valueState="{baseModel>/postingDateValueStateTo}" dateValue="{baseModel>/postingDateTo}" />
 									<Label text="{i18n>MovementType}" design="Bold"/>
 									<MultiInput value="{baseModel>/movementTypeFrom}" placeholder="{i18n>EnterMovementType}" change="onChangeMatMov" tokenUpdate="onDeleteMatMov" id="matMov" showValueHelp="false"/>
 									<Label text="{i18n>MaterialDocument}" design="Bold"/>
@@ -601,8 +601,8 @@
 <MultiInput value="" placeholder="Enter Batch" showValueHelp="false" id="stockLotBatchFromId" change="onChangeBatchStkLot"
 tokenUpdate="onDeleteBatchStkLot"/>-->
 									<Label text="{i18n>ExpiryDate}" design="Bold"/>
-									<DatePicker placeholder="{i18n>From}" change="handleChangeExpDateFrom" class="sapUiSmallMarginBottom" value="{baseModel>/expDateFrom}"/>
-									<DatePicker placeholder="{i18n>To}" change="handleChangeExpDateTo" class="sapUiSmallMarginBottom" value="{baseModel>/expDateTo}"/>
+									<DatePicker placeholder="{i18n>From}" change="handleChangeExpDateFrom" class="sapUiSmallMarginBottom" dateValue="{baseModel>/expDateFrom}"/>
+									<DatePicker placeholder="{i18n>To}" change="handleChangeExpDateTo" class="sapUiSmallMarginBottom" dateValue="{baseModel>/expDateTo}"/>
 									<Label/>
 									<RadioButton text="{i18n>onlyUnres}" groupName="Grp1" select="onChangeOnlyUnrestStkLot" selected="{baseModel>/onlyUnrestStkLotVal}"/>
 									<RadioButton text="{i18n>onlyQI}" groupName="Grp1" select="onChangeOnlyQIStkLot" selected="{baseModel>/onlyQIStkLotVal}"/>
