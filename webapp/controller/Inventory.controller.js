@@ -3097,7 +3097,7 @@ sap.ui.define([
 				// this.ownStkMaterial = undefined;
 				// this.venConsMaterial = undefined;
 				// this.getView().getModel("baseModel").setProperty("/month", "");
-				this.getView().getModel("baseModel").setProperty("/endingStockDateFrom", "");
+				this.getView().getModel("baseModel").setProperty("/endingStockDateFrom", null);
 			} else {
 				this.byEndingPeriod = undefined;
 			}
@@ -3111,8 +3111,8 @@ sap.ui.define([
 				// this.allMaterials = undefined;
 				// this.ownStkMaterial = undefined;
 				// this.venConsMaterial = undefined;
-				this.getView().getModel("baseModel").setProperty("/month", "");
-				// this.getView().getModel("baseModel").setProperty("/endingStockDateFrom", "");
+				this.getView().getModel("baseModel").setProperty("/month", null);
+				// this.getView().getModel("baseModel").setProperty("/endingStockDateFrom", null);
 			} else {
 				this.byAsAtDate = undefined;
 			}
