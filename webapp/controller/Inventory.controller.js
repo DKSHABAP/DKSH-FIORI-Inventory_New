@@ -5189,7 +5189,7 @@ sap.ui.define([
 				SearchPara.EndingStckplantValueState = "None";
 				for (var i = 0; i < this.plantFromSelectedItems.length; i++) {
 					if (plant === undefined) {
-						plant = "plant eq " + "('" + this.plantFromSelectedItems[i] + "'";
+						plant = "( plant eq " + "'" + this.plantFromSelectedItems[i] + "'";
 					} else {
 						if (i === this.plantFromSelectedItems.length - 1) {
 							plant = plant + " " + "or" + " " + "plant eq " + "'" + this.plantFromSelectedItems[i] + "')";
